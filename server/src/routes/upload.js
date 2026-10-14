@@ -85,7 +85,6 @@ router.post('/:id/upload', upload.array('photos', 500), async (req, res) => {
     }
 
     // Auto sync to Render cloud server
-    const settings = db.getSettings();
     if (settings.cloudServerUrl) {
       try {
         const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
