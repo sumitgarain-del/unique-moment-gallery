@@ -58,7 +58,10 @@ export default function ShareModal({ project, onClose }) {
     }
   };
 
-  const publicLink = shareInfo?.publicLink || '';
+  const publicLink =
+    shareInfo?.publicLink ||
+    (shareInfo?.primaryLink && !shareInfo.primaryLink.includes('localhost') ? shareInfo.primaryLink : '') ||
+    `https://unique-moment-gallery.onrender.com/gallery/${project.token}`;
   const qrImageUrl =
     shareInfo?.qrImageUrl ||
     (publicLink ? `${publicLink.replace(/\/gallery\/.*$/, '')}/api/network/qr-image/${project.token}.png` : '');

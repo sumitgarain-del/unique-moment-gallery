@@ -426,63 +426,31 @@ export default function SettingsModal({ onClose }) {
                 />
               </div>
 
-              {/* Permanent Worldwide Gallery Link & Cloudflare Tunnel Settings */}
+              {/* 24/7 Cloud Gallery Server Settings */}
               <div className="pt-3 border-t border-white/10 space-y-3">
                 <div className="flex items-center space-x-2">
-                  <Globe className="w-4 h-4 text-blue-400" />
+                  <Globe className="w-4 h-4 text-emerald-400" />
                   <span className="text-xs font-bold text-white uppercase tracking-wider">
-                    Permanent Gallery Domain (ল্যাপটপ রিস্টার্ট হলেও লিঙ্ক পরিবর্তন হবে না)
+                    24/7 Cloud Gallery Server (Render.com)
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-400 leading-relaxed">
-                  ডিফল্টভাবে Cloudflare Quick Tunnel কাজ করে যা সম্পূর্ণ অটোমেটিক। আপনি যদি চান ল্যাপটপ বন্ধ করে অন করলেও ক্লায়েন্টদের পাঠানো লিঙ্ক কখনোই বদলাবে না, তবে এখানে আপনার ফিক্সড ডোমেন বা টোকেন দিন:
+                  আপনার ল্যাপটপ বন্ধ থাকলেও ক্লায়েন্টরা ২৪ ঘণ্টা গ্যালারি দেখতে ও ছবি সিলেক্ট করতে পারবে। এখানে আপনার Render-এর সার্ভিস URL দিন:
                 </p>
 
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-1">
-                    Render.com Cloud Server URL (ল্যাপটপ বন্ধ থাকলেও ২৪/৭ লাইভ সার্ভার)
+                    Render Cloud Server URL
                   </label>
                   <input
                     type="text"
-                    value={settings.cloudServerUrl || ''}
+                    value={settings.cloudServerUrl || 'https://unique-moment-gallery.onrender.com'}
                     onChange={(e) => setSettings({ ...settings, cloudServerUrl: e.target.value.trim() })}
-                    placeholder="e.g. https://uniquemoment.onrender.com"
+                    placeholder="https://unique-moment-gallery.onrender.com"
                     className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
                   />
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
-                    Render.com-এ হোস্ট করা আপনার ফ্রি সার্ভারের লিঙ্ক (যেমন: https://uniquemoment.onrender.com)
-                  </span>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
-                    Permanent Custom Domain / Static URL (Optional)
-                  </label>
-                  <input
-                    type="text"
-                    value={settings.customDomain || ''}
-                    onChange={(e) => setSettings({ ...settings, customDomain: e.target.value.trim() })}
-                    placeholder="e.g. https://gallery.uniquemoment.com or https://unique-moment.ngrok-free.app"
-                    className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                  />
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
-                    Cloudflare Zero Trust domain, Ngrok permanent free domain, বা নিজস্ব ডোমেন
-                  </span>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
-                    Cloudflare Zero Trust Tunnel Token (Optional)
-                  </label>
-                  <input
-                    type="password"
-                    value={settings.cloudflareTunnelToken || ''}
-                    onChange={(e) => setSettings({ ...settings, cloudflareTunnelToken: e.target.value.trim() })}
-                    placeholder="eyJh..."
-                    className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                  />
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
-                    Cloudflare Zero Trust ড্যাশবোর্ড থেকে প্রাপ্ত আজীবন ফ্রি টানেল টোকেন
+                  <span className="text-[10px] text-emerald-400 mt-1 block">
+                    ✓ ক্লায়েন্টদের শেয়ার করার সব লিঙ্ক এবং হোয়াটসঅ্যাপ মেসেজে স্বয়ংক্রিয়ভাবে এই ২৪/৭ লিঙ্ক ব্যবহার হবে।
                   </span>
                 </div>
               </div>

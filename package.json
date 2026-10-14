@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Studio Sync - Photography Proxy Sync & Local Master Auto-Sorting",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "npm install",
+    "start": "node server/src/index.js",
+    "build": "echo 'Build ready'",
     "build:client": "cd client && npm run build",
     "start:server": "cd server && npm start",
     "start:client": "cd client && npm run dev"

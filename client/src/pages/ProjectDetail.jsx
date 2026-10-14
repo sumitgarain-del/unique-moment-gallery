@@ -232,8 +232,8 @@ export default function ProjectDetail({
 
   const clientPublicLink =
     shareInfo?.publicLink ||
-    (shareInfo?.tunnelActive && shareInfo?.primaryLink && !shareInfo.primaryLink.includes('localhost') ? shareInfo.primaryLink : '') ||
-    '';
+    (shareInfo?.primaryLink && !shareInfo.primaryLink.includes('localhost') ? shareInfo.primaryLink : '') ||
+    `https://unique-moment-gallery.onrender.com/gallery/${project.token}`;
 
   const publicQrImageUrl =
     shareInfo?.qrImageUrl ||
@@ -257,10 +257,6 @@ export default function ProjectDetail({
   };
 
   const handleCopyLink = () => {
-    if (!clientPublicLink) {
-      alert('Connecting worldwide tunnel... Please wait a moment.');
-      return;
-    }
     navigator.clipboard.writeText(clientPublicLink);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2500);
@@ -464,21 +460,15 @@ export default function ProjectDetail({
               <span className="text-xs font-semibold uppercase tracking-wider text-rose-400">
                 Phase 1: Shareable Client Selection Link
               </span>
-              {shareInfo?.tunnelActive ? (
-                <span className="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>Online Worldwide (Works on any Mobile Data / Wi-Fi)</span>
-                </span>
-              ) : (
-                <span className="text-[11px] text-amber-400/90 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                  Initializing Cloudflare Worldwide Tunnel...
-                </span>
-              )}
+              <span className="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>24/7 Cloud Gallery Live (Render.com + Google Drive)</span>
+              </span>
             </div>
 
             <div className="mt-3 flex items-center space-x-2">
               <div className="flex-1 p-2.5 rounded-xl bg-black/50 border border-white/10 font-mono text-xs text-blue-300 select-all truncate">
-                {clientPublicLink || 'Connecting Worldwide Cloudflare Tunnel...'}
+                {clientPublicLink}
               </div>
               
               <button

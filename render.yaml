@@ -5,11 +5,9 @@ services:
     plan: free
     region: singapore
     buildCommand: npm install
-    startCommand: node index.js
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-      - key: NODE_VERSION
-        value: 20.18.0

@@ -12,7 +12,7 @@ class Database {
       photographerEmail: 'contact@uniquemoment.com',
       customDomain: '', // e.g. https://gallery.uniquemoment.com
       cloudflareTunnelToken: '', // Cloudflare Zero Trust permanent tunnel token
-      cloudServerUrl: '', // Render.com or external cloud server URL (e.g. https://unique-moment.onrender.com)
+      cloudServerUrl: 'https://unique-moment-gallery.onrender.com', // 24/7 Render cloud gallery server URL
       gdrive: {
         enabled: false,
         clientId: '',
