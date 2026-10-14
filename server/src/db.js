@@ -170,7 +170,22 @@ class Database {
     const project = this.data.projects.find((p) => p.id === id);
     if (!project) return null;
 
-    project.images.push(...newImages);
+    for (const img of newImages) {
+      const existingIdx = project.images.findIndex(
+        (existing) => existing.originalName === img.originalName || existing.stem === img.stem
+      );
+      if (existingIdx !== -1) {
+        project.images[existingIdx] = {
+          ...project.images[existingIdx],
+          ...img,
+          status: project.images[existingIdx].status || img.status,
+          comment: project.images[existingIdx].comment || img.comment,
+        };
+      } else {
+        project.images.push(img);
+      }
+    }
+
     if (project.status === 'draft' && project.images.length > 0) {
       project.status = 'uploaded';
     }
