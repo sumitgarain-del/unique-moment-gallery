@@ -280,29 +280,44 @@ export default function ProjectDetail({
   };
 
   const handleStartFolderImport = async () => {
-    if (!masterFolderPath) {
+    const totalPhotos = project.images?.length || project.stats?.total || 0;
+    if (!masterFolderPath && totalPhotos === 0) {
       alert('Please select a Master Folder first.');
       return;
     }
     try {
-      setIsImporting(true);
-      setFolderImportProgress({
-        stage: 'scanning',
-        completed: 0,
-        total: 0,
-        remaining: 0,
-        percent: 0,
-        currentFile: 'Scanning folder for images & RAW files...',
-      });
-      const res = await importFolder(project.id, masterFolderPath, true);
-      if (res.project) {
-        onUpdateProject(res.project);
+      if (masterFolderPath) {
+        setIsImporting(true);
+        setFolderImportProgress({
+          stage: 'scanning',
+          completed: 0,
+          total: 0,
+          remaining: 0,
+          percent: 0,
+          currentFile: 'Scanning folder for images & RAW files...',
+        });
+        const res = await importFolder(project.id, masterFolderPath, true);
+        if (res.project) {
+          onUpdateProject(res.project);
+        }
+      } else {
+        // If photos were added without master folder, auto-backup existing proxies to Google Drive
+        setIsSyncingGdrive(true);
+        setGdriveStatus('Auto-syncing proxies to Google Drive...');
+        await syncProjectToGdrive(project.id);
+        onUpdateProject((prev) => ({
+          ...prev,
+          gdrive: { ...prev.gdrive, uploaded: true },
+        }));
+        alert('Google Drive backup complete! Gallery is live.');
       }
     } catch (err) {
       alert(`Auto-Backup error: ${err.message}`);
       setFolderImportProgress(null);
     } finally {
       setIsImporting(false);
+      setIsSyncingGdrive(false);
+      setGdriveStatus('');
     }
   };
 
@@ -593,15 +608,24 @@ export default function ProjectDetail({
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <button
-              onClick={handleGdriveUpload}
-              disabled={isSyncingGdrive || stats.total === 0}
-              className="w-full flex items-center justify-center space-x-1.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-300 hover:text-white transition-colors disabled:opacity-50"
-            >
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+            <span className="text-slate-400 flex items-center space-x-1.5">
               <Cloud className="w-3.5 h-3.5 text-blue-400" />
-              <span>{isSyncingGdrive ? 'Syncing to Drive...' : 'Backup Proxies to Google Drive'}</span>
-            </button>
+              <span>Google Drive:</span>
+            </span>
+            {project.gdrive?.uploaded ? (
+              <a
+                href={project.gdrive.folderUrl || '#'}
+                target="_blank"
+                rel="noreferrer"
+                className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center space-x-1"
+              >
+                <span>Backed Up ({project.gdrive.syncedCount || stats.total || 0})</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            ) : (
+              <span className="text-amber-400 font-medium">Auto-backups on scan</span>
+            )}
           </div>
         </div>
 
@@ -651,15 +675,21 @@ export default function ProjectDetail({
           <button
             type="button"
             onClick={handleStartFolderImport}
-            disabled={!masterFolderPath || isImporting}
-            className="flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-amber-950/40 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none flex-shrink-0"
+            disabled={(!masterFolderPath && stats.total === 0) || isImporting || isSyncingGdrive}
+            className="flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 via-rose-600 to-indigo-600 hover:from-amber-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-rose-950/40 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none flex-shrink-0"
           >
-            {isImporting ? (
-              <Loader2 className="w-4 h-4 animate-spin" />
+            {isImporting || isSyncingGdrive ? (
+              <Loader2 className="w-4 h-4 animate-spin text-white" />
             ) : (
-              <Play className="w-4 h-4" />
+              <Play className="w-4 h-4 fill-white" />
             )}
-            <span>Scan & Auto-Backup to Drive</span>
+            <span>
+              {isImporting
+                ? 'Compressing & Backing Up to Drive...'
+                : isSyncingGdrive
+                ? 'Backing Up to Drive...'
+                : 'Scan & Auto-Backup to Drive'}
+            </span>
           </button>
         </div>
       </div>
