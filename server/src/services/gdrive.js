@@ -16,26 +16,8 @@ export class GoogleDriveService {
     }
 
     try {
-      if (gdrive.serviceAccountKey) {
-        // Service Account authentication
-        let credentials;
-        try {
-          credentials = typeof gdrive.serviceAccountKey === 'string'
-            ? JSON.parse(gdrive.serviceAccountKey)
-            : gdrive.serviceAccountKey;
-        } catch (e) {
-          throw new Error('Invalid Service Account JSON key format');
-        }
-
-        const auth = new google.auth.JWT(
-          credentials.client_email,
-          null,
-          credentials.private_key,
-          ['https://www.googleapis.com/auth/drive']
-        );
-        return google.drive({ version: 'v3', auth });
-      } else if (gdrive.clientId && gdrive.clientSecret && gdrive.refreshToken) {
-        // OAuth2 authentication
+      if (gdrive.clientId && gdrive.clientSecret && gdrive.refreshToken) {
+        // Pure OAuth2 authentication (Full Google Drive storage quota)
         const oauth2Client = new google.auth.OAuth2(
           gdrive.clientId,
           gdrive.clientSecret
@@ -44,9 +26,10 @@ export class GoogleDriveService {
         return google.drive({ version: 'v3', auth: oauth2Client });
       }
     } catch (err) {
-      console.error('[GDrive] Auth initialization error:', err.message);
+      console.error('[GDrive] OAuth initialization error:', err.message);
       return null;
     }
+    return null;
 
     }
 

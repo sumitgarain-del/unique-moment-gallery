@@ -19,8 +19,6 @@ class Database {
         clientSecret: '',
         refreshToken: '',
         parentFolderId: '',
-        folderUrl: '',
-        serviceAccountKey: '',
         status: 'unconfigured', // 'unconfigured' | 'connected' | 'mock'
       },
       exportSettings: {

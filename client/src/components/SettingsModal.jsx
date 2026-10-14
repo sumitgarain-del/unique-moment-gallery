@@ -27,31 +27,7 @@ export default function SettingsModal({ onClose }) {
     });
   }, []);
 
-  const [authMethod, setAuthMethod] = useState(
-    settings.gdrive?.serviceAccountKey ? 'service_account' : 'service_account'
-  );
 
-  const handleUploadJsonFile = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const jsonContent = event.target.result;
-        JSON.parse(jsonContent); // Test valid JSON
-        setSettings((prev) => ({
-          ...prev,
-          gdrive: {
-            ...prev.gdrive,
-            serviceAccountKey: jsonContent,
-          },
-        }));
-      } catch (err) {
-        alert('Invalid JSON file format. Please upload the key file downloaded from Google Cloud.');
-      }
-    };
-    reader.readAsText(file);
-  };
 
   const handleConnectWithGoogle = async () => {
     if (!settings.gdrive?.clientId || !settings.gdrive?.clientSecret) {
@@ -223,135 +199,72 @@ export default function SettingsModal({ onClose }) {
                     </p>
                   </div>
 
-                  {/* Authentication Method Selector Tabs */}
-                  <div className="p-1 bg-white/5 rounded-xl border border-white/5 grid grid-cols-2 gap-1">
-                    <button
-                      type="button"
-                      onClick={() => setAuthMethod('service_account')}
-                      className={`py-2 px-3 rounded-lg text-xs font-medium transition-all ${
-                        authMethod === 'service_account'
-                          ? 'bg-rose-600 text-white shadow-sm'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      Method 1: Service Account Key
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setAuthMethod('oauth')}
-                      className={`py-2 px-3 rounded-lg text-xs font-medium transition-all ${
-                        authMethod === 'oauth'
-                          ? 'bg-rose-600 text-white shadow-sm'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      Method 2: Google OAuth Login
-                    </button>
-                  </div>
-
-                  {/* Method 1: Service Account Key */}
-                  {authMethod === 'service_account' && (
-                    <div className="space-y-3 p-3.5 rounded-xl bg-black/30 border border-white/5">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <span className="text-xs font-semibold text-slate-200">
-                            Service Account JSON Key
-                          </span>
-                          <p className="text-[10px] text-slate-400">
-                            Created in Google Cloud Console &gt; IAM & Admin &gt; Service Accounts
-                          </p>
-                        </div>
-                        <label className="cursor-pointer flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-colors">
-                          <Upload className="w-3.5 h-3.5 text-rose-400" />
-                          <span>Upload .JSON File</span>
-                          <input
-                            type="file"
-                            accept=".json"
-                            onChange={handleUploadJsonFile}
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
-
-                      <textarea
-                        rows={3}
-                        placeholder='Paste Service Account JSON key content here: { "type": "service_account", "client_email": "...", "private_key": "..." }'
-                        value={settings.gdrive?.serviceAccountKey || ''}
-                        onChange={(e) =>
-                          setSettings({
-                            ...settings,
-                            gdrive: { ...settings.gdrive, serviceAccountKey: e.target.value },
-                          })
-                        }
-                        className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                      />
-
-                      <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300">
-                        💡 <strong>Important:</strong> In your Google Drive, right-click the target parent folder &gt; <strong>Share</strong> &gt; Add the <code>client_email</code> from this JSON key as <strong>Editor</strong>.
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Method 2: OAuth 2.0 Google Login */}
-                  {authMethod === 'oauth' && (
-                    <div className="space-y-3 p-3.5 rounded-xl bg-black/30 border border-white/5">
-                      <div className="space-y-1">
-                        <span className="text-xs font-semibold text-slate-200">
-                          Google Cloud OAuth 2.0 Client
+                  {/* Direct Google OAuth 2.0 Connection (5TB Storage) */}
+                  <div className="space-y-3 p-4 rounded-xl bg-black/40 border border-white/10">
+                    <div className="flex items-center justify-between">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-semibold text-white flex items-center space-x-1.5">
+                          <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                          <span>Google Drive Account (5TB Cloud Storage)</span>
                         </span>
-                        <p className="text-[10px] text-slate-400">
-                          Created in Google Cloud Console &gt; APIs &amp; Services &gt; Credentials
+                        <p className="text-[11px] text-slate-400">
+                          Connect with your Google account (sumitgarain@gmail.com) for full 5TB storage quota!
                         </p>
                       </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        <div>
-                          <label className="block text-[10px] text-slate-400 mb-1">Client ID</label>
-                          <input
-                            type="text"
-                            placeholder="e.g. 123456...apps.googleusercontent.com"
-                            value={settings.gdrive?.clientId || ''}
-                            onChange={(e) =>
-                              setSettings({
-                                ...settings,
-                                gdrive: { ...settings.gdrive, clientId: e.target.value.trim() },
-                              })
-                            }
-                            className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-[10px] text-slate-400 mb-1">Client Secret</label>
-                          <input
-                            type="password"
-                            placeholder="GOCSPX-..."
-                            value={settings.gdrive?.clientSecret || ''}
-                            onChange={(e) =>
-                              setSettings({
-                                ...settings,
-                                gdrive: { ...settings.gdrive, clientSecret: e.target.value.trim() },
-                              })
-                            }
-                            className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="p-2 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-                        <span>Authorized Redirect URI:</span>
-                        <code className="text-rose-400 font-bold select-all">http://localhost:5000/api/gdrive/callback</code>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={handleConnectWithGoogle}
-                        className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs shadow-lg shadow-blue-900/30 transition-all"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        <span>Sign In with Google / Connect Google Drive</span>
-                      </button>
+                      {settings.gdrive?.refreshToken && (
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                          Connected
+                        </span>
+                      )}
                     </div>
-                  )}
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                      <div>
+                        <label className="block text-[10px] text-slate-400 mb-1">Google OAuth Client ID</label>
+                        <input
+                          type="text"
+                          placeholder="e.g. 123456...apps.googleusercontent.com"
+                          value={settings.gdrive?.clientId || ''}
+                          onChange={(e) =>
+                            setSettings({
+                              ...settings,
+                              gdrive: { ...settings.gdrive, clientId: e.target.value.trim() },
+                            })
+                          }
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[10px] text-slate-400 mb-1">Google OAuth Client Secret</label>
+                        <input
+                          type="password"
+                          placeholder="GOCSPX-..."
+                          value={settings.gdrive?.clientSecret || ''}
+                          onChange={(e) =>
+                            setSettings({
+                              ...settings,
+                              gdrive: { ...settings.gdrive, clientSecret: e.target.value.trim() },
+                            })
+                          }
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="p-2.5 rounded-lg bg-black/50 border border-white/5 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                      <span>Authorized Redirect URI in Google Cloud:</span>
+                      <code className="text-rose-400 font-bold select-all">http://localhost:5000/api/gdrive/callback</code>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleConnectWithGoogle}
+                      className="w-full flex items-center justify-center space-x-2 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-blue-900/40 transition-all hover:scale-[1.01]"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Sign In with Google (Connect 5TB Drive: sumitgarain@gmail.com)</span>
+                    </button>
+                  </div>
 
                   {/* Test Connection Button */}
                   <div className="pt-2">
