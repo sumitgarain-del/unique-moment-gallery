@@ -1,0 +1,24 @@
+# Node dependencies (Render will automatically install these)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Frontend build outputs (Render will automatically compile with Vite)
+client/dist/
+dist/
+
+# Windows native binaries & compiled installer (Not needed on Linux Render)
+server/bin/
+dist_installer/
+*.exe
+*.dll
+
+# Local image proxies & temporary storage
+storage/
+storage/proxies/
+storage/temp/
+*.log
+
+# Environment & OS files
+.DS_Store
+Thumbs.db
