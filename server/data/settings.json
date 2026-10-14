@@ -1,0 +1,24 @@
+{
+  "studioName": "Unique Moment",
+  "photographerEmail": "mail2uniquemoment@gmail.com",
+  "customDomain": "",
+  "cloudflareTunnelToken": "",
+  "cloudServerUrl": "",
+  "gdrive": {
+    "enabled": false,
+    "clientId": "",
+    "clientSecret": "",
+    "refreshToken": "",
+    "parentFolderId": "",
+    "folderUrl": "",
+    "serviceAccountKey": "",
+    "status": "not_configured",
+    "serviceAccountEmail": ""
+  },
+  "exportSettings": {
+    "folderNameTemplate": "Selected Images",
+    "copyRaws": true,
+    "copyJpegs": true,
+    "recursiveSearch": true
+  }
+}

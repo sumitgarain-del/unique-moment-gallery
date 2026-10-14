@@ -3,9 +3,12 @@ node_modules/
 client/node_modules/
 server/node_modules/
 
-# Frontend build outputs (Render will automatically compile with Vite)
-client/dist/
-dist/
+# Native dist installer
+dist_installer/
+/dist/
+!client/dist/
+!client/dist/**
+
 
 # Windows native binaries & compiled installer (Not needed on Linux Render)
 server/bin/
