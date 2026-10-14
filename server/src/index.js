@@ -18,6 +18,7 @@ import gdriveRouter from './routes/gdrive.js';
 import networkRouter from './routes/network.js';
 import cloudRouter from './routes/cloud.js';
 import { tunnelService } from './services/tunnel.js';
+import { cloudSyncWorker } from './services/cloud_sync.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -90,4 +91,7 @@ server.listen(config.PORT, () => {
   }).catch((err) => {
     console.warn(`[Tunnel] Auto-start note: ${err.message}`);
   });
+
+  // Start background auto-sync to pull client selections from Render in real-time
+  cloudSyncWorker.start(4000);
 });

@@ -116,14 +116,20 @@ export default function ProjectDetail({
     });
 
     const unsubSubmitted = socket.on('PROJECT_SUBMITTED', (data) => {
-      if (data.projectId === project.id) {
+      if (!data.projectId || data.projectId === project.id) {
         onUpdateProject((prev) => ({
           ...prev,
           status: 'submitted',
-          submittedAt: data.submittedAt,
-          submissionNotes: data.submissionNotes,
-          stats: data.stats,
+          submittedAt: data.submittedAt || new Date().toISOString(),
+          submissionNotes: data.submissionNotes || prev?.submissionNotes,
+          stats: data.stats || prev?.stats,
         }));
+      }
+    });
+
+    const unsubProjectUpdated = socket.on('PROJECT_UPDATED', (data) => {
+      if (data.project && data.project.id === project.id) {
+        onUpdateProject(data.project);
       }
     });
 
@@ -172,9 +178,30 @@ export default function ProjectDetail({
       setFolderImportProgress(null);
     });
 
+    // Auto-pull selections & submission state from Render cloud every 3.5s
+    const cloudPollTimer = setInterval(async () => {
+      try {
+        const res = await cloudPullProject(project.id);
+        if (res.project) {
+          const cloudStatus = res.project.status;
+          const currentStatus = project.status;
+          const cloudSelected = res.project.stats?.selected || 0;
+          const currentSelected = project.stats?.selected || 0;
+
+          if (cloudStatus !== currentStatus || cloudSelected !== currentSelected) {
+            onUpdateProject(res.project);
+          }
+        }
+      } catch (err) {
+        // quiet background poll error
+      }
+    }, 3500);
+
     return () => {
+      clearInterval(cloudPollTimer);
       unsubVote();
       unsubSubmitted();
+      unsubProjectUpdated();
       unsubUploadProgress();
       unsubGdriveProgress();
       unsubGdriveCompleted();

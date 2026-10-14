@@ -39,18 +39,36 @@ export default function App() {
   const galleryMatch = pathname.match(/^\/gallery\/([a-zA-Z0-9_-]+)/);
   const clientGalleryToken = galleryMatch ? galleryMatch[1] : null;
 
+function playNotificationChime() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.15); // A5
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.6);
+  } catch (e) {}
+}
+
   // Load projects
   useEffect(() => {
     if (clientGalleryToken) return; // In client mode, skip loading studio projects
 
-    loadProjects();
+    loadProjects(false);
     socket.connect();
 
     // Listen for studio alert
     const unsubAlert = socket.on('STUDIO_ALERT', (data) => {
+      playNotificationChime();
       setStudioToast(data.message);
-      loadProjects(); // refresh projects list
-      setTimeout(() => setStudioToast(null), 6000);
+      loadProjects(true); // refresh projects list silently
+      setTimeout(() => setStudioToast(null), 8000);
     });
 
     const unsubDeleted = socket.on('PROJECT_DELETED', (data) => {
@@ -58,15 +76,21 @@ export default function App() {
       setSelectedProject((prev) => (prev?.id === data.projectId ? null : prev));
     });
 
+    // Auto-poll projects list every 4 seconds in background
+    const pollInterval = setInterval(() => {
+      loadProjects(true);
+    }, 4000);
+
     return () => {
+      clearInterval(pollInterval);
       unsubAlert();
       unsubDeleted();
     };
   }, [clientGalleryToken]);
 
-  const loadProjects = async () => {
+  const loadProjects = async (silent = false) => {
     try {
-      setLoading(true);
+      if (!silent) setLoading(true);
       const data = await getProjects();
       setProjects(data || []);
       // If a project was selected, refresh its reference
@@ -77,7 +101,7 @@ export default function App() {
     } catch (err) {
       console.error('Failed to load projects:', err);
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   };
 

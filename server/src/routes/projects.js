@@ -281,6 +281,29 @@ router.post('/:id/cloud-pull', async (req, res) => {
         submissionNotes: data.submissionNotes || project.submissionNotes,
       });
 
+      if (data.status === 'submitted' && project.status !== 'submitted') {
+        socketHub.broadcastToRoom(`project:${id}`, {
+          type: 'PROJECT_SUBMITTED',
+          projectId: id,
+          token: project.token,
+          submittedAt: data.submittedAt,
+          stats: updated.stats,
+        });
+
+        socketHub.broadcastAll({
+          type: 'STUDIO_ALERT',
+          message: `🎉 Client ${project.clientName} has finalized their selection! (${updated.stats.selected} photos shortlisted)`,
+          projectId: id,
+          clientName: project.clientName,
+          selectedCount: updated.stats.selected,
+        });
+      } else {
+        socketHub.broadcastToRoom(`project:${id}`, {
+          type: 'VOTE_UPDATED',
+          stats: updated.stats,
+        });
+      }
+
       return res.json({ success: true, project: updated, stats: data });
     }
 
