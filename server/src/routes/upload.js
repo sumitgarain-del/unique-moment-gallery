@@ -84,6 +84,19 @@ router.post('/:id/upload', upload.array('photos', 500), async (req, res) => {
       });
     }
 
+    // Auto sync to Render cloud server
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl) {
+      try {
+        const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
+        fetch(cloudUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: db.getProject(id) }),
+        }).catch((e) => console.warn('[Cloud] Auto-sync note:', e.message));
+      } catch (e) {}
+    }
+
     // Notify project viewers
     socketHub.broadcastToRoom(`project:${id}`, {
       type: 'PHOTOS_ADDED',

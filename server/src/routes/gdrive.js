@@ -158,6 +158,19 @@ router.post('/upload/:id', async (req, res) => {
       },
     });
 
+    // Auto sync updated project with Google Drive IDs to Render
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl) {
+      try {
+        const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
+        fetch(cloudUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: db.getProject(id) }),
+        }).catch((e) => console.warn('[Cloud] GDrive auto-sync note:', e.message));
+      } catch (e) {}
+    }
+
     res.json({ success: true, result });
   } catch (err) {
     console.error('[GDrive Upload] Error:', err.message);

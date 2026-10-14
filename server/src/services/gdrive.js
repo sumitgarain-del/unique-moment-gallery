@@ -207,6 +207,15 @@ export class GoogleDriveService {
         media,
         fields: 'id, webViewLink, thumbnailLink',
       });
+
+      // Grant anyone with link read access so Google CDN works seamlessly
+      try {
+        await drive.permissions.create({
+          fileId: driveFile.data.id,
+          requestBody: { role: 'reader', type: 'anyone' },
+        });
+      } catch (permErr) {}
+
       return {
         id: driveFile.data.id,
         webViewLink: driveFile.data.webViewLink,

@@ -39,6 +39,8 @@ router.get('/:token', (req, res) => {
         status: img.status || 'unreviewed',
         comment: img.comment || '',
         lastVotedAt: img.lastVotedAt,
+        gdriveId: img.gdriveId || null,
+        gdriveViewUrl: img.gdriveViewUrl || null,
       })),
     };
 
