@@ -9,8 +9,11 @@ class CloudSyncWorker {
 
   start(intervalMs = 4000) {
     if (this.timer) clearInterval(this.timer);
-    // Initial run immediately after 1 second
-    setTimeout(() => this.pollActiveProjects(), 1000);
+    // Initial run immediately: ensure all local projects are pushed to Render cloud
+    setTimeout(() => {
+      this.syncAllProjectsToCloud();
+      this.pollActiveProjects();
+    }, 1200);
     this.timer = setInterval(() => this.pollActiveProjects(), intervalMs);
     console.log(`[CloudSync] Background auto-sync started (polling every ${intervalMs / 1000}s)`);
   }
@@ -18,6 +21,24 @@ class CloudSyncWorker {
   stop() {
     if (this.timer) clearInterval(this.timer);
     this.timer = null;
+  }
+
+  async syncAllProjectsToCloud() {
+    try {
+      const settings = db.getSettings();
+      if (!settings.cloudServerUrl) return;
+      const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
+      const projects = db.getProjects() || [];
+      for (const project of projects) {
+        if (!project.token) continue;
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project }),
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
+      }
+    } catch (e) {}
   }
 
   async pollActiveProjects() {
@@ -37,7 +58,17 @@ class CloudSyncWorker {
         try {
           const url = `${cloudBase}/api/cloud/project/${project.token}/selection`;
           const res = await fetch(url, { signal: AbortSignal.timeout(3500) });
-          if (!res.ok) continue;
+          if (!res.ok) {
+            // Render returned 404 (e.g. Render restarted or lost memory). Re-sync project immediately!
+            console.log(`[CloudSync] Cloud gallery missing for "${project.title}". Re-syncing to Render...`);
+            await fetch(`${cloudBase}/api/cloud/sync-project`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ project }),
+              signal: AbortSignal.timeout(6000),
+            }).catch(() => {});
+            continue;
+          }
 
           const data = await res.json();
           if (!data || !data.success) continue;

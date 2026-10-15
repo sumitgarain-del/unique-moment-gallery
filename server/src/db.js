@@ -110,21 +110,21 @@ class Database {
       shootType: projectData.shootType || 'Wedding',
       notes: projectData.notes || '',
       token: projectData.token || `gallery_${Math.random().toString(36).substring(2, 10)}${Math.random().toString(36).substring(2, 10)}`,
-      status: 'draft', // 'draft' | 'uploaded' | 'submitted'
-      images: [],
+      status: projectData.status || (projectData.images && projectData.images.length > 0 ? 'uploaded' : 'draft'),
+      images: projectData.images || [],
       masterFolderPath: projectData.masterFolderPath || '',
       outputFolderPath: projectData.outputFolderPath || '',
-      gdrive: {
+      gdrive: projectData.gdrive || {
         uploaded: false,
         folderId: null,
         folderUrl: null,
         syncedCount: 0,
       },
-      submittedAt: null,
-      submissionNotes: '',
-      lastSyncResult: null,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
+      submittedAt: projectData.submittedAt || null,
+      submissionNotes: projectData.submissionNotes || '',
+      lastSyncResult: projectData.lastSyncResult || null,
+      createdAt: projectData.createdAt || new Date().toISOString(),
+      updatedAt: projectData.updatedAt || new Date().toISOString(),
     };
 
     this.data.projects.unshift(newProject);
