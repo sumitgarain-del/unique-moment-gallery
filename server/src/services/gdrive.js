@@ -275,6 +275,13 @@ export class GoogleDriveService {
             fields: 'id, webViewLink, thumbnailLink',
           });
 
+          try {
+            await drive.permissions.create({
+              fileId: driveFile.data.id,
+              requestBody: { role: 'reader', type: 'anyone' },
+            });
+          } catch (permErr) {}
+
           img.gdriveId = driveFile.data.id;
           img.gdriveViewUrl = driveFile.data.webViewLink;
 

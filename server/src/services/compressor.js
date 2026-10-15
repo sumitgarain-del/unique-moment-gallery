@@ -3,6 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 import { v4 as uuidv4 } from 'uuid';
 import { config } from '../config.js';
+import { GoogleDriveService } from './gdrive.js';
 
 /**
  * Extracts embedded JPEG from RAW files (CR2, CR3, NEF, ARW, DNG) if Sharp fails to read raw raster
@@ -216,9 +217,14 @@ export class CompressorService {
           } catch (e) {}
         }
 
-        // 2. Network Stage: Overlapped concurrent Google Drive upload
+        // 2. Network Stage: Overlapped concurrent Google Drive upload (throttled to 6 parallel workers)
         if (uploadToDrive && gdriveFolderId) {
-          const uploadPromise = GoogleDriveService.uploadSingleProxy({
+          while (activeUploads.length >= 6) {
+            await Promise.race(activeUploads);
+          }
+
+          let uploadPromise;
+          uploadPromise = GoogleDriveService.uploadSingleProxy({
             img: item,
             folderId: gdriveFolderId,
           }).then((res) => {
@@ -229,6 +235,9 @@ export class CompressorService {
             uploadedCount++;
           }).catch((err) => {
             console.warn(`[Pipeline] Upload background note: ${err.message}`);
+          }).finally(() => {
+            const idx = activeUploads.indexOf(uploadPromise);
+            if (idx !== -1) activeUploads.splice(idx, 1);
           });
 
           activeUploads.push(uploadPromise);
