@@ -163,6 +163,29 @@ export default function ClientGallery({ token }) {
     }
   };
 
+  const images = gallery?.images || [];
+  const selectedCount = images.filter((img) => img.status === 'selected').length;
+  const rejectedCount = images.filter((img) => img.status === 'rejected').length;
+  const unreviewedCount = images.filter((img) => !img.status || img.status === 'unreviewed').length;
+
+  const availableSubfolders = useMemo(() => {
+    const set = new Set();
+    images.forEach((img) => {
+      if (img.subfolder) set.add(img.subfolder);
+    });
+    return Array.from(set).sort();
+  }, [images]);
+
+  const filteredImages = useMemo(() => {
+    return images.filter((img) => {
+      if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
+      if (filter === 'selected') return img.status === 'selected';
+      if (filter === 'rejected') return img.status === 'rejected';
+      if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
+      return true;
+    });
+  }, [images, subfolderFilter, filter]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0e1015] flex items-center justify-center">
@@ -187,27 +210,6 @@ export default function ClientGallery({ token }) {
       </div>
     );
   }
-
-  const images = gallery.images || [];
-  const selectedCount = images.filter((img) => img.status === 'selected').length;
-  const rejectedCount = images.filter((img) => img.status === 'rejected').length;
-  const unreviewedCount = images.filter((img) => !img.status || img.status === 'unreviewed').length;
-
-  const availableSubfolders = useMemo(() => {
-    const set = new Set();
-    images.forEach((img) => {
-      if (img.subfolder) set.add(img.subfolder);
-    });
-    return Array.from(set).sort();
-  }, [images]);
-
-  const filteredImages = images.filter((img) => {
-    if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
-    if (filter === 'selected') return img.status === 'selected';
-    if (filter === 'rejected') return img.status === 'rejected';
-    if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
-    return true;
-  });
 
   return (
     <div className="min-h-screen bg-[#0e1015] text-slate-100 flex flex-col justify-between selection:bg-rose-500 selection:text-white">
