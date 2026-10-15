@@ -61,7 +61,8 @@ export async function importFolder(projectId, folderPath, recursive = true) {
 export async function uploadPhotos(projectId, files, onProgress = null) {
   const formData = new FormData();
   for (const file of files) {
-    formData.append('photos', file);
+    formData.append('photos', file, file.name);
+    formData.append('relativePaths', file.webkitRelativePath || '');
   }
 
   return new Promise((resolve, reject) => {

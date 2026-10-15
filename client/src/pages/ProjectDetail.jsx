@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
   ArrowLeft,
   UploadCloud,
@@ -25,9 +25,97 @@ import {
   Folder,
   FolderCheck,
   Play,
-  Loader2
+  Loader2,
+  FolderUp,
+  Image as ImageIcon,
 } from 'lucide-react';
 import PhotoCard from '../components/PhotoCard';
+
+const VALID_PHOTO_EXTENSIONS = new Set([
+  'jpg', 'jpeg', 'png', 'webp', 'tiff', 'tif',
+  'cr2', 'cr3', 'nef', 'arw', 'dng', 'raf', 'rw2', 'orf', 'pef'
+]);
+
+function isSupportedPhoto(filename) {
+  if (!filename) return false;
+  const ext = filename.split('.').pop()?.toLowerCase();
+  return ext && VALID_PHOTO_EXTENSIONS.has(ext);
+}
+
+async function extractFilesFromDataTransfer(dataTransfer) {
+  const fileList = [];
+
+  async function readEntriesChunk(directoryReader) {
+    return new Promise((resolve) => {
+      directoryReader.readEntries(
+        (entries) => resolve(entries || []),
+        (err) => {
+          console.warn('readEntries chunk error:', err);
+          resolve([]);
+        }
+      );
+    });
+  }
+
+  async function traverseEntry(entry, currentPath = '') {
+    if (entry.isFile) {
+      const file = await new Promise((resolve) => {
+        entry.file(resolve, () => resolve(null));
+      });
+      if (file && isSupportedPhoto(file.name)) {
+        if (!file.webkitRelativePath && currentPath) {
+          try {
+            Object.defineProperty(file, 'webkitRelativePath', {
+              value: `${currentPath}/${file.name}`,
+              writable: false,
+            });
+          } catch (e) {}
+        }
+        fileList.push(file);
+      }
+    } else if (entry.isDirectory) {
+      const dirReader = entry.createReader();
+      let hasMore = true;
+      while (hasMore) {
+        const batch = await readEntriesChunk(dirReader);
+        if (!batch || batch.length === 0) {
+          hasMore = false;
+        } else {
+          const newPath = currentPath ? `${currentPath}/${entry.name}` : entry.name;
+          for (const child of batch) {
+            await traverseEntry(child, newPath);
+          }
+        }
+      }
+    }
+  }
+
+  if (dataTransfer.items && dataTransfer.items.length > 0) {
+    const queue = [];
+    for (let i = 0; i < dataTransfer.items.length; i++) {
+      const item = dataTransfer.items[i];
+      if (typeof item.webkitGetAsEntry === 'function') {
+        const entry = item.webkitGetAsEntry();
+        if (entry) queue.push(entry);
+      } else if (item.kind === 'file') {
+        const f = item.getAsFile();
+        if (f && isSupportedPhoto(f.name)) fileList.push(f);
+      }
+    }
+    for (const entry of queue) {
+      await traverseEntry(entry, '');
+    }
+  } else if (dataTransfer.files && dataTransfer.files.length > 0) {
+    for (let i = 0; i < dataTransfer.files.length; i++) {
+      const f = dataTransfer.files[i];
+      if (isSupportedPhoto(f.name)) {
+        fileList.push(f);
+      }
+    }
+  }
+
+  return fileList;
+}
 import {
   uploadPhotos,
   syncProjectToGdrive,
@@ -51,6 +139,7 @@ export default function ProjectDetail({
   onOpenLightbox,
 }) {
   const [filter, setFilter] = useState('all'); // 'all' | 'selected' | 'rejected' | 'unreviewed'
+  const [subfolderFilter, setSubfolderFilter] = useState('all');
   const [isUploading, setIsUploading] = useState(false);
   const [uploadPercent, setUploadPercent] = useState(0);
   const [compressionStatus, setCompressionStatus] = useState('');
@@ -68,6 +157,7 @@ export default function ProjectDetail({
   const [folderImportProgress, setFolderImportProgress] = useState(null);
 
   const fileInputRef = useRef(null);
+  const folderInputRef = useRef(null);
 
   // Keep masterFolderPath synced with project
   useEffect(() => {
@@ -212,28 +302,56 @@ export default function ProjectDetail({
     };
   }, [project.id]);
 
-  const handleFileUpload = async (files) => {
-    if (!files || files.length === 0) return;
+  const handleFileUpload = async (incomingFiles) => {
+    let filesArray = [];
+    if (Array.isArray(incomingFiles)) {
+      filesArray = incomingFiles.filter((f) => isSupportedPhoto(f.name));
+    } else if (incomingFiles) {
+      filesArray = Array.from(incomingFiles).filter((f) => isSupportedPhoto(f.name));
+    }
+
+    if (filesArray.length === 0) {
+      alert('No supported photo or RAW files found in the selected folder/files.\n\nSupported formats: JPG, PNG, WEBP, TIFF, CR2, CR3, NEF, ARW, DNG, RAF, RW2, ORF.');
+      return;
+    }
 
     try {
       setIsUploading(true);
       setUploadPercent(0);
-      setCompressionStatus('Uploading files to compression queue...');
 
-      const res = await uploadPhotos(project.id, files, (percent) => {
-        setUploadPercent(percent);
-        if (percent === 100) {
-          setCompressionStatus('Generating lightweight 1920px WebP proxies with Sharp...');
+      const BATCH_SIZE = 40;
+      const totalBatches = Math.ceil(filesArray.length / BATCH_SIZE);
+
+      for (let b = 0; b < totalBatches; b++) {
+        const start = b * BATCH_SIZE;
+        const end = Math.min(start + BATCH_SIZE, filesArray.length);
+        const chunk = filesArray.slice(start, end);
+
+        setUploadPercent(0);
+        setCompressionStatus(
+          `Uploading batch ${b + 1} of ${totalBatches} (${start + 1}–${end} of ${filesArray.length} photos)...`
+        );
+
+        const res = await uploadPhotos(project.id, chunk, (percent) => {
+          setUploadPercent(percent);
+          if (percent === 100) {
+            setCompressionStatus(
+              `Compressing 1920px WebP proxies & backing up to Google Drive (Batch ${b + 1}/${totalBatches})...`
+            );
+          }
+        });
+
+        if (res.project) {
+          onUpdateProject(res.project);
         }
-      });
+      }
 
-      onUpdateProject(res.project);
-      setCompressionStatus('Completed proxy generation!');
+      setCompressionStatus(`✅ All ${filesArray.length} photos uploaded, compressed & backed up to Google Drive!`);
       setTimeout(() => {
         setIsUploading(false);
         setUploadPercent(0);
         setCompressionStatus('');
-      }, 1500);
+      }, 2500);
     } catch (err) {
       alert(`Upload failed: ${err.message}`);
       setIsUploading(false);
@@ -375,7 +493,16 @@ export default function ProjectDetail({
     await voteImage(project.token, image.id, newStatus, null, 'Studio');
   };
 
+  const availableSubfolders = useMemo(() => {
+    const set = new Set();
+    (project.images || []).forEach((img) => {
+      if (img.subfolder) set.add(img.subfolder);
+    });
+    return Array.from(set).sort();
+  }, [project.images]);
+
   const filteredImages = (project.images || []).filter((img) => {
+    if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
     if (filter === 'selected') return img.status === 'selected';
     if (filter === 'rejected') return img.status === 'rejected';
     if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
@@ -811,25 +938,40 @@ export default function ProjectDetail({
         </div>
       )}
 
-      {/* PHASE 1: BULK DROPZONE UPLOADER */}
+      {/* PHASE 1: BULK DROPZONE UPLOADER (SUPPORTS RECURSIVE FOLDERS & SUBFOLDERS) */}
       <div
         onDragOver={(e) => {
           e.preventDefault();
           setDragOver(true);
         }}
         onDragLeave={() => setDragOver(false)}
-        onDrop={(e) => {
+        onDrop={async (e) => {
           e.preventDefault();
           setDragOver(false);
-          handleFileUpload(e.dataTransfer.files);
+          setIsUploading(true);
+          setCompressionStatus('Scanning dropped folder & subdirectories for photos...');
+          try {
+            const files = await extractFilesFromDataTransfer(e.dataTransfer);
+            if (files.length === 0) {
+              setIsUploading(false);
+              setCompressionStatus('');
+              alert('No supported photos or RAW files found in dropped folder.');
+              return;
+            }
+            await handleFileUpload(files);
+          } catch (err) {
+            setIsUploading(false);
+            setCompressionStatus('');
+            alert(`Error reading dropped folder: ${err.message}`);
+          }
         }}
-        onClick={() => fileInputRef.current?.click()}
-        className={`relative p-8 rounded-2xl border-2 border-dashed transition-all cursor-pointer text-center ${
+        className={`relative p-8 rounded-2xl border-2 border-dashed transition-all text-center ${
           dragOver
             ? 'border-rose-500 bg-rose-500/10 scale-[1.01]'
             : 'border-white/15 hover:border-white/30 bg-[#141720]/50 hover:bg-[#141720]'
         }`}
       >
+        {/* Hidden File Input for Individual Photos */}
         <input
           type="file"
           multiple
@@ -839,32 +981,70 @@ export default function ProjectDetail({
           onChange={(e) => handleFileUpload(e.target.files)}
         />
 
-        <div className="max-w-md mx-auto space-y-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-rose-600/30">
-            <UploadCloud className="w-6 h-6" />
+        {/* Hidden Folder Input for Entire Folders with Subfolders */}
+        <input
+          type="file"
+          ref={folderInputRef}
+          webkitdirectory="true"
+          directory=""
+          multiple
+          className="hidden"
+          onChange={(e) => handleFileUpload(e.target.files)}
+        />
+
+        <div className="max-w-xl mx-auto space-y-4">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 via-pink-600 to-amber-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-rose-600/30">
+            <FolderUp className="w-7 h-7" />
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm text-white">
-              Drop Master Photos or RAW Files Here
+            <h3 className="font-bold text-base text-white">
+              Drop Master Folder or Photos Here
             </h3>
-            <p className="text-xs text-slate-400 mt-1">
-              Supports Canon CR2/CR3, Sony ARW, Nikon NEF, DNG, TIFF & high-res JPGs.
+            <p className="text-xs text-slate-300 mt-1">
+              Drag & drop an entire folder (including subfolders like Haldi, Reception, RAW) or individual photos.
             </p>
             <p className="text-[11px] text-rose-400 mt-0.5">
-              Automatically converted into lightweight 1920px WebP proxies.
+              Supports Canon CR2/CR3, Sony ARW, Nikon NEF, DNG, TIFF & high-res JPGs. Automatically converted to 1920px WebP & backed up to Google Drive.
             </p>
+          </div>
+
+          {/* Action Buttons: Choose Folder vs Choose Photos */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                folderInputRef.current?.click();
+              }}
+              className="flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-500 hover:to-rose-500 text-white font-semibold text-xs shadow-md shadow-rose-950/40 transition-all hover:scale-105 cursor-pointer"
+            >
+              <FolderUp className="w-4 h-4" />
+              <span>📁 Upload Entire Folder (with subfolders)</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                fileInputRef.current?.click();
+              }}
+              className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs border border-white/10 transition-colors cursor-pointer"
+            >
+              <UploadCloud className="w-4 h-4 text-slate-300" />
+              <span>Select Individual Photos</span>
+            </button>
           </div>
 
           {isUploading && (
             <div className="pt-3 space-y-2">
-              <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+              <div className="w-full h-2.5 bg-white/10 rounded-full overflow-hidden p-0.5 border border-white/10">
                 <div
-                  className="h-full bg-gradient-to-r from-rose-500 to-pink-500 transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 rounded-full transition-all duration-300"
                   style={{ width: `${uploadPercent}%` }}
                 ></div>
               </div>
-              <div className="text-xs font-mono text-slate-300">{compressionStatus}</div>
+              <div className="text-xs font-mono text-amber-300 font-medium">{compressionStatus}</div>
             </div>
           )}
         </div>
@@ -885,6 +1065,41 @@ export default function ProjectDetail({
 
       {/* PHOTOS FILTER TABS & GALLERY GRID */}
       <div className="space-y-4">
+        {/* SUBFOLDER FILTER TABS (IF MULTIPLE FOLDERS PRESENT) */}
+        {availableSubfolders.length > 0 && (
+          <div className="flex items-center space-x-2 overflow-x-auto pb-1">
+            <span className="text-xs text-slate-400 font-medium flex items-center space-x-1 shrink-0">
+              <Folder className="w-3.5 h-3.5 text-amber-400" />
+              <span>Subfolders:</span>
+            </span>
+            <button
+              onClick={() => setSubfolderFilter('all')}
+              className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all shrink-0 ${
+                subfolderFilter === 'all'
+                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                  : 'bg-white/5 text-slate-400 hover:text-white border border-white/5'
+              }`}
+            >
+              All Folders ({project.images?.length || 0})
+            </button>
+            {availableSubfolders.map((sub) => {
+              const count = (project.images || []).filter((img) => img.subfolder === sub).length;
+              return (
+                <button
+                  key={sub}
+                  onClick={() => setSubfolderFilter(sub)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all shrink-0 ${
+                    subfolderFilter === sub
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                      : 'bg-white/5 text-slate-400 hover:text-white border border-white/5'
+                  }`}
+                >
+                  📁 {sub} ({count})
+                </button>
+              );
+            })}
+          </div>
+        )}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center space-x-1 bg-white/5 p-1 rounded-xl border border-white/5">
             <button

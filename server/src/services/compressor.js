@@ -38,7 +38,7 @@ export class CompressorService {
   /**
    * Process a single photo file into a lightweight 1920px WebP proxy
    */
-  static async createProxy({ projectId, filePath, originalName, originalSize }) {
+  static async createProxy({ projectId, filePath, originalName, originalSize, subfolder = null }) {
     const ext = path.extname(originalName);
     const stem = path.basename(originalName, ext);
     const id = uuidv4();
@@ -49,7 +49,8 @@ export class CompressorService {
       fs.mkdirSync(projectProxyDir, { recursive: true });
     }
 
-    const proxyFilename = `${stem}.webp`;
+    const safeSub = subfolder ? `${subfolder.replace(/[/\\:*?"<>|]/g, '_')}_` : '';
+    const proxyFilename = `${safeSub}${stem}.webp`;
     const proxyFilePath = path.resolve(projectProxyDir, proxyFilename);
 
     let imageInput = filePath;
@@ -111,6 +112,7 @@ export class CompressorService {
       id,
       originalName,
       stem,
+      subfolder: subfolder || null,
       originalExt: ext,
       proxyFilename,
       proxyPath: proxyFilePath,
@@ -189,11 +191,15 @@ export class CompressorService {
     for (const file of files) {
       try {
         // 1. CPU Stage: Sharp lightweight WebP compression
+        const rawSub = file.subfolder || (file.relativePath ? path.dirname(file.relativePath).replace(/^[./\\]+/, '') : null);
+        const subfolder = rawSub && rawSub !== '.' ? rawSub : null;
+
         const item = await this.createProxy({
           projectId,
           filePath: file.path,
           originalName: file.originalname || file.name,
           originalSize: file.size || (fs.existsSync(file.path) ? fs.statSync(file.path).size : 0),
+          subfolder,
         });
 
         results.push(item);
@@ -291,7 +297,7 @@ export class CompressorService {
     ]);
     const files = [];
 
-    function traverse(currentDir) {
+    function traverse(currentDir, relativeDir = '') {
       if (!fs.existsSync(currentDir)) return;
       let entries = [];
       try {
@@ -304,7 +310,8 @@ export class CompressorService {
         const fullPath = path.join(currentDir, entry.name);
         if (entry.isDirectory()) {
           if (recursive && !entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== 'Selected Images') {
-            traverse(fullPath);
+            const nextRel = relativeDir ? path.join(relativeDir, entry.name) : entry.name;
+            traverse(fullPath, nextRel);
           }
         } else if (entry.isFile()) {
           const ext = path.extname(entry.name).toLowerCase();
@@ -315,6 +322,7 @@ export class CompressorService {
                 path: fullPath,
                 originalname: entry.name,
                 name: entry.name,
+                subfolder: relativeDir || null,
                 size: stat.size,
               });
             } catch (e) {}
@@ -323,7 +331,7 @@ export class CompressorService {
       }
     }
 
-    traverse(dirPath);
+    traverse(dirPath, '');
     return files;
   }
 }

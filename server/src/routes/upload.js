@@ -29,7 +29,7 @@ const upload = multer({
 });
 
 // POST /api/projects/:id/upload
-router.post('/:id/upload', upload.array('photos', 500), async (req, res) => {
+router.post('/:id/upload', upload.array('photos', 2500), async (req, res) => {
   const { id } = req.params;
   const project = db.getProject(id);
 
@@ -57,9 +57,25 @@ router.post('/:id/upload', upload.array('photos', 500), async (req, res) => {
       }
     }
 
+    const relativePaths = Array.isArray(req.body.relativePaths)
+      ? req.body.relativePaths
+      : req.body.relativePaths
+      ? [req.body.relativePaths]
+      : [];
+
+    const filesToProcess = req.files.map((file, idx) => {
+      const relPath = relativePaths[idx] || '';
+      const rawSub = relPath ? path.dirname(relPath).replace(/^[./\\]+/, '') : null;
+      return {
+        ...file,
+        relativePath: relPath,
+        subfolder: rawSub && rawSub !== '.' ? rawSub : null,
+      };
+    });
+
     const results = await CompressorService.processStreamPipeline({
       projectId: id,
-      files: req.files,
+      files: filesToProcess,
       uploadToDrive: uploadToDrive && Boolean(gdriveFolderId),
       gdriveFolderId,
       onProgress: (progress) => {

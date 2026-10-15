@@ -171,9 +171,10 @@ class Database {
     if (!project) return null;
 
     for (const img of newImages) {
-      const existingIdx = project.images.findIndex(
-        (existing) => existing.originalName === img.originalName || existing.stem === img.stem
-      );
+      const existingIdx = project.images.findIndex((existing) => {
+        const sameSub = (existing.subfolder || '') === (img.subfolder || '');
+        return sameSub && (existing.originalName === img.originalName || existing.stem === img.stem);
+      });
       if (existingIdx !== -1) {
         project.images[existingIdx] = {
           ...project.images[existingIdx],

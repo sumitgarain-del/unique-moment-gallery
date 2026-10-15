@@ -102,6 +102,12 @@ export default function PhotoCard({
           </span>
         </div>
 
+        {image.subfolder && (
+          <div className="text-[10px] font-mono text-amber-300/90 truncate flex items-center space-x-1" title={`Folder: ${image.subfolder}`}>
+            <span className="truncate">📁 {image.subfolder}</span>
+          </div>
+        )}
+
         {/* Quick Selection Buttons */}
         <div className="grid grid-cols-2 gap-2 pt-1 border-t border-white/5">
           <button

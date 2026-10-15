@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   Heart,
   Ban,
@@ -10,7 +10,8 @@ import {
   Camera,
   Check,
   ChevronRight,
-  Filter
+  Filter,
+  Folder
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import PhotoCard from '../components/PhotoCard';
@@ -23,6 +24,7 @@ export default function ClientGallery({ token }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [filter, setFilter] = useState('all'); // 'all' | 'selected' | 'rejected' | 'unreviewed'
+  const [subfolderFilter, setSubfolderFilter] = useState('all');
   const [activeViewers, setActiveViewers] = useState(1);
   const [voterName, setVoterName] = useState('Client');
 
@@ -191,7 +193,16 @@ export default function ClientGallery({ token }) {
   const rejectedCount = images.filter((img) => img.status === 'rejected').length;
   const unreviewedCount = images.filter((img) => !img.status || img.status === 'unreviewed').length;
 
+  const availableSubfolders = useMemo(() => {
+    const set = new Set();
+    images.forEach((img) => {
+      if (img.subfolder) set.add(img.subfolder);
+    });
+    return Array.from(set).sort();
+  }, [images]);
+
   const filteredImages = images.filter((img) => {
+    if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
     if (filter === 'selected') return img.status === 'selected';
     if (filter === 'rejected') return img.status === 'rejected';
     if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
@@ -262,6 +273,42 @@ export default function ClientGallery({ token }) {
               </div>
             </div>
             <Sparkles className="w-5 h-5 text-amber-400 hidden sm:block" />
+          </div>
+        )}
+
+        {/* Subfolder Filter Bar */}
+        {availableSubfolders.length > 0 && (
+          <div className="flex items-center space-x-2 overflow-x-auto pb-2">
+            <span className="text-xs text-slate-400 font-medium flex items-center space-x-1 shrink-0">
+              <Folder className="w-3.5 h-3.5 text-amber-400" />
+              <span>Folders:</span>
+            </span>
+            <button
+              onClick={() => setSubfolderFilter('all')}
+              className={`px-3 py-1 rounded-lg text-xs font-mono transition-all shrink-0 ${
+                subfolderFilter === 'all'
+                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                  : 'bg-white/5 text-slate-400 hover:text-white border border-white/5'
+              }`}
+            >
+              All Folders ({images.length})
+            </button>
+            {availableSubfolders.map((sub) => {
+              const count = images.filter((img) => img.subfolder === sub).length;
+              return (
+                <button
+                  key={sub}
+                  onClick={() => setSubfolderFilter(sub)}
+                  className={`px-3 py-1 rounded-lg text-xs font-mono transition-all shrink-0 ${
+                    subfolderFilter === sub
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                      : 'bg-white/5 text-slate-400 hover:text-white border border-white/5'
+                  }`}
+                >
+                  📁 {sub} ({count})
+                </button>
+              );
+            })}
           </div>
         )}
 
