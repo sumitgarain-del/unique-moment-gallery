@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { config } from './config.js';
+import { cloudBackupService } from './services/cloud_backup.js';
 
 class Database {
   constructor() {
@@ -69,12 +70,46 @@ class Database {
     }
   }
 
-  saveDatabase() {
+  saveDatabase(skipCloud = false) {
     try {
       const dataStr = JSON.stringify(this.data, null, 2);
       fs.writeFileSync(this.dbFile, dataStr, 'utf8');
+      if (!skipCloud) {
+        cloudBackupService.scheduleBackup(this.data);
+      }
     } catch (err) {
       console.error('[DB] Error saving database:', err);
+    }
+  }
+
+  async syncWithCloudBackup() {
+    try {
+      const backupData = await cloudBackupService.fetchBackup();
+      if (!backupData || !Array.isArray(backupData.projects)) return;
+
+      let modified = false;
+      for (const backupProj of backupData.projects) {
+        const localProj = this.data.projects.find(
+          (p) => p.token === backupProj.token || p.id === backupProj.id
+        );
+        if (!localProj) {
+          this.data.projects.push(backupProj);
+          modified = true;
+        } else {
+          const backupSelected = (backupProj.images || []).filter((i) => i.status === 'selected').length;
+          const localSelected = (localProj.images || []).filter((i) => i.status === 'selected').length;
+          if (backupSelected > localSelected || backupProj.status === 'submitted') {
+            Object.assign(localProj, backupProj);
+            modified = true;
+          }
+        }
+      }
+      if (modified) {
+        this.saveDatabase(true);
+        console.log(`[DB] Restored ${this.data.projects.length} projects from cloud backup`);
+      }
+    } catch (err) {
+      console.warn('[DB] syncWithCloudBackup note:', err.message);
     }
   }
 

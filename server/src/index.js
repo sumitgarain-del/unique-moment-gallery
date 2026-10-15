@@ -94,4 +94,7 @@ server.listen(config.PORT, () => {
 
   // Start background auto-sync to pull client selections from Render in real-time
   cloudSyncWorker.start(4000);
+
+  // Automatically restore/sync projects from cloud backup
+  db.syncWithCloudBackup();
 });
