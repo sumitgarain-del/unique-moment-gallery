@@ -59,48 +59,53 @@ export class CompressorService {
     let metadata;
     let proxyBuffer;
 
-    try {
-      // First attempt: direct Sharp processing
-      const sharpInstance = sharp(imageInput, { failOnError: false })
-        .rotate() // auto-orient based on EXIF
-        .resize({
-          width: config.PROXY_MAX_WIDTH,
-          height: config.PROXY_MAX_WIDTH,
-          fit: 'inside',
-          withoutEnlargement: true,
-        })
-        .webp({ quality: config.PROXY_QUALITY, effort: 4 });
-
-      proxyBuffer = await sharpInstance.toBuffer();
+    if (fs.existsSync(proxyFilePath) && fs.statSync(proxyFilePath).size > 0) {
+      proxyBuffer = fs.readFileSync(proxyFilePath);
       metadata = await sharp(proxyBuffer).metadata();
-    } catch (err) {
-      if (isRaw) {
-        console.warn(`[Compressor] Standard decode failed for RAW ${originalName}, trying embedded preview extraction...`);
-        const fileBuffer = fs.readFileSync(filePath);
-        const jpegBuffer = extractEmbeddedJpeg(fileBuffer);
-        if (jpegBuffer) {
-          const sharpInstance = sharp(jpegBuffer)
-            .rotate()
-            .resize({
-              width: config.PROXY_MAX_WIDTH,
-              height: config.PROXY_MAX_WIDTH,
-              fit: 'inside',
-              withoutEnlargement: true,
-            })
-            .webp({ quality: config.PROXY_QUALITY, effort: 4 });
+    } else {
+      try {
+        // First attempt: direct Sharp processing
+        const sharpInstance = sharp(imageInput, { failOnError: false })
+          .rotate() // auto-orient based on EXIF
+          .resize({
+            width: config.PROXY_MAX_WIDTH,
+            height: config.PROXY_MAX_WIDTH,
+            fit: 'inside',
+            withoutEnlargement: true,
+          })
+          .webp({ quality: config.PROXY_QUALITY, effort: 4 });
 
-          proxyBuffer = await sharpInstance.toBuffer();
-          metadata = await sharp(proxyBuffer).metadata();
+        proxyBuffer = await sharpInstance.toBuffer();
+        metadata = await sharp(proxyBuffer).metadata();
+      } catch (err) {
+        if (isRaw) {
+          console.warn(`[Compressor] Standard decode failed for RAW ${originalName}, trying embedded preview extraction...`);
+          const fileBuffer = fs.readFileSync(filePath);
+          const jpegBuffer = extractEmbeddedJpeg(fileBuffer);
+          if (jpegBuffer) {
+            const sharpInstance = sharp(jpegBuffer)
+              .rotate()
+              .resize({
+                width: config.PROXY_MAX_WIDTH,
+                height: config.PROXY_MAX_WIDTH,
+                fit: 'inside',
+                withoutEnlargement: true,
+              })
+              .webp({ quality: config.PROXY_QUALITY, effort: 4 });
+
+            proxyBuffer = await sharpInstance.toBuffer();
+            metadata = await sharp(proxyBuffer).metadata();
+          } else {
+            throw new Error(`Could not decode RAW file ${originalName} nor find embedded JPEG preview`);
+          }
         } else {
-          throw new Error(`Could not decode RAW file ${originalName} nor find embedded JPEG preview`);
+          throw err;
         }
-      } else {
-        throw err;
       }
-    }
 
-    // Write proxy to disk
-    fs.writeFileSync(proxyFilePath, proxyBuffer);
+      // Write proxy to disk
+      fs.writeFileSync(proxyFilePath, proxyBuffer);
+    }
     const proxySize = proxyBuffer.length;
 
     const bytesSaved = Math.max(0, originalSize - proxySize);

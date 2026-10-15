@@ -9,7 +9,7 @@ class Database {
     this.data = { projects: [] };
     this.settings = {
       studioName: 'Unique Moment',
-      photographerEmail: 'contact@uniquemoment.com',
+      photographerEmail: 'mail2uniquemoment@gmail.com',
       customDomain: '', // e.g. https://gallery.uniquemoment.com
       cloudflareTunnelToken: '', // Cloudflare Zero Trust permanent tunnel token
       cloudServerUrl: 'https://unique-moment-gallery.onrender.com', // 24/7 Render cloud gallery server URL
@@ -19,7 +19,8 @@ class Database {
         clientSecret: '',
         refreshToken: '',
         parentFolderId: '',
-        status: 'unconfigured', // 'unconfigured' | 'connected' | 'mock'
+        folderUrl: '',
+        status: 'unconfigured',
       },
       exportSettings: {
         folderNameTemplate: 'Selected Images',
@@ -49,13 +50,22 @@ class Database {
     try {
       if (fs.existsSync(this.settingsFile)) {
         const rawSettings = fs.readFileSync(this.settingsFile, 'utf8');
-        this.settings = { ...this.settings, ...JSON.parse(rawSettings) };
+        const parsed = JSON.parse(rawSettings);
+
+        this.settings = {
+          ...this.settings,
+          ...parsed,
+          cloudServerUrl: parsed.cloudServerUrl || this.settings.cloudServerUrl,
+          gdrive: {
+            ...this.settings.gdrive,
+            ...(parsed.gdrive || {}),
+          },
+        };
       } else {
         this.saveSettings(this.settings);
       }
     } catch (err) {
-      console.error('[DB] Failed to load settings, initializing defaults:', err.message);
-      this.saveSettings(this.settings);
+      console.error('[DB] Failed to load settings:', err.message);
     }
   }
 
