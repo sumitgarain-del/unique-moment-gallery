@@ -68,15 +68,44 @@ router.patch('/:id', (req, res) => {
 });
 
 // DELETE /api/projects/:id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const success = db.deleteProject(id);
-    if (!success) {
+    const project = db.getProject(id);
+    if (!project) {
       return res.status(404).json({ success: false, error: 'Project not found' });
     }
+
+    // 1. Permanently delete project folder and all its proxies from Google Drive
+    if (project.gdrive?.folderId) {
+      try {
+        await GoogleDriveService.deleteProjectFolder(project.gdrive.folderId);
+        console.log(`[Delete] Google Drive folder ${project.gdrive.folderId} removed.`);
+      } catch (gdriveErr) {
+        console.warn(`[Delete] Google Drive deletion note: ${gdriveErr.message}`);
+      }
+    }
+
+    // 2. Delete project from Render cloud server if configured
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl && project.token) {
+      try {
+        const cloudUrl = `${settings.cloudServerUrl.replace(/\/$/, '')}/api/cloud/project/${project.token}`;
+        await fetch(cloudUrl, { method: 'DELETE' });
+        console.log(`[Delete] Project ${project.token} removed from Render cloud.`);
+      } catch (cloudErr) {
+        console.warn(`[Delete] Render cloud deletion note: ${cloudErr.message}`);
+      }
+    }
+
+    // 3. Delete local proxy files and database record
+    const success = db.deleteProject(id);
+    if (!success) {
+      return res.status(404).json({ success: false, error: 'Failed to delete local project' });
+    }
+
     socketHub.broadcast('PROJECT_DELETED', { projectId: id });
-    res.json({ success: true, message: 'Project deleted successfully' });
+    res.json({ success: true, message: 'Project, Google Drive backup, and cloud gallery deleted successfully' });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

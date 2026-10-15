@@ -93,4 +93,23 @@ router.get('/project/:token/selection', (req, res) => {
   }
 });
 
+/**
+ * Endpoint on Render (or cloud server) to delete a project by token
+ * DELETE /api/cloud/project/:token
+ */
+router.delete('/project/:token', (req, res) => {
+  try {
+    const { token } = req.params;
+    const project = db.getProjectByToken(token);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Project not found' });
+    }
+    db.deleteProject(project.id);
+    console.log(`[Cloud] Deleted project ${project.title} (${token}) from cloud.`);
+    res.json({ success: true, message: 'Project deleted from cloud' });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 export default router;

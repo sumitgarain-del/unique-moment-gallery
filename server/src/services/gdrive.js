@@ -169,6 +169,22 @@ export class GoogleDriveService {
   }
 
   /**
+   * Permanently deletes a project folder and its contents from Google Drive
+   */
+  static async deleteProjectFolder(folderId) {
+    const drive = this.getDriveClient();
+    if (!drive || !folderId || folderId.startsWith('mock_')) return false;
+    try {
+      await drive.files.delete({ fileId: folderId });
+      console.log(`[GDrive] Successfully deleted project folder ${folderId} from Google Drive.`);
+      return true;
+    } catch (err) {
+      console.warn(`[GDrive] Warning deleting project folder ${folderId}:`, err.message);
+      return false;
+    }
+  }
+
+  /**
    * Upload a single proxy image directly to Google Drive
    */
   static async uploadSingleProxy({ img, folderId }) {

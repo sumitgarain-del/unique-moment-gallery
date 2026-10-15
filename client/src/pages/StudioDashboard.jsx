@@ -295,12 +295,16 @@ export default function StudioDashboard({
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          if (confirm(`Delete project "${project.clientName}"?`)) {
+                          if (
+                            confirm(
+                              `Delete project "${project.clientName}"?\n\nThis will permanently remove the local project, its folder on Google Drive, and its online gallery on Render.`
+                            )
+                          ) {
                             onDeleteProject(project.id);
                           }
                         }}
                         className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 text-slate-500 hover:text-red-400 border border-white/5 transition-colors"
-                        title="Delete project"
+                        title="Delete project (cleans up Google Drive and Cloud)"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
