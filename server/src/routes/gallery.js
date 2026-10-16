@@ -38,6 +38,7 @@ router.get('/:token', (req, res) => {
         height: img.height,
         status: img.status || 'unreviewed',
         comment: img.comment || '',
+        subfolder: img.subfolder || (img.proxyFilename && img.proxyFilename.includes('_') ? img.proxyFilename.split('_')[0] : null),
         lastVotedAt: img.lastVotedAt,
         gdriveId: img.gdriveId || null,
         gdriveViewUrl: img.gdriveViewUrl || null,

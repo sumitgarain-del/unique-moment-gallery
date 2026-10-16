@@ -168,17 +168,28 @@ export default function ClientGallery({ token }) {
   const rejectedCount = images.filter((img) => img.status === 'rejected').length;
   const unreviewedCount = images.filter((img) => !img.status || img.status === 'unreviewed').length;
 
+  const getSubfolder = (img) => {
+    if (img.subfolder) return img.subfolder;
+    if (img.proxyFilename && img.proxyFilename.includes('_')) {
+      const prefix = img.proxyFilename.split('_')[0];
+      if (prefix && prefix !== 'None') return prefix;
+    }
+    return null;
+  };
+
   const availableSubfolders = useMemo(() => {
     const set = new Set();
     images.forEach((img) => {
-      if (img.subfolder) set.add(img.subfolder);
+      const sub = getSubfolder(img);
+      if (sub) set.add(sub);
     });
     return Array.from(set).sort();
   }, [images]);
 
   const filteredImages = useMemo(() => {
     return images.filter((img) => {
-      if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
+      const sub = getSubfolder(img);
+      if (subfolderFilter !== 'all' && sub !== subfolderFilter) return false;
       if (filter === 'selected') return img.status === 'selected';
       if (filter === 'rejected') return img.status === 'rejected';
       if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
@@ -296,7 +307,7 @@ export default function ClientGallery({ token }) {
               All Folders ({images.length})
             </button>
             {availableSubfolders.map((sub) => {
-              const count = images.filter((img) => img.subfolder === sub).length;
+              const count = images.filter((img) => getSubfolder(img) === sub).length;
               return (
                 <button
                   key={sub}
@@ -374,7 +385,7 @@ export default function ClientGallery({ token }) {
             {filteredImages.map((image) => (
               <PhotoCard
                 key={image.id}
-                image={image}
+                image={{ ...image, subfolder: getSubfolder(image) }}
                 isClientView={true}
                 showCompressionStats={false}
                 onSelect={(img) => handleVote(img, 'selected')}
