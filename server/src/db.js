@@ -140,7 +140,14 @@ class Database {
   }
 
   getProjectByToken(token) {
-    const project = this.data.projects.find((p) => p.token === token);
+    if (!token) return null;
+    const clean = token.trim().toLowerCase();
+    const project = this.data.projects.find((p) => {
+      if (p.token && p.token.toLowerCase() === clean) return true;
+      if (p.id && p.id.toLowerCase() === clean) return true;
+      if (Array.isArray(p.aliases) && p.aliases.some((a) => a.toLowerCase() === clean)) return true;
+      return false;
+    });
     if (!project) return null;
     return this.computeProjectStats(project);
   }
