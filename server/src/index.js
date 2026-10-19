@@ -38,22 +38,30 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Serve proxy preview images statically
 app.use('/api/proxies', express.static(config.PROXIES_DIR));
 
-// API Routes
+// API Routes (Mounted under both /api/* and direct /* so all rewrite styles work seamlessly)
 app.use('/api/projects', projectsRouter);
+app.use('/projects', projectsRouter);
 app.use('/api/projects', uploadRouter);
+app.use('/projects', uploadRouter);
 app.use('/api/projects', syncRouter);
+app.use('/projects', syncRouter);
 app.use('/api/gallery', galleryRouter);
+app.use('/gallery', galleryRouter);
 app.use('/api/folders', foldersRouter);
+app.use('/folders', foldersRouter);
 app.use('/api/gdrive', gdriveRouter);
+app.use('/gdrive', gdriveRouter);
 app.use('/api/network', networkRouter);
+app.use('/network', networkRouter);
 app.use('/api/cloud', cloudRouter);
+app.use('/cloud', cloudRouter);
 
 // Settings route
-app.get('/api/settings', (req, res) => {
+app.get(['/api/settings', '/settings'], (req, res) => {
   res.json({ success: true, settings: db.getSettings() });
 });
 
-app.post('/api/settings', (req, res) => {
+app.post(['/api/settings', '/settings'], (req, res) => {
   const updated = db.saveSettings(req.body);
   res.json({ success: true, settings: updated });
 });
@@ -75,26 +83,34 @@ if (clientDist) {
   });
 }
 
-// Initialize WebSocket server
-socketHub.init(server);
+// Start standalone server only when NOT running on Vercel serverless
+if (!config.IS_VERCEL) {
+  // Initialize WebSocket server
+  socketHub.init(server);
 
-// Start server
-server.listen(config.PORT, () => {
-  console.log(`=======================================================`);
-  console.log(`📸 STUDIO SYNC BACKEND RUNNING ON http://localhost:${config.PORT}`);
-  console.log(`⚡ WebSocket Server active on ws://localhost:${config.PORT}/ws`);
-  console.log(`=======================================================`);
+  server.listen(config.PORT, () => {
+    console.log(`=======================================================`);
+    console.log(`📸 STUDIO SYNC BACKEND RUNNING ON http://localhost:${config.PORT}`);
+    console.log(`⚡ WebSocket Server active on ws://localhost:${config.PORT}/ws`);
+    console.log(`=======================================================`);
 
-  // Automatically start worldwide public HTTPS tunnel for client access anywhere
-  tunnelService.startTunnel().then((res) => {
-    console.log(`🌍 PUBLIC WORLDWIDE CLIENT ACCESS ONLINE: ${res.url}`);
-  }).catch((err) => {
-    console.warn(`[Tunnel] Auto-start note: ${err.message}`);
+    // Automatically start worldwide public HTTPS tunnel for client access anywhere
+    tunnelService.startTunnel().then((res) => {
+      console.log(`🌍 PUBLIC WORLDWIDE CLIENT ACCESS ONLINE: ${res.url}`);
+    }).catch((err) => {
+      console.warn(`[Tunnel] Auto-start note: ${err.message}`);
+    });
+
+    // Start background auto-sync to pull client selections from cloud in real-time
+    cloudSyncWorker.start(4000);
+
+    // Automatically restore/sync projects from cloud backup
+    db.syncWithCloudBackup();
   });
-
-  // Start background auto-sync to pull client selections from Render in real-time
-  cloudSyncWorker.start(4000);
-
-  // Automatically restore/sync projects from cloud backup
+} else {
+  // Restore/sync from cloud backup on serverless function boot
   db.syncWithCloudBackup();
-});
+}
+
+export { app, server };
+export default app;

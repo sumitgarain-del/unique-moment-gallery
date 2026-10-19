@@ -5,8 +5,8 @@
   "description": "Studio Sync - Photography Proxy Sync & Local Master Auto-Sorting",
   "scripts": {
     "start": "node server/src/index.js",
-    "build": "echo 'Build ready'",
-    "build:client": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
+    "build:client": "cd client && npm install && npm run build",
     "start:server": "cd server && npm start",
     "start:client": "cd client && npm run dev"
   },

@@ -73,7 +73,15 @@ class Database {
   saveDatabase(skipCloud = false) {
     try {
       const dataStr = JSON.stringify(this.data, null, 2);
-      fs.writeFileSync(this.dbFile, dataStr, 'utf8');
+      try {
+        fs.writeFileSync(this.dbFile, dataStr, 'utf8');
+      } catch (writeErr) {
+        try {
+          const tmpFile = path.resolve(config.TEMP_DIR, 'database.json');
+          fs.writeFileSync(tmpFile, dataStr, 'utf8');
+        } catch (e) {}
+      }
+
       if (!skipCloud) {
         cloudBackupService.scheduleBackup(this.data);
       }
