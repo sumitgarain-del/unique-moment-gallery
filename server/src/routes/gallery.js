@@ -5,10 +5,13 @@ import { socketHub } from '../services/websocket.js';
 const router = express.Router();
 
 // GET /api/gallery/:token
-router.get('/:token', (req, res) => {
+router.get('/:token', async (req, res) => {
   try {
     const { token } = req.params;
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
 
     if (!project) {
       return res.status(404).json({ success: false, error: 'Gallery link not found or expired' });
@@ -53,12 +56,15 @@ router.get('/:token', (req, res) => {
 });
 
 // POST /api/gallery/:token/vote
-router.post('/:token/vote', (req, res) => {
+router.post('/:token/vote', async (req, res) => {
   try {
     const { token } = req.params;
     const { imageId, status, comment, voterName = 'Client' } = req.body;
 
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
     if (!project) {
       return res.status(404).json({ success: false, error: 'Gallery not found' });
     }
@@ -98,12 +104,15 @@ router.post('/:token/vote', (req, res) => {
 });
 
 // POST /api/gallery/:token/submit
-router.post('/:token/submit', (req, res) => {
+router.post('/:token/submit', async (req, res) => {
   try {
     const { token } = req.params;
     const { submissionNotes = '', clientName = '', selectedImageIds = [] } = req.body;
 
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
     if (!project) {
       return res.status(404).json({ success: false, error: 'Gallery not found' });
     }
@@ -140,10 +149,13 @@ router.post('/:token/submit', (req, res) => {
 });
 
 // POST /api/gallery/:token/reopen (Allows client to re-verify or adjust selections after submission)
-router.post('/:token/reopen', (req, res) => {
+router.post('/:token/reopen', async (req, res) => {
   try {
     const { token } = req.params;
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
     if (!project) {
       return res.status(404).json({ success: false, error: 'Gallery not found' });
     }
