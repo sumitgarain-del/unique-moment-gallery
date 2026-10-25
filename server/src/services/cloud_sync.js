@@ -9,10 +9,9 @@ class CloudSyncWorker {
 
   start(intervalMs = 3000) {
     if (this.timer) clearInterval(this.timer);
-    // Initial run immediately: poll first, then sync
+    // Initial poll immediately
     setTimeout(() => {
       this.pollActiveProjects();
-      this.syncAllProjectsToCloud();
     }, 1200);
     this.timer = setInterval(() => this.pollActiveProjects(), intervalMs);
     console.log(`[CloudSync] Background auto-sync started (polling every ${intervalMs / 1000}s)`);
