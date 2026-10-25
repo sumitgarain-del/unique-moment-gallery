@@ -36,7 +36,7 @@ class TunnelService {
     const settings = db.getSettings();
     let cloudBase = (settings.cloudServerUrl && settings.cloudServerUrl.trim()) ||
                     (settings.customDomain && settings.customDomain.trim()) ||
-                    'https://unique-moment-gallery.onrender.com';
+                    'https://spry-teal-c1983ep.vercel.app';
 
     if (!cloudBase.startsWith('http://') && !cloudBase.startsWith('https://')) {
       cloudBase = `https://${cloudBase}`;

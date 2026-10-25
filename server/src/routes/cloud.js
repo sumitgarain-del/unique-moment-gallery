@@ -17,13 +17,41 @@ router.post('/sync-project', (req, res) => {
     const existing = db.getProjectByToken(project.token);
     let updated;
     if (existing) {
-      // Preserve client status / votes if client has already voted on cloud!
+      // Preserve client status / votes if client has already voted or deselected on cloud!
       const mergedImages = (project.images || []).map((img) => {
         const existingImg = (existing.images || []).find(
-          (i) => i.id === img.id || i.originalName === img.originalName
+          (i) => (img.id && i.id === img.id) ||
+                 ((i.subfolder || '') === (img.subfolder || '') && i.originalName === img.originalName)
         );
-        if (existingImg && existingImg.status && existingImg.status !== 'unreviewed') {
-          return { ...img, status: existingImg.status, comment: existingImg.comment || img.comment };
+        if (existingImg && (existingImg.lastVotedAt || (existingImg.status && existingImg.status !== 'unreviewed'))) {
+          let preferredStatus = existingImg.status || 'unreviewed';
+          let preferredComment = existingImg.comment || img.comment;
+          let preferredVotedAt = existingImg.lastVotedAt || img.lastVotedAt;
+          let preferredBy = existingImg.lastModifiedBy || img.lastModifiedBy;
+
+          if (img.lastVotedAt && existingImg.lastVotedAt) {
+            const localTime = new Date(img.lastVotedAt).getTime();
+            const cloudTime = new Date(existingImg.lastVotedAt).getTime();
+            if (localTime > cloudTime) {
+              preferredStatus = img.status;
+              preferredComment = img.comment;
+              preferredVotedAt = img.lastVotedAt;
+              preferredBy = img.lastModifiedBy;
+            }
+          } else if (img.status && img.status !== 'unreviewed' && (!existingImg.status || existingImg.status === 'unreviewed')) {
+            preferredStatus = img.status;
+            preferredComment = img.comment;
+            preferredVotedAt = img.lastVotedAt;
+            preferredBy = img.lastModifiedBy;
+          }
+
+          return {
+            ...img,
+            status: preferredStatus,
+            comment: preferredComment,
+            lastVotedAt: preferredVotedAt,
+            lastModifiedBy: preferredBy,
+          };
         }
         return img;
       });
@@ -84,8 +112,10 @@ router.get('/project/:token/selection', (req, res) => {
       allImages: (project.images || []).map((img) => ({
         id: img.id,
         originalName: img.originalName,
-        status: img.status,
-        comment: img.comment,
+        status: img.status || 'unreviewed',
+        comment: img.comment || '',
+        lastVotedAt: img.lastVotedAt || null,
+        lastModifiedBy: img.lastModifiedBy || null,
       })),
     });
   } catch (err) {

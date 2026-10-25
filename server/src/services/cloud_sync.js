@@ -57,15 +57,15 @@ class CloudSyncWorker {
 
         try {
           const url = `${cloudBase}/api/cloud/project/${project.token}/selection`;
-          const res = await fetch(url, { signal: AbortSignal.timeout(3500) });
+          const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
           if (!res.ok) {
-            // Render returned 404 (e.g. Render restarted or lost memory). Re-sync project immediately!
-            console.log(`[CloudSync] Cloud gallery missing for "${project.title}". Re-syncing to Render...`);
+            // Cloud gallery missing. Re-sync project immediately!
+            console.log(`[CloudSync] Cloud gallery missing for "${project.title}". Re-syncing to cloud...`);
             await fetch(`${cloudBase}/api/cloud/sync-project`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ project }),
-              signal: AbortSignal.timeout(6000),
+              signal: AbortSignal.timeout(10000),
             }).catch(() => {});
             continue;
           }
@@ -76,20 +76,29 @@ class CloudSyncWorker {
           let hasChanges = false;
           let newlySubmitted = false;
 
-          if (data.status === 'submitted' && project.status !== 'submitted') {
-            newlySubmitted = true;
+          if (data.status && data.status !== project.status) {
             hasChanges = true;
+            if (data.status === 'submitted' && project.status !== 'submitted') {
+              newlySubmitted = true;
+            }
           }
 
-          // Check if any image status or comments changed
+          // Check if any image status or comments changed (supports selecting, deselecting, and commenting)
           const currentImages = project.images || [];
+          const cloudMap = new Map((data.allImages || []).map((ci) => [ci.id, ci]));
+
           const updatedImages = currentImages.map((img) => {
-            const cloudImg = (data.allImages || []).find(
-              (ci) => ci.id === img.id || ci.originalName === img.originalName
-            );
-            if (cloudImg && cloudImg.status && cloudImg.status !== 'unreviewed' && cloudImg.status !== img.status) {
-              hasChanges = true;
-              return { ...img, status: cloudImg.status, comment: cloudImg.comment || img.comment };
+            const cloudImg = cloudMap.get(img.id);
+            if (cloudImg) {
+              const currentStatus = img.status || 'unreviewed';
+              const cloudStatus = cloudImg.status || 'unreviewed';
+              const currentComment = img.comment || '';
+              const cloudComment = cloudImg.comment || '';
+
+              if (cloudStatus !== currentStatus || cloudComment !== currentComment) {
+                hasChanges = true;
+                return { ...img, status: cloudStatus, comment: cloudComment };
+              }
             }
             return img;
           });
@@ -102,10 +111,16 @@ class CloudSyncWorker {
               submissionNotes: data.submissionNotes || project.submissionNotes,
             });
 
-            console.log(`[CloudSync] Detected real-time updates for "${project.title}" from cloud! Status: ${updated.status}`);
+            console.log(`[CloudSync] Detected real-time updates for "${project.title}" from cloud! Status: ${updated.status}, Selected: ${updated.stats?.selected}`);
 
             // 1. Broadcast to specific project room
             socketHub.broadcastToRoom(`project:${project.id}`, {
+              type: 'PROJECT_UPDATED',
+              project: updated,
+            });
+
+            // 2. Broadcast to all screens (updates Dashboard cards instantly)
+            socketHub.broadcastAll({
               type: 'PROJECT_UPDATED',
               project: updated,
             });
@@ -119,7 +134,7 @@ class CloudSyncWorker {
                 stats: updated.stats,
               });
 
-              // 2. Broadcast high-priority Studio Alert to all connected photographer screens
+              // Broadcast high-priority Studio Alert to all connected photographer screens
               socketHub.broadcastAll({
                 type: 'STUDIO_ALERT',
                 message: `🎉 Client ${project.clientName} has finalized their selection! (${updated.stats.selected} photos shortlisted)`,
@@ -130,6 +145,12 @@ class CloudSyncWorker {
             } else {
               socketHub.broadcastToRoom(`project:${project.id}`, {
                 type: 'VOTE_UPDATED',
+                projectId: project.id,
+                stats: updated.stats,
+              });
+              socketHub.broadcastAll({
+                type: 'VOTE_UPDATED',
+                projectId: project.id,
                 stats: updated.stats,
               });
             }

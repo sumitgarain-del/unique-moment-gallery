@@ -7,13 +7,13 @@ class Database {
   constructor() {
     this.dbFile = config.DB_FILE;
     this.settingsFile = config.SETTINGS_FILE;
-    this.data = { projects: [] };
+    this.data = { projects: [], deletedProjectIds: [], deletedTokens: [] };
     this.settings = {
       studioName: 'Unique Moment',
       photographerEmail: 'mail2uniquemoment@gmail.com',
       customDomain: '', // e.g. https://gallery.uniquemoment.com
       cloudflareTunnelToken: '', // Cloudflare Zero Trust permanent tunnel token
-      cloudServerUrl: 'https://unique-moment-gallery.onrender.com', // 24/7 Render cloud gallery server URL
+      cloudServerUrl: 'https://spry-teal-c1983ep.vercel.app', // 24/7 Vercel cloud gallery server URL
       gdrive: {
         enabled: false,
         clientId: '',
@@ -36,15 +36,35 @@ class Database {
 
   init() {
     try {
-      if (fs.existsSync(this.dbFile)) {
+      const tmpFile = path.resolve(config.TEMP_DIR, 'database.json');
+      let loaded = false;
+
+      // On serverless read-only platforms (like Vercel), load persistent tmp file if exists
+      if (config.IS_VERCEL && fs.existsSync(tmpFile)) {
+        try {
+          const raw = fs.readFileSync(tmpFile, 'utf8');
+          const parsed = JSON.parse(raw);
+          if (parsed && Array.isArray(parsed.projects)) {
+            this.data = parsed;
+            loaded = true;
+          }
+        } catch (e) {}
+      }
+
+      if (!loaded && fs.existsSync(this.dbFile)) {
         const raw = fs.readFileSync(this.dbFile, 'utf8');
         this.data = JSON.parse(raw);
-      } else {
+      } else if (!loaded) {
         this.saveDatabase();
       }
+
+      // Ensure tracking structures exist
+      this.data.projects = this.data.projects || [];
+      this.data.deletedProjectIds = this.data.deletedProjectIds || [];
+      this.data.deletedTokens = this.data.deletedTokens || [];
     } catch (err) {
       console.error('[DB] Failed to load database, initializing new:', err.message);
-      this.data = { projects: [] };
+      this.data = { projects: [], deletedProjectIds: [], deletedTokens: [] };
       this.saveDatabase();
     }
 
@@ -92,24 +112,30 @@ class Database {
 
   async syncWithCloudBackup() {
     try {
+      // ONLY run cloud restoration if local database is completely empty (0 projects)
+      // Never revive projects into an existing active local database!
+      if (this.data.projects && this.data.projects.length > 0) {
+        return;
+      }
+
       const backupData = await cloudBackupService.fetchBackup();
       if (!backupData || !Array.isArray(backupData.projects)) return;
 
+      const deletedIds = new Set(this.data.deletedProjectIds || []);
+      const deletedTokens = new Set(this.data.deletedTokens || []);
+
       let modified = false;
       for (const backupProj of backupData.projects) {
+        if (deletedIds.has(backupProj.id) || deletedTokens.has(backupProj.token)) {
+          continue; // Permanently skip deleted projects
+        }
+
         const localProj = this.data.projects.find(
           (p) => p.token === backupProj.token || p.id === backupProj.id
         );
         if (!localProj) {
           this.data.projects.push(backupProj);
           modified = true;
-        } else {
-          const backupSelected = (backupProj.images || []).filter((i) => i.status === 'selected').length;
-          const localSelected = (localProj.images || []).filter((i) => i.status === 'selected').length;
-          if (backupSelected > localSelected || backupProj.status === 'submitted') {
-            Object.assign(localProj, backupProj);
-            modified = true;
-          }
         }
       }
       if (modified) {
@@ -138,11 +164,11 @@ class Database {
   }
 
   getProjects() {
-    return this.data.projects.map((p) => this.computeProjectStats(p));
+    return (this.data.projects || []).map((p) => this.computeProjectStats(p));
   }
 
   getProject(id) {
-    const project = this.data.projects.find((p) => p.id === id);
+    const project = (this.data.projects || []).find((p) => p.id === id);
     if (!project) return null;
     return this.computeProjectStats(project);
   }
@@ -150,7 +176,7 @@ class Database {
   getProjectByToken(token) {
     if (!token) return null;
     const clean = token.trim().toLowerCase();
-    const project = this.data.projects.find((p) => {
+    const project = (this.data.projects || []).find((p) => {
       if (p.token && p.token.toLowerCase() === clean) return true;
       if (p.id && p.id.toLowerCase() === clean) return true;
       if (Array.isArray(p.aliases) && p.aliases.some((a) => a.toLowerCase() === clean)) return true;
@@ -179,12 +205,12 @@ class Database {
         folderId: null,
         folderUrl: null,
         syncedCount: 0,
+        syncedAt: null,
       },
       submittedAt: projectData.submittedAt || null,
       submissionNotes: projectData.submissionNotes || '',
-      lastSyncResult: projectData.lastSyncResult || null,
       createdAt: projectData.createdAt || new Date().toISOString(),
-      updatedAt: projectData.updatedAt || new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     };
 
     this.data.projects.unshift(newProject);
@@ -193,7 +219,7 @@ class Database {
   }
 
   updateProject(id, updates) {
-    const index = this.data.projects.findIndex((p) => p.id === id);
+    const index = (this.data.projects || []).findIndex((p) => p.id === id);
     if (index === -1) return null;
 
     this.data.projects[index] = {
@@ -207,11 +233,21 @@ class Database {
   }
 
   deleteProject(id) {
-    const index = this.data.projects.findIndex((p) => p.id === id);
+    const index = (this.data.projects || []).findIndex((p) => p.id === id);
     if (index === -1) return false;
 
-    // Remove proxy files folder if exists
     const project = this.data.projects[index];
+    this.data.deletedProjectIds = this.data.deletedProjectIds || [];
+    this.data.deletedTokens = this.data.deletedTokens || [];
+
+    if (!this.data.deletedProjectIds.includes(project.id)) {
+      this.data.deletedProjectIds.push(project.id);
+    }
+    if (project.token && !this.data.deletedTokens.includes(project.token)) {
+      this.data.deletedTokens.push(project.token);
+    }
+
+    // Remove proxy files folder if exists
     const proxyDir = path.resolve(config.PROXIES_DIR, project.id);
     if (fs.existsSync(proxyDir)) {
       try {
@@ -227,7 +263,7 @@ class Database {
   }
 
   addImagesToProject(id, newImages) {
-    const project = this.data.projects.find((p) => p.id === id);
+    const project = (this.data.projects || []).find((p) => p.id === id);
     if (!project) return null;
 
     for (const img of newImages) {
@@ -256,14 +292,14 @@ class Database {
   }
 
   updateImageVote(projectId, imageId, voteStatus, comment = null, voterName = 'Client') {
-    const project = this.data.projects.find((p) => p.id === projectId);
+    const project = (this.data.projects || []).find((p) => p.id === projectId);
     if (!project) return null;
 
-    const image = project.images.find((img) => img.id === imageId);
+    const image = (project.images || []).find((img) => img.id === imageId);
     if (!image) return null;
 
-    image.status = voteStatus; // 'selected' | 'rejected' | 'unreviewed'
-    if (comment !== null) {
+    image.status = voteStatus;
+    if (comment !== null && comment !== undefined) {
       image.comment = comment;
     }
     image.lastModifiedBy = voterName;
@@ -277,9 +313,19 @@ class Database {
     };
   }
 
-  submitProjectSelection(projectId, submissionNotes = '') {
-    const project = this.data.projects.find((p) => p.id === projectId);
+  submitProjectSelection(projectId, submissionNotes = '', selectedImageIds = null) {
+    const project = (this.data.projects || []).find((p) => p.id === projectId);
     if (!project) return null;
+
+    if (Array.isArray(selectedImageIds) && selectedImageIds.length > 0) {
+      const selectedSet = new Set(selectedImageIds);
+      (project.images || []).forEach((img) => {
+        if (selectedSet.has(img.id)) {
+          img.status = 'selected';
+          img.lastVotedAt = img.lastVotedAt || new Date().toISOString();
+        }
+      });
+    }
 
     project.status = 'submitted';
     project.submittedAt = new Date().toISOString();
@@ -305,9 +351,7 @@ class Database {
     });
 
     const bytesSaved = Math.max(0, totalOriginalBytes - totalProxyBytes);
-    const savingsPercent = totalOriginalBytes > 0 
-      ? Math.round((bytesSaved / totalOriginalBytes) * 100) 
-      : 0;
+    const savingsPercent = totalOriginalBytes > 0 ? Math.round((bytesSaved / totalOriginalBytes) * 100) : 0;
 
     return {
       ...project,
@@ -320,7 +364,7 @@ class Database {
         totalProxyBytes,
         bytesSaved,
         savingsPercent,
-      }
+      },
     };
   }
 }

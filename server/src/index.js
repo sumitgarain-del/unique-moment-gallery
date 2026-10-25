@@ -35,8 +35,61 @@ app.use(cors({
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
-// Serve proxy preview images statically
-app.use('/api/proxies', express.static(config.PROXIES_DIR));
+// Serve proxy preview images statically, with automatic Google Drive streaming and disk caching
+app.get(['/api/proxies/:projectId/:filename', '/proxies/:projectId/:filename'], async (req, res) => {
+  try {
+    const { projectId, filename } = req.params;
+    const projectDir = path.resolve(config.PROXIES_DIR, projectId);
+    const localFile = path.resolve(projectDir, filename);
+
+    // 1. If cached on local disk, serve immediately
+    if (fs.existsSync(localFile)) {
+      return res.sendFile(localFile);
+    }
+
+    // 2. Find image in database
+    const project = db.getProject(projectId);
+    const img = project?.images?.find(
+      (i) => i.proxyFilename === filename || i.originalName === filename || i.stem === filename.replace(/\.[^/.]+$/, '')
+    );
+
+    if (img && img.gdriveId) {
+      // 3. Fetch from Google Drive, cache to disk, and stream to client
+      try {
+        const driveRes = await fetch(`https://lh3.googleusercontent.com/d/${img.gdriveId}`, {
+          signal: AbortSignal.timeout(12000),
+        });
+
+        if (driveRes.ok) {
+          const contentType = driveRes.headers.get('content-type') || 'image/webp';
+          res.setHeader('Content-Type', contentType);
+          res.setHeader('Cache-Control', 'public, max-age=86400');
+
+          const buffer = Buffer.from(await driveRes.arrayBuffer());
+
+          // Save to local cache in background (so next view is instant offline)
+          try {
+            if (!fs.existsSync(projectDir)) {
+              fs.mkdirSync(projectDir, { recursive: true });
+            }
+            fs.writeFile(localFile, buffer, () => {});
+          } catch (e) {}
+
+          return res.end(buffer);
+        }
+      } catch (e) {
+        console.warn(`[Proxy] Google Drive stream error for ${filename}:`, e.message);
+      }
+    }
+
+    // 4. Send 404 immediately so browser never hangs
+    res.status(404).send('Proxy not found');
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+app.use(['/api/proxies', '/proxies'], express.static(config.PROXIES_DIR));
 
 // API Routes (Mounted under both /api/* and direct /* so all rewrite styles work seamlessly)
 app.use('/api/projects', projectsRouter);
@@ -79,6 +132,8 @@ if (clientDist) {
   app.get('*', (req, res) => {
     if (!req.path.startsWith('/api') && !req.path.startsWith('/ws')) {
       res.sendFile(path.join(clientDist, 'index.html'));
+    } else {
+      res.status(404).json({ success: false, error: 'Not found' });
     }
   });
 }

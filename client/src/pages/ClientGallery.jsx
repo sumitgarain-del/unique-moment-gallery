@@ -46,6 +46,45 @@ export default function ClientGallery({ token }) {
       setLoading(true);
       setError('');
       const data = await getGallery(token);
+
+      // LocalStorage recovery: protect client from serverless cold-start resets
+      let localVotes = {};
+      try {
+        const stored = localStorage.getItem(`studio_sync_votes_${token}`);
+        if (stored) localVotes = JSON.parse(stored);
+      } catch (e) {}
+
+      if (data && Array.isArray(data.images) && Object.keys(localVotes).length > 0) {
+        let hasLocalVotesToSync = false;
+        data.images = data.images.map((img) => {
+          const lv = localVotes[img.id];
+          if (lv && lv.status && (!img.status || img.status === 'unreviewed')) {
+            hasLocalVotesToSync = true;
+            return { ...img, status: lv.status, comment: lv.comment || img.comment };
+          }
+          return img;
+        });
+
+        // Recount stats
+        const selCount = data.images.filter((i) => i.status === 'selected').length;
+        const rejCount = data.images.filter((i) => i.status === 'rejected').length;
+        data.stats = {
+          ...data.stats,
+          selected: selCount,
+          rejected: rejCount,
+          unreviewed: data.images.length - selCount - rejCount,
+        };
+
+        // Re-dispatch missing votes to server silently in background
+        if (hasLocalVotesToSync) {
+          Object.entries(localVotes).forEach(([imgId, v]) => {
+            if (v && v.status && v.status !== 'unreviewed') {
+              voteImage(token, imgId, v.status, v.comment || null, voterName).catch(() => {});
+            }
+          });
+        }
+      }
+
       setGallery(data);
       if (data.status === 'submitted') {
         setSubmittedSuccess(true);
@@ -114,12 +153,22 @@ export default function ClientGallery({ token }) {
       return { ...prev, images: updatedImages };
     });
 
+    // Save to device localStorage immediately
+    try {
+      const stored = localStorage.getItem(`studio_sync_votes_${token}`);
+      const votes = stored ? JSON.parse(stored) : {};
+      if (newStatus === 'unreviewed') {
+        delete votes[image.id];
+      } else {
+        votes[image.id] = { status: newStatus, comment: image.comment || '', timestamp: Date.now() };
+      }
+      localStorage.setItem(`studio_sync_votes_${token}`, JSON.stringify(votes));
+    } catch (e) {}
+
     try {
       await voteImage(token, image.id, newStatus, null, voterName);
     } catch (err) {
-      console.error('Vote error:', err);
-      // Revert if error
-      loadGalleryData();
+      console.warn('Vote background sync note:', err.message);
     }
   };
 
@@ -133,6 +182,14 @@ export default function ClientGallery({ token }) {
         );
         return { ...prev, images: updatedImages };
       });
+      try {
+        const stored = localStorage.getItem(`studio_sync_votes_${token}`);
+        const votes = stored ? JSON.parse(stored) : {};
+        if (votes[image.id]) {
+          votes[image.id].comment = comment;
+          localStorage.setItem(`studio_sync_votes_${token}`, JSON.stringify(votes));
+        }
+      } catch (e) {}
     } catch (err) {
       console.error('Comment error:', err);
     }
@@ -141,9 +198,15 @@ export default function ClientGallery({ token }) {
   const handleSubmitSelection = async () => {
     try {
       setIsSubmitting(true);
-      await submitGallery(token, submissionNotes, voterName);
+      const selectedIds = (gallery?.images || []).filter((i) => i.status === 'selected').map((i) => i.id);
+      await submitGallery(token, submissionNotes, voterName, selectedIds);
       setSubmittedSuccess(true);
       setShowSubmitModal(false);
+
+      // Clear local storage after successful final submit
+      try {
+        localStorage.removeItem(`studio_sync_votes_${token}`);
+      } catch (e) {}
 
       // Trigger celebration confetti
       try {

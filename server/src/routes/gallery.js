@@ -100,14 +100,14 @@ router.post('/:token/vote', (req, res) => {
 router.post('/:token/submit', (req, res) => {
   try {
     const { token } = req.params;
-    const { submissionNotes = '', clientName = '' } = req.body;
+    const { submissionNotes = '', clientName = '', selectedImageIds = [] } = req.body;
 
     const project = db.getProjectByToken(token);
     if (!project) {
       return res.status(404).json({ success: false, error: 'Gallery not found' });
     }
 
-    const updated = db.submitProjectSelection(project.id, submissionNotes);
+    const updated = db.submitProjectSelection(project.id, submissionNotes, selectedImageIds);
 
     // Real-time alert to studio dashboard
     const broadcastPayload = {

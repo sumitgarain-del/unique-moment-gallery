@@ -190,16 +190,22 @@ export default function ProjectDetail({
     socket.joinRoom(`project:${project.id}`);
 
     const unsubVote = socket.on('VOTE_UPDATED', (data) => {
-      if (data.projectId === project.id) {
+      if (!data.projectId || data.projectId === project.id) {
         onUpdateProject((prev) => {
           if (!prev || prev.id !== project.id) return prev;
-          const updatedImages = (prev.images || []).map((img) =>
-            img.id === data.imageId ? { ...img, status: data.status, comment: data.comment } : img
-          );
+          if (data.imageId) {
+            const updatedImages = (prev.images || []).map((img) =>
+              img.id === data.imageId ? { ...img, status: data.status, comment: data.comment } : img
+            );
+            return {
+              ...prev,
+              images: updatedImages,
+              stats: data.stats || prev.stats,
+            };
+          }
           return {
             ...prev,
-            images: updatedImages,
-            stats: data.stats,
+            stats: data.stats || prev.stats,
           };
         });
       }
@@ -378,7 +384,7 @@ export default function ProjectDetail({
   const clientPublicLink =
     shareInfo?.publicLink ||
     (shareInfo?.primaryLink && !shareInfo.primaryLink.includes('localhost') ? shareInfo.primaryLink : '') ||
-    `https://unique-moment-gallery.onrender.com/gallery/${project.token}`;
+    `https://spry-teal-c1983ep.vercel.app/gallery/${project.token}`;
 
   const publicQrImageUrl =
     shareInfo?.qrImageUrl ||

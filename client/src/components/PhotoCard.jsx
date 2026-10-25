@@ -19,7 +19,7 @@ export default function PhotoCard({
   };
 
   const gdriveSrc = image.gdriveId ? `https://lh3.googleusercontent.com/d/${image.gdriveId}` : null;
-  const displaySrc = gdriveSrc || image.proxyUrl;
+  const displaySrc = image.proxyUrl || gdriveSrc;
 
   return (
     <div
@@ -39,8 +39,11 @@ export default function PhotoCard({
         <img
           src={displaySrc}
           onError={(e) => {
-            if (image.proxyUrl && e.target.src !== image.proxyUrl) {
-              e.target.src = image.proxyUrl;
+            const fallback = e.target.src.includes('lh3.googleusercontent')
+              ? image.proxyUrl
+              : gdriveSrc;
+            if (fallback && e.target.src !== fallback) {
+              e.target.src = fallback;
             }
           }}
           alt={image.originalName}

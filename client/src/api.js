@@ -109,10 +109,10 @@ export async function voteImage(token, imageId, status, comment = null, voterNam
   });
 }
 
-export async function submitGallery(token, submissionNotes, clientName) {
+export async function submitGallery(token, submissionNotes, clientName, selectedImageIds = []) {
   return await fetchJson(`/gallery/${token}/submit`, {
     method: 'POST',
-    body: JSON.stringify({ submissionNotes, clientName }),
+    body: JSON.stringify({ submissionNotes, clientName, selectedImageIds }),
   });
 }
 

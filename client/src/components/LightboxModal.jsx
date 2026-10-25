@@ -486,10 +486,13 @@ export default function LightboxModal({
           }}
         >
           <img
-            src={currentImage.gdriveId ? `https://lh3.googleusercontent.com/d/${currentImage.gdriveId}` : currentImage.proxyUrl}
+            src={currentImage.proxyUrl || (currentImage.gdriveId ? `https://lh3.googleusercontent.com/d/${currentImage.gdriveId}` : null)}
             onError={(e) => {
-              if (currentImage.proxyUrl && e.target.src !== currentImage.proxyUrl) {
-                e.target.src = currentImage.proxyUrl;
+              const fallback = e.target.src.includes('lh3.googleusercontent')
+                ? currentImage.proxyUrl
+                : (currentImage.gdriveId ? `https://lh3.googleusercontent.com/d/${currentImage.gdriveId}` : null);
+              if (fallback && e.target.src !== fallback) {
+                e.target.src = fallback;
               }
             }}
             alt={currentImage.originalName}

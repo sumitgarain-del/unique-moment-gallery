@@ -344,22 +344,22 @@ export default function SettingsModal({ onClose }) {
                 <div className="flex items-center space-x-2">
                   <Globe className="w-4 h-4 text-emerald-400" />
                   <span className="text-xs font-bold text-white uppercase tracking-wider">
-                    24/7 Cloud Gallery Server (Render.com)
+                    24/7 Cloud Gallery Server (Vercel)
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-400 leading-relaxed">
-                  আপনার ল্যাপটপ বন্ধ থাকলেও ক্লায়েন্টরা ২৪ ঘণ্টা গ্যালারি দেখতে ও ছবি সিলেক্ট করতে পারবে। এখানে আপনার Render-এর সার্ভিস URL দিন:
+                  আপনার ল্যাপটপ বন্ধ থাকলেও ক্লায়েন্টরা ২৪ ঘণ্টা গ্যালারি দেখতে ও ছবি সিলেক্ট করতে পারবে। এখানে আপনার ক্লাউড সার্ভিস URL দিন:
                 </p>
 
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-1">
-                    Render Cloud Server URL
+                    Cloud Server URL (Vercel)
                   </label>
                   <input
                     type="text"
-                    value={settings.cloudServerUrl || 'https://unique-moment-gallery.onrender.com'}
+                    value={settings.cloudServerUrl || 'https://spry-teal-c1983ep.vercel.app'}
                     onChange={(e) => setSettings({ ...settings, cloudServerUrl: e.target.value.trim() })}
-                    placeholder="https://unique-moment-gallery.onrender.com"
+                    placeholder="https://spry-teal-c1983ep.vercel.app"
                     className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
                   />
                   <span className="text-[10px] text-emerald-400 mt-1 block">

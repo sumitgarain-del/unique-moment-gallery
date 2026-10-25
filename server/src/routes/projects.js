@@ -295,10 +295,14 @@ router.post('/:id/cloud-pull', async (req, res) => {
     // Update local project images with latest client statuses
     if (data.allImages && Array.isArray(data.allImages)) {
       const currentImages = project.images || [];
+      const cloudMap = new Map((data.allImages || []).map((ci) => [ci.id, ci]));
+
       const updatedImages = currentImages.map((img) => {
-        const cloudImg = data.allImages.find((ci) => ci.id === img.id || ci.originalName === img.originalName);
-        if (cloudImg && cloudImg.status && cloudImg.status !== 'unreviewed') {
-          return { ...img, status: cloudImg.status, comment: cloudImg.comment || img.comment };
+        const cloudImg = cloudMap.get(img.id);
+        if (cloudImg) {
+          const cloudStatus = cloudImg.status || 'unreviewed';
+          const cloudComment = cloudImg.comment || '';
+          return { ...img, status: cloudStatus, comment: cloudComment };
         }
         return img;
       });
@@ -329,7 +333,12 @@ router.post('/:id/cloud-pull', async (req, res) => {
       } else {
         socketHub.broadcastToRoom(`project:${id}`, {
           type: 'VOTE_UPDATED',
+          projectId: id,
           stats: updated.stats,
+        });
+        socketHub.broadcastAll({
+          type: 'PROJECT_UPDATED',
+          project: updated,
         });
       }
 
