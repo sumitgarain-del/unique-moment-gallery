@@ -115,8 +115,8 @@ class CloudSyncWorker {
             };
 
             const localSelectedCount = currentImages.filter((i) => i.status === 'selected').length;
-            // Cold start detection: when cloud suddenly reports 0 while local had > 5 selections and no submission notes
-            const isColdStartWipe = (data.selectedCount === 0 && localSelectedCount > 5 && !data.submittedAt && !data.submissionNotes);
+            // Cold start detection: when cloud suddenly reports 0 while local had > 5 selections and no submission notes or reset
+            const isColdStartWipe = (data.selectedCount === 0 && localSelectedCount > 5 && !data.submittedAt && !data.submissionNotes && !data.resetAt && !project.resetAt);
 
             const updatedImages = currentImages.map((img) => {
               const cloudImg = findCloudImg(img);

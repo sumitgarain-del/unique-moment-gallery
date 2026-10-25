@@ -351,4 +351,107 @@ router.post('/:id/cloud-pull', async (req, res) => {
   }
 });
 
+// POST /api/projects/:id/reset-selections (Studio Owner clears all client selections)
+router.post('/:id/reset-selections', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const project = db.getProject(id);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Project not found' });
+    }
+
+    const resetAt = new Date().toISOString();
+    const resetImages = (project.images || []).map((img) => ({
+      ...img,
+      status: 'unreviewed',
+      comment: '',
+      lastVotedAt: null,
+      lastModifiedBy: null,
+    }));
+
+    const updated = db.updateProject(id, {
+      images: resetImages,
+      status: 'uploaded',
+      submittedAt: null,
+      submissionNotes: '',
+      resetAt,
+    });
+
+    console.log(`[Project] Selections cleared locally for "${project.title}"`);
+
+    // Notify local real-time listeners
+    socketHub.broadcastToRoom(`project:${id}`, {
+      type: 'PROJECT_UPDATED',
+      project: updated,
+    });
+    socketHub.broadcastAll({
+      type: 'PROJECT_UPDATED',
+      project: updated,
+    });
+    socketHub.broadcastAll({
+      type: 'SELECTIONS_CLEARED',
+      projectId: id,
+      token: project.token,
+      resetAt,
+    });
+
+    // Sync clear to Cloud server (Vercel)
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl && project.token) {
+      const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
+      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reset-selection`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resetAt }),
+        signal: AbortSignal.timeout(8000),
+      }).catch((err) => console.error('[ResetSelections] Cloud sync error:', err.message));
+    }
+
+    res.json({ success: true, project: updated });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// POST /api/projects/:id/reopen (Studio Owner unlocks/allows re-verification after submission)
+router.post('/:id/reopen', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const project = db.getProject(id);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Project not found' });
+    }
+
+    const updated = db.updateProject(id, {
+      status: 'uploaded',
+      submittedAt: null,
+    });
+
+    console.log(`[Project] Reopened "${project.title}" for client re-verification`);
+
+    socketHub.broadcastToRoom(`project:${id}`, {
+      type: 'PROJECT_UPDATED',
+      project: updated,
+    });
+    socketHub.broadcastAll({
+      type: 'PROJECT_UPDATED',
+      project: updated,
+    });
+
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl && project.token) {
+      const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
+      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reopen`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(8000),
+      }).catch((err) => console.error('[Reopen] Cloud sync error:', err.message));
+    }
+
+    res.json({ success: true, project: updated });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 export default router;

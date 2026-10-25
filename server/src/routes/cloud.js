@@ -98,6 +98,7 @@ router.get('/project/:token/selection', (req, res) => {
       success: true,
       token,
       status: project.status,
+      resetAt: project.resetAt || null,
       submittedAt: project.submittedAt,
       submissionNotes: project.submissionNotes,
       selectedCount: selectedImages.length,
@@ -137,6 +138,66 @@ router.delete('/project/:token', (req, res) => {
     db.deleteProject(project.id);
     console.log(`[Cloud] Deleted project ${project.title} (${token}) from cloud.`);
     res.json({ success: true, message: 'Project deleted from cloud' });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * Endpoint on cloud to reset all client selections for a project
+ * POST /api/cloud/project/:token/reset-selection
+ */
+router.post('/project/:token/reset-selection', (req, res) => {
+  try {
+    const { token } = req.params;
+    const { resetAt = new Date().toISOString() } = req.body;
+    const project = db.getProjectByToken(token);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Project not found' });
+    }
+
+    const resetImages = (project.images || []).map((img) => ({
+      ...img,
+      status: 'unreviewed',
+      comment: '',
+      lastVotedAt: null,
+      lastModifiedBy: null,
+    }));
+
+    const updated = db.updateProject(project.id, {
+      images: resetImages,
+      status: 'uploaded',
+      submittedAt: null,
+      submissionNotes: '',
+      resetAt,
+    });
+
+    console.log(`[Cloud] Reset all selections for project "${project.title}" (${token})`);
+    res.json({ success: true, project: updated });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * Endpoint on cloud to unlock/reopen a submitted project
+ * POST /api/cloud/project/:token/reopen
+ */
+router.post('/project/:token/reopen', (req, res) => {
+  try {
+    const { token } = req.params;
+    const project = db.getProjectByToken(token);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Project not found' });
+    }
+
+    const updated = db.updateProject(project.id, {
+      status: 'uploaded',
+      submittedAt: null,
+    });
+
+    console.log(`[Cloud] Reopened project "${project.title}" (${token}) for re-verification`);
+    res.json({ success: true, project: updated });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

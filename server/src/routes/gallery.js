@@ -24,6 +24,7 @@ router.get('/:token', (req, res) => {
       notes: project.notes,
       token: project.token,
       status: project.status,
+      resetAt: project.resetAt || null,
       submittedAt: project.submittedAt,
       submissionNotes: project.submissionNotes,
       stats: project.stats,
@@ -131,6 +132,45 @@ router.post('/:token/submit', (req, res) => {
     res.json({
       success: true,
       message: 'Selections submitted successfully!',
+      project: updated,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// POST /api/gallery/:token/reopen (Allows client to re-verify or adjust selections after submission)
+router.post('/:token/reopen', (req, res) => {
+  try {
+    const { token } = req.params;
+    const project = db.getProjectByToken(token);
+    if (!project) {
+      return res.status(404).json({ success: false, error: 'Gallery not found' });
+    }
+
+    const updated = db.updateProject(project.id, {
+      status: 'uploaded',
+      submittedAt: null,
+    });
+
+    const broadcastPayload = {
+      type: 'PROJECT_REOPENED',
+      projectId: project.id,
+      token: project.token,
+      status: 'uploaded',
+      stats: updated.stats,
+    };
+
+    socketHub.broadcastToRoom(`gallery:${token}`, broadcastPayload);
+    socketHub.broadcastToRoom(`project:${project.id}`, broadcastPayload);
+    socketHub.broadcastAll({
+      type: 'PROJECT_UPDATED',
+      project: updated,
+    });
+
+    res.json({
+      success: true,
+      message: 'Gallery unlocked for re-verification',
       project: updated,
     });
   } catch (err) {
