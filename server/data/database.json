@@ -34511,9 +34511,9 @@
       "notes": "",
       "token": "gallery_lhmqll83g1xfujvx",
       "aliases": [
+        "gallery_supriya_wedding",
         "supriya",
         "supriya_wedding",
-        "gallery_supriya_wedding",
         "gallery_lhmqll83g1xfujvx",
         "proj_supriya_wedding"
       ],
@@ -34528,11 +34528,13 @@
           "proxySize": 254882,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1bRZ5br8rnc5rE3M_43R9uNXbAdyFAexX",
           "gdriveViewUrl": "https://drive.google.com/file/d/1bRZ5br8rnc5rE3M_43R9uNXbAdyFAexX/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastModifiedBy": "Client",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z"
         },
         {
           "id": "3617a6a2-f8d1-4fc3-920f-4636b57a70cc",
@@ -34543,11 +34545,13 @@
           "proxySize": 264768,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ciRfb234bdYz8xgwmrW6ux9l-MYumqg7",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ciRfb234bdYz8xgwmrW6ux9l-MYumqg7/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a79a133c-d648-4601-b7d4-0b0ff2a57c9e",
@@ -34558,11 +34562,13 @@
           "proxySize": 313564,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Ua229SvSciwD_f2njWwWIX95ygofU5Sm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Ua229SvSciwD_f2njWwWIX95ygofU5Sm/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f8cd9aa4-7059-4c2d-a9a1-4e7dd4cd0fa2",
@@ -34573,11 +34579,13 @@
           "proxySize": 320096,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1z5Wt_fwwZEkxBg5rZp3IkAMZs2dtq3hm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1z5Wt_fwwZEkxBg5rZp3IkAMZs2dtq3hm/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d0954040-f39d-4208-a628-52500326008f",
@@ -34588,11 +34596,13 @@
           "proxySize": 405366,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "15_HyIqYDOk9u17BC-GJDC1A8P8NrzpnW",
           "gdriveViewUrl": "https://drive.google.com/file/d/15_HyIqYDOk9u17BC-GJDC1A8P8NrzpnW/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a5e0689e-d0bb-4270-929a-9c865e57ecc2",
@@ -34603,11 +34613,13 @@
           "proxySize": 299360,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10Dz0-aLwmtLpbiMA1VrqlUuDMDNvRO11",
           "gdriveViewUrl": "https://drive.google.com/file/d/10Dz0-aLwmtLpbiMA1VrqlUuDMDNvRO11/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1e031774-41f2-49d4-b714-de8b636dca02",
@@ -34618,11 +34630,13 @@
           "proxySize": 344110,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1B9TLRkm4siQH8jYTdtyiiepboDmgYBgv",
           "gdriveViewUrl": "https://drive.google.com/file/d/1B9TLRkm4siQH8jYTdtyiiepboDmgYBgv/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "07a0c460-6e6a-4d86-b22a-adc8bec94ed1",
@@ -34637,7 +34651,9 @@
           "comment": "",
           "gdriveId": "1L5t0ohDIQ76-x9NM3ja_ZKfi7R5XkQla",
           "gdriveViewUrl": "https://drive.google.com/file/d/1L5t0ohDIQ76-x9NM3ja_ZKfi7R5XkQla/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:30:44.331Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ddc43f64-491e-4a84-830e-d8ea08ff7938",
@@ -34648,11 +34664,13 @@
           "proxySize": 263460,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1G-kUsYiNLw9lG-GOjDAJJn-KgxahjcGb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1G-kUsYiNLw9lG-GOjDAJJn-KgxahjcGb/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "eaff6893-361c-4112-81f0-51cda4f2a0b9",
@@ -34693,11 +34711,13 @@
           "proxySize": 347764,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1-j8p-RstwzNL5GFZ7OGo6oSB32M-6iK1",
           "gdriveViewUrl": "https://drive.google.com/file/d/1-j8p-RstwzNL5GFZ7OGo6oSB32M-6iK1/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8f6e80a2-8335-4709-8e3d-86d84d896677",
@@ -34708,11 +34728,13 @@
           "proxySize": 299500,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1k_cfvx3emWEEFwZjN_AJL1SqxTgtadnE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1k_cfvx3emWEEFwZjN_AJL1SqxTgtadnE/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "320e4754-2d72-47a3-996a-4f1b93873f58",
@@ -34723,11 +34745,13 @@
           "proxySize": 285836,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1w0DPQrU2BV1aRXFAgRenks_JwQldtlTE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1w0DPQrU2BV1aRXFAgRenks_JwQldtlTE/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "abdac8ff-164e-4e74-8863-c96bd949a093",
@@ -34753,11 +34777,13 @@
           "proxySize": 330930,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1k7d1qr3shVCrvB0LcgyO_CDMNZCHrHrt",
           "gdriveViewUrl": "https://drive.google.com/file/d/1k7d1qr3shVCrvB0LcgyO_CDMNZCHrHrt/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fe15afa7-db75-4c1c-ab0d-26d2901ee1c3",
@@ -34768,11 +34794,13 @@
           "proxySize": 331552,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1y4QV9hlcE7A2KmXkKKo2VyA8HbIeG1_O",
           "gdriveViewUrl": "https://drive.google.com/file/d/1y4QV9hlcE7A2KmXkKKo2VyA8HbIeG1_O/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fbaf8e2e-109c-4bc7-8f6e-2a04193ad22c",
@@ -34798,11 +34826,13 @@
           "proxySize": 310750,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "163WwbH6LytJgCJm8YDlytbN26esl7VV-",
           "gdriveViewUrl": "https://drive.google.com/file/d/163WwbH6LytJgCJm8YDlytbN26esl7VV-/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "dcf92a9e-54b8-4a14-9226-2b8db2c968f9",
@@ -34828,11 +34858,13 @@
           "proxySize": 313906,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "16MHi94Ld2oFJ6EySIqVhQKIfBami8NTN",
           "gdriveViewUrl": "https://drive.google.com/file/d/16MHi94Ld2oFJ6EySIqVhQKIfBami8NTN/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "72bea31b-e21c-4e5e-8cf9-898005a64744",
@@ -34858,11 +34890,13 @@
           "proxySize": 288152,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1-XBcIlAVDKPlR3n0nZ3IdUsi1z4OMg1v",
           "gdriveViewUrl": "https://drive.google.com/file/d/1-XBcIlAVDKPlR3n0nZ3IdUsi1z4OMg1v/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "81c837a2-96a8-4c98-b8d7-c1b25ce3c3e8",
@@ -34873,11 +34907,13 @@
           "proxySize": 224040,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1949D4njiE5ngzJR2idTzfSC5kS6RIPT9",
           "gdriveViewUrl": "https://drive.google.com/file/d/1949D4njiE5ngzJR2idTzfSC5kS6RIPT9/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ec70f2ad-2225-4aae-9356-1c9d4e478f26",
@@ -34888,11 +34924,13 @@
           "proxySize": 233520,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ZwMrkSk5P7NHMKsMirLm-q5lo1IpU2FY",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ZwMrkSk5P7NHMKsMirLm-q5lo1IpU2FY/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "87f5e4b8-545a-4287-a7ef-922010654a67",
@@ -34903,11 +34941,13 @@
           "proxySize": 295840,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1BhUmXXiBjqW7kpAXPC8FgyDz4sYJfC80",
           "gdriveViewUrl": "https://drive.google.com/file/d/1BhUmXXiBjqW7kpAXPC8FgyDz4sYJfC80/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6ff0b398-bc9b-4c65-a7b1-57e9aa56ca21",
@@ -34963,11 +35003,13 @@
           "proxySize": 86384,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "17ihzD4LJsNL8REZ1DL_eRFcT8fZzvCLj",
           "gdriveViewUrl": "https://drive.google.com/file/d/17ihzD4LJsNL8REZ1DL_eRFcT8fZzvCLj/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "85c54a8f-e0a9-4c18-816d-9ccdf8ae773c",
@@ -35008,11 +35050,13 @@
           "proxySize": 314876,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1J0sh_HFAjCYTqIpI7uaXUIQeFQmMdEqD",
           "gdriveViewUrl": "https://drive.google.com/file/d/1J0sh_HFAjCYTqIpI7uaXUIQeFQmMdEqD/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T06:11:12.442Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a427a7f6-7a68-44c0-9cee-6d561bc6959a",
@@ -35143,11 +35187,13 @@
           "proxySize": 248470,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "17KMvvwxRftyemL4l0umead7w9nr1vCDg",
           "gdriveViewUrl": "https://drive.google.com/file/d/17KMvvwxRftyemL4l0umead7w9nr1vCDg/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8d3dba8d-4218-4ab8-97c4-275465d7091d",
@@ -35158,11 +35204,13 @@
           "proxySize": 359258,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "18tw52bNTp8ZfMuiObVx5kFhugAmwq2UO",
           "gdriveViewUrl": "https://drive.google.com/file/d/18tw52bNTp8ZfMuiObVx5kFhugAmwq2UO/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "3f5d6acc-cfaf-4b9f-a73e-9731398fc9e1",
@@ -35188,11 +35236,13 @@
           "proxySize": 340014,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ubDkw4hXvwOpl2h2NclBzvhTERZ5SMTP",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ubDkw4hXvwOpl2h2NclBzvhTERZ5SMTP/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e5922c74-d9a1-4105-9426-a0867773cd11",
@@ -35203,11 +35253,13 @@
           "proxySize": 341396,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "15k4rwy2tomOZb4yRD3CkIoaPuqMTqJBV",
           "gdriveViewUrl": "https://drive.google.com/file/d/15k4rwy2tomOZb4yRD3CkIoaPuqMTqJBV/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6839d9d7-4e52-4c78-bebf-755f3eaf083d",
@@ -35218,11 +35270,13 @@
           "proxySize": 336496,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1XJXKnqvmaUFEIVraQEDHqCQM8q4n0ZbL",
           "gdriveViewUrl": "https://drive.google.com/file/d/1XJXKnqvmaUFEIVraQEDHqCQM8q4n0ZbL/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "44aab4f0-f531-490b-9ac6-2d758dcba475",
@@ -35233,11 +35287,13 @@
           "proxySize": 280270,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "16LERtLoWkagYuWZSZ-rWEPH9xTxLcc7Q",
           "gdriveViewUrl": "https://drive.google.com/file/d/16LERtLoWkagYuWZSZ-rWEPH9xTxLcc7Q/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1cfa0e29-2c34-484f-91a5-e3d145bd3eb5",
@@ -35248,11 +35304,13 @@
           "proxySize": 272846,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1Y5rwaEm57K2dA2omhZXVY8AvLurcJe7c",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Y5rwaEm57K2dA2omhZXVY8AvLurcJe7c/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "145950a4-88cc-485f-a6e6-67b0d3c37473",
@@ -35278,11 +35336,13 @@
           "proxySize": 270712,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1OuPyzYgSVzbjaSfqi1nIU9nknQaK9a_0",
           "gdriveViewUrl": "https://drive.google.com/file/d/1OuPyzYgSVzbjaSfqi1nIU9nknQaK9a_0/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0ec763fc-cd73-4770-a131-d9674acb7949",
@@ -35503,11 +35563,13 @@
           "proxySize": 314220,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1u_Hr74R5IkE_RGQ3reXHmt68I8cTvlll",
           "gdriveViewUrl": "https://drive.google.com/file/d/1u_Hr74R5IkE_RGQ3reXHmt68I8cTvlll/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9b19d56a-5d47-41ee-931e-32349a1093d2",
@@ -35593,11 +35655,13 @@
           "proxySize": 270912,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ptDhoX14MKVmFEK8Bs94_7eyIkbqrq8Y",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ptDhoX14MKVmFEK8Bs94_7eyIkbqrq8Y/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "cc34c56a-cbe5-4e0a-b3d5-ad050527d72e",
@@ -35623,11 +35687,13 @@
           "proxySize": 361700,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11PanVRYXvj8caZsqz0wwleIL7GS7fdT1",
           "gdriveViewUrl": "https://drive.google.com/file/d/11PanVRYXvj8caZsqz0wwleIL7GS7fdT1/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "57a9bc85-699b-486a-874b-f517f5c08b20",
@@ -35668,11 +35734,13 @@
           "proxySize": 286918,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1mIAecxZT9M6OoodvGrRs2EOYI6_Xm85-",
           "gdriveViewUrl": "https://drive.google.com/file/d/1mIAecxZT9M6OoodvGrRs2EOYI6_Xm85-/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c4f0858b-7de0-4bd8-bd73-1183fdbc5fab",
@@ -35728,11 +35796,13 @@
           "proxySize": 253730,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1gnVEL1R6FB3h1SnVztuv9irtebLVC7Uo",
           "gdriveViewUrl": "https://drive.google.com/file/d/1gnVEL1R6FB3h1SnVztuv9irtebLVC7Uo/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "eddea285-97e3-42be-b501-0f210c5ccda2",
@@ -35923,11 +35993,13 @@
           "proxySize": 255324,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1pzV2_E799agHUG9zMvRx8kCYa4P55PEn",
           "gdriveViewUrl": "https://drive.google.com/file/d/1pzV2_E799agHUG9zMvRx8kCYa4P55PEn/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8ed649e5-f8b5-4622-82cc-268bf50c0333",
@@ -35938,11 +36010,13 @@
           "proxySize": 244162,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1TEMZVgK63v91u0t-lGQL1Wpx5nkGHyFj",
           "gdriveViewUrl": "https://drive.google.com/file/d/1TEMZVgK63v91u0t-lGQL1Wpx5nkGHyFj/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "b5f4970d-0913-4680-b3eb-a724ab98386a",
@@ -35953,11 +36027,13 @@
           "proxySize": 247306,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1yZdWsb9qc2ldA0dBHqGKiuus6O1sTndQ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1yZdWsb9qc2ldA0dBHqGKiuus6O1sTndQ/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "38520ce7-45cc-46f4-a4ab-73f27edcbc95",
@@ -35998,11 +36074,13 @@
           "proxySize": 309734,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ITuMUECrEDXBsGhWUcA8Tqfc8JUq_-My",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ITuMUECrEDXBsGhWUcA8Tqfc8JUq_-My/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "20e1f329-d81c-47cb-841d-1869094933d1",
@@ -36073,11 +36151,13 @@
           "proxySize": 322116,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1wRno2bgjgRGUvRQNwL5M472m73ZNkzSc",
           "gdriveViewUrl": "https://drive.google.com/file/d/1wRno2bgjgRGUvRQNwL5M472m73ZNkzSc/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9f73589e-3aea-4a89-a472-704dfce93e1d",
@@ -36103,11 +36183,13 @@
           "proxySize": 196484,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "16YOjL8_67YswuU8_DQkYkb_IIuGf7Jzv",
           "gdriveViewUrl": "https://drive.google.com/file/d/16YOjL8_67YswuU8_DQkYkb_IIuGf7Jzv/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5d9d3c12-8de8-40e8-b29f-d514be5a39d8",
@@ -36148,11 +36230,13 @@
           "proxySize": 246908,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1nD-YmgJUeX1BGOrrS3szy5vt-l9Z4DnY",
           "gdriveViewUrl": "https://drive.google.com/file/d/1nD-YmgJUeX1BGOrrS3szy5vt-l9Z4DnY/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "dec1c3dc-9030-4e1c-96c4-d620c8bb66dc",
@@ -36163,11 +36247,13 @@
           "proxySize": 182782,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1iXGIzVjwbyogZL1vOM3sz2WvFXIKDaIz",
           "gdriveViewUrl": "https://drive.google.com/file/d/1iXGIzVjwbyogZL1vOM3sz2WvFXIKDaIz/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1b4019cc-edad-4e38-8bea-c24afdb8e72e",
@@ -36343,11 +36429,13 @@
           "proxySize": 124886,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1vQq15vR6ZDSUEUx-d6O7CAqG3z2e8CLF",
           "gdriveViewUrl": "https://drive.google.com/file/d/1vQq15vR6ZDSUEUx-d6O7CAqG3z2e8CLF/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "645d4735-0b80-4e5f-8f04-9e75ecb1eb96",
@@ -36373,11 +36461,13 @@
           "proxySize": 151564,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1dx26RkloqeCSQS0AihPMteEDAH5KD-ie",
           "gdriveViewUrl": "https://drive.google.com/file/d/1dx26RkloqeCSQS0AihPMteEDAH5KD-ie/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "12a6a20d-ad47-41f1-8355-6ae31af8f788",
@@ -36433,11 +36523,13 @@
           "proxySize": 171352,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1cjaOjTipAmpHYC5bwm4qgpGWzIbfLVXD",
           "gdriveViewUrl": "https://drive.google.com/file/d/1cjaOjTipAmpHYC5bwm4qgpGWzIbfLVXD/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a727cd59-4d99-4e36-ba0b-aa165d1b2a77",
@@ -36463,11 +36555,13 @@
           "proxySize": 305832,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1zHQVxYoreFdArVGpkoatOFoS3x6lwYiZ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1zHQVxYoreFdArVGpkoatOFoS3x6lwYiZ/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "aae7a347-0ed0-4b31-b191-a4d13fca6dbf",
@@ -36508,11 +36602,13 @@
           "proxySize": 299284,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1e6z8AOAUxn68vNWjjwFr29rJxOGN5CDg",
           "gdriveViewUrl": "https://drive.google.com/file/d/1e6z8AOAUxn68vNWjjwFr29rJxOGN5CDg/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "91c1151d-54d0-4416-893c-607830bb38f3",
@@ -36523,11 +36619,13 @@
           "proxySize": 294740,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10oN8B2_-dO7DKsZ01JdQYKfVrF5QUd4-",
           "gdriveViewUrl": "https://drive.google.com/file/d/10oN8B2_-dO7DKsZ01JdQYKfVrF5QUd4-/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c8bc3c49-18be-46b9-9254-cc6309e7644f",
@@ -36538,11 +36636,13 @@
           "proxySize": 293702,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1CiE9wmJt9Rc0xrMgcvGg7COr9mcRwXbO",
           "gdriveViewUrl": "https://drive.google.com/file/d/1CiE9wmJt9Rc0xrMgcvGg7COr9mcRwXbO/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "54380121-4c11-465e-959a-312b65e45c6c",
@@ -36553,11 +36653,13 @@
           "proxySize": 290200,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1mhRF0et1gBBl8Yd54BaOATKOgH8NtI_I",
           "gdriveViewUrl": "https://drive.google.com/file/d/1mhRF0et1gBBl8Yd54BaOATKOgH8NtI_I/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "97d36f92-5284-44ff-b4fb-d14e06a260e0",
@@ -36583,11 +36685,13 @@
           "proxySize": 293282,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10u0z55YuDLrERDtcieCQc67-dwt3C9Ms",
           "gdriveViewUrl": "https://drive.google.com/file/d/10u0z55YuDLrERDtcieCQc67-dwt3C9Ms/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "bdadb70a-32a8-4e57-88d8-b6e5cd1eb587",
@@ -36598,11 +36702,13 @@
           "proxySize": 278746,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "145NfGz0OXO7t2MMcM6JagbLNIgJh-LJE",
           "gdriveViewUrl": "https://drive.google.com/file/d/145NfGz0OXO7t2MMcM6JagbLNIgJh-LJE/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "2df05345-23b8-4064-8548-025416314e51",
@@ -36613,11 +36719,13 @@
           "proxySize": 279002,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "17i_rk6CYbcRTFNLeB0q8JlDojVfUYyv9",
           "gdriveViewUrl": "https://drive.google.com/file/d/17i_rk6CYbcRTFNLeB0q8JlDojVfUYyv9/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "dde78268-b6b2-49c0-b4a2-caca7cea1c9b",
@@ -36658,11 +36766,13 @@
           "proxySize": 271662,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MW94rvIS71MTytVp_4ddHf0qD45LZcig",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MW94rvIS71MTytVp_4ddHf0qD45LZcig/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "7ec41b64-c824-4b9d-9b3b-861dada26058",
@@ -36673,11 +36783,13 @@
           "proxySize": 268120,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1DmUYaxEXv0o3H5MqxY7Vf66FOx5Ut-Ct",
           "gdriveViewUrl": "https://drive.google.com/file/d/1DmUYaxEXv0o3H5MqxY7Vf66FOx5Ut-Ct/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "dbc49a1d-7ed5-4444-9e53-98b22d87a52b",
@@ -36688,11 +36800,13 @@
           "proxySize": 288960,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "189mg62k9NCNzlncLj8WUf0SItd25BARK",
           "gdriveViewUrl": "https://drive.google.com/file/d/189mg62k9NCNzlncLj8WUf0SItd25BARK/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "93495847-3c8d-4e50-87db-6328e4e44c7d",
@@ -36703,11 +36817,13 @@
           "proxySize": 291352,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10wCmEdGaK6ravic1L7QAkoRHKIu3lC-x",
           "gdriveViewUrl": "https://drive.google.com/file/d/10wCmEdGaK6ravic1L7QAkoRHKIu3lC-x/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "539e70e3-cac3-4421-8921-2dc27432f2bb",
@@ -36733,11 +36849,13 @@
           "proxySize": 276584,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1tKYdPo1SzJhUO_qD2A7TG0HeRKyI7nVz",
           "gdriveViewUrl": "https://drive.google.com/file/d/1tKYdPo1SzJhUO_qD2A7TG0HeRKyI7nVz/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c4f97c14-25df-4d4b-b6bc-4f8599020763",
@@ -36763,11 +36881,13 @@
           "proxySize": 172322,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Cw6Xpak2l2U9dooNA0r7az0QOovKC_ss",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Cw6Xpak2l2U9dooNA0r7az0QOovKC_ss/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d887971e-564b-49f7-9808-7eb8cbf2241b",
@@ -36838,11 +36958,13 @@
           "proxySize": 192526,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1culUURUs6-VGmI6OKocmlSHU8Yc-bgoz",
           "gdriveViewUrl": "https://drive.google.com/file/d/1culUURUs6-VGmI6OKocmlSHU8Yc-bgoz/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c505b037-3b68-4bba-a4bc-9b97d9220351",
@@ -36853,11 +36975,13 @@
           "proxySize": 196064,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1AC_EmTJgPwMnHU3dwVuSOZvIKy8Sb4xp",
           "gdriveViewUrl": "https://drive.google.com/file/d/1AC_EmTJgPwMnHU3dwVuSOZvIKy8Sb4xp/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c22817d4-06b2-4f28-8c0e-f3826b1470ab",
@@ -36913,11 +37037,13 @@
           "proxySize": 201928,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1cV4xwG2S43vHrttfnreHvBobATHPKgPE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1cV4xwG2S43vHrttfnreHvBobATHPKgPE/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "80d055de-754b-4890-b559-079c9c5c177e",
@@ -36928,11 +37054,13 @@
           "proxySize": 250608,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1z7Bv0f2w3fyf_KrgYwdNxU_3pMiUwdZb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1z7Bv0f2w3fyf_KrgYwdNxU_3pMiUwdZb/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e7c56326-df4c-4d69-aecf-c8dc8b127ffb",
@@ -36988,11 +37116,13 @@
           "proxySize": 309930,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "19es1Ti_uOMNfNRK9wb7APHxkPmbdGtvX",
           "gdriveViewUrl": "https://drive.google.com/file/d/19es1Ti_uOMNfNRK9wb7APHxkPmbdGtvX/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "38856cef-e663-4e67-927f-bebbb178fbf8",
@@ -37033,11 +37163,13 @@
           "proxySize": 182192,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1N4RFQeGvv41npqve19mXlXxzYZuIZFqX",
           "gdriveViewUrl": "https://drive.google.com/file/d/1N4RFQeGvv41npqve19mXlXxzYZuIZFqX/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fcc6da1f-2e3b-47af-b220-de50f32a7d4a",
@@ -37108,11 +37240,13 @@
           "proxySize": 311462,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1vx1e8WZOo6HuzCFqu4e7oJe6pMiki-8R",
           "gdriveViewUrl": "https://drive.google.com/file/d/1vx1e8WZOo6HuzCFqu4e7oJe6pMiki-8R/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "10c091f1-109f-4cfa-a684-5d01fb90b01b",
@@ -37123,11 +37257,13 @@
           "proxySize": 315892,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1QO_IPj_lbxa32x7p69GeEyqeN9KQwSwW",
           "gdriveViewUrl": "https://drive.google.com/file/d/1QO_IPj_lbxa32x7p69GeEyqeN9KQwSwW/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d79c5a04-62ee-4aff-8fbc-a9b9c15bfe24",
@@ -37168,11 +37304,13 @@
           "proxySize": 299824,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Pj9-dQyvTN00u3nyTzXhLqbKKayuyut8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Pj9-dQyvTN00u3nyTzXhLqbKKayuyut8/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "cdc0dd5e-5e49-48de-86ec-b853e623ab74",
@@ -37198,11 +37336,13 @@
           "proxySize": 344526,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fbq9XwT88fIMF_blbMQNYdAkQ9mxSTOw",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fbq9XwT88fIMF_blbMQNYdAkQ9mxSTOw/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d56d1b3e-edfa-4289-b8a9-bef5c6167586",
@@ -37228,11 +37368,13 @@
           "proxySize": 361252,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11T7ro-LARDR_FqvgAhW_yDeEROAecoYH",
           "gdriveViewUrl": "https://drive.google.com/file/d/11T7ro-LARDR_FqvgAhW_yDeEROAecoYH/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "595ed0c1-8c1e-416e-8bfa-42847ad71424",
@@ -37273,11 +37415,13 @@
           "proxySize": 316682,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1JsU8SF-42vDo6sdevEX-RwB5-xnibVQQ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1JsU8SF-42vDo6sdevEX-RwB5-xnibVQQ/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "bff925fe-adff-4206-9767-cc321313b5cd",
@@ -37288,11 +37432,13 @@
           "proxySize": 382692,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1GuYMvU2I4Wm1O_rDaPFhzoDEIVS48KuL",
           "gdriveViewUrl": "https://drive.google.com/file/d/1GuYMvU2I4Wm1O_rDaPFhzoDEIVS48KuL/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fed3a3b1-22f5-48aa-9a16-c1e8beb86328",
@@ -37303,11 +37449,13 @@
           "proxySize": 410304,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1A5KHfsk49Z74vP3tWdYw4ONkfCKmy-Vx",
           "gdriveViewUrl": "https://drive.google.com/file/d/1A5KHfsk49Z74vP3tWdYw4ONkfCKmy-Vx/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "341b12f6-31c3-495c-9482-9f6a97836c16",
@@ -37318,11 +37466,13 @@
           "proxySize": 526476,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1zQ-M2OPetC4-a-9piLa7gr0W-r7yfbNR",
           "gdriveViewUrl": "https://drive.google.com/file/d/1zQ-M2OPetC4-a-9piLa7gr0W-r7yfbNR/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "643f1f14-7d3b-4ef0-86c1-10868bf162ab",
@@ -37348,11 +37498,13 @@
           "proxySize": 525984,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "16P9DyQBSixosazuHEzC2yF_TfTRbNH4y",
           "gdriveViewUrl": "https://drive.google.com/file/d/16P9DyQBSixosazuHEzC2yF_TfTRbNH4y/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0e0ed4ab-278a-459e-94c9-c27a0c723ea2",
@@ -37453,11 +37605,13 @@
           "proxySize": 427614,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "14C912pUirZqwx08TmyH9h8MlS6b3B_is",
           "gdriveViewUrl": "https://drive.google.com/file/d/14C912pUirZqwx08TmyH9h8MlS6b3B_is/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "830f88b8-244c-445a-96c9-4b1df77ec4fe",
@@ -37498,11 +37652,13 @@
           "proxySize": 201516,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1mvzOlu_DxiPn0YYeYUDFGJo6Ou6PbyIW",
           "gdriveViewUrl": "https://drive.google.com/file/d/1mvzOlu_DxiPn0YYeYUDFGJo6Ou6PbyIW/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fcab1719-254a-4e0d-85f3-016fe0700016",
@@ -37528,11 +37684,13 @@
           "proxySize": 196620,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1A2kufGvVKXg5AV-ZscrMfWWuUaU_uIGB",
           "gdriveViewUrl": "https://drive.google.com/file/d/1A2kufGvVKXg5AV-ZscrMfWWuUaU_uIGB/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "efa361bc-4437-4d87-b721-0166d1053708",
@@ -37588,11 +37746,13 @@
           "proxySize": 200800,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1I_zQI0LciV1qlEqc7bqqWuqUtm2bQo0o",
           "gdriveViewUrl": "https://drive.google.com/file/d/1I_zQI0LciV1qlEqc7bqqWuqUtm2bQo0o/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "18d636d2-404d-46bd-af8a-f26efae8bcfd",
@@ -37618,11 +37778,13 @@
           "proxySize": 240088,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MRo4_1R4Cu3AWWlkUltky0EVkOq8rf5G",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MRo4_1R4Cu3AWWlkUltky0EVkOq8rf5G/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "be9d8ba4-27b7-4702-944f-5026fac2f3e1",
@@ -37693,11 +37855,13 @@
           "proxySize": 238256,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Tl_Lewv3iFkDAL3EYsqn_bAGFciHsf59",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Tl_Lewv3iFkDAL3EYsqn_bAGFciHsf59/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a788e0b0-dca4-406d-a11e-44919ba77ceb",
@@ -37738,11 +37902,13 @@
           "proxySize": 210948,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1GStwv9blS757FLCtODwz9-3zzLd0E59v",
           "gdriveViewUrl": "https://drive.google.com/file/d/1GStwv9blS757FLCtODwz9-3zzLd0E59v/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "296f2946-d079-4480-8bf7-c68682e9b453",
@@ -37768,11 +37934,13 @@
           "proxySize": 211660,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1F6AflF7euf7kuFSQqYNCZQh0evgLeDoh",
           "gdriveViewUrl": "https://drive.google.com/file/d/1F6AflF7euf7kuFSQqYNCZQh0evgLeDoh/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "722e9128-c6f5-45b4-a032-e4a8ad3e1fd9",
@@ -37783,11 +37951,13 @@
           "proxySize": 213726,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1PDcF82OXsjSKZNlOCg3niHrPLjQMEXMo",
           "gdriveViewUrl": "https://drive.google.com/file/d/1PDcF82OXsjSKZNlOCg3niHrPLjQMEXMo/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c12f42b7-11c4-4424-baa4-fe0ae0fb9c4a",
@@ -37813,11 +37983,13 @@
           "proxySize": 145404,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1YxACwDpIm5k71l2Ln87n19TAgK8hUdIw",
           "gdriveViewUrl": "https://drive.google.com/file/d/1YxACwDpIm5k71l2Ln87n19TAgK8hUdIw/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "14fad056-17ae-417d-9860-f39efbdf3ef7",
@@ -37843,11 +38015,13 @@
           "proxySize": 183858,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1EdeuKYPoCie5p1jT7T4yTuCCPS-kJw15",
           "gdriveViewUrl": "https://drive.google.com/file/d/1EdeuKYPoCie5p1jT7T4yTuCCPS-kJw15/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "cd986aac-b3c8-4baf-959e-1d9e6eebbc9a",
@@ -37978,11 +38152,13 @@
           "proxySize": 175294,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "145-q1cZid8Rl4LBfzpXGX8lPWIIdEU-_",
           "gdriveViewUrl": "https://drive.google.com/file/d/145-q1cZid8Rl4LBfzpXGX8lPWIIdEU-_/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d3304421-dafe-41fa-8111-c031f066799f",
@@ -38473,11 +38649,13 @@
           "proxySize": 178940,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10H_DcObyMUa9vaLZQUCtfGleVolqulu1",
           "gdriveViewUrl": "https://drive.google.com/file/d/10H_DcObyMUa9vaLZQUCtfGleVolqulu1/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a26b932c-a08f-4240-b20b-61899bc3d8c0",
@@ -38638,11 +38816,13 @@
           "proxySize": 541398,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Z-wS_Z4t6w5AeVYTZa__ncdT-lFPY6OV",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Z-wS_Z4t6w5AeVYTZa__ncdT-lFPY6OV/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c5e1a4c6-8d03-4c1b-ac99-a3e4e31045fe",
@@ -38833,11 +39013,13 @@
           "proxySize": 109836,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1NrR_8uXqQya-AmBzeznK68CGNu7n12Cb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1NrR_8uXqQya-AmBzeznK68CGNu7n12Cb/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "30320138-d5ed-48c7-8e61-aa22e1b82862",
@@ -38953,11 +39135,13 @@
           "proxySize": 254602,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1qMURxZZpjKK1_kyqYBks9Zr9Duna8KXp",
           "gdriveViewUrl": "https://drive.google.com/file/d/1qMURxZZpjKK1_kyqYBks9Zr9Duna8KXp/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "22fd6a2d-fea4-40a7-a723-4f5ef9cd57a7",
@@ -39028,11 +39212,13 @@
           "proxySize": 248832,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1THXfak2Fsi0UZsjyLhch4JO4-vxbzolL",
           "gdriveViewUrl": "https://drive.google.com/file/d/1THXfak2Fsi0UZsjyLhch4JO4-vxbzolL/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "68a749ef-ce53-4719-9847-480883096317",
@@ -39073,11 +39259,13 @@
           "proxySize": 289826,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1nflyG9CI2DWLpyYrcZnOIxrgHrGtxfMT",
           "gdriveViewUrl": "https://drive.google.com/file/d/1nflyG9CI2DWLpyYrcZnOIxrgHrGtxfMT/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8dc12f22-5e3e-4a6c-a9f1-d2bf44102e07",
@@ -39178,11 +39366,13 @@
           "proxySize": 288424,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1g2lTDFMt2VP-tRojohcxRx-AI6IlRg52",
           "gdriveViewUrl": "https://drive.google.com/file/d/1g2lTDFMt2VP-tRojohcxRx-AI6IlRg52/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d25e9e6c-d176-427c-8811-7a771867a6a5",
@@ -39193,11 +39383,13 @@
           "proxySize": 246302,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1RJWxtxX3Yfwlkri9GnXUDg2PqV6xl_Zb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1RJWxtxX3Yfwlkri9GnXUDg2PqV6xl_Zb/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "7fec90ab-804a-4e39-bb88-c735ec786893",
@@ -39223,11 +39415,13 @@
           "proxySize": 254990,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1x8WP4SYQQnuBc0DTuZUTzs-UWxj5hTCU",
           "gdriveViewUrl": "https://drive.google.com/file/d/1x8WP4SYQQnuBc0DTuZUTzs-UWxj5hTCU/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T12:57:24.618Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "88e3f6cf-4be1-4543-941a-141e81eab754",
@@ -39238,11 +39432,13 @@
           "proxySize": 261690,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Ca1ftbQXSi46_Cd4b3uUMayQ3F4-W8EP",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Ca1ftbQXSi46_Cd4b3uUMayQ3F4-W8EP/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c9d85363-92e2-4c1a-95b6-bd405e848579",
@@ -39253,11 +39449,13 @@
           "proxySize": 258528,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "18jwA-oDsuJ4n4VEJcK__p6ZOChq6NoOm",
           "gdriveViewUrl": "https://drive.google.com/file/d/18jwA-oDsuJ4n4VEJcK__p6ZOChq6NoOm/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e4228bfe-3bdc-48f6-a7f4-3091a0a2fcea",
@@ -39358,11 +39556,13 @@
           "proxySize": 277976,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1DsNF_Aa0r1vuaEk7jHaNvxGBT-HfOeQ6",
           "gdriveViewUrl": "https://drive.google.com/file/d/1DsNF_Aa0r1vuaEk7jHaNvxGBT-HfOeQ6/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "259419a0-6ad6-462c-9ccf-e143975a05f9",
@@ -39433,11 +39633,13 @@
           "proxySize": 266072,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1nYdKCH1czLTBbf6zPFFTp8Ca1zU95e7t",
           "gdriveViewUrl": "https://drive.google.com/file/d/1nYdKCH1czLTBbf6zPFFTp8Ca1zU95e7t/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1cb0987c-05e8-43b1-815b-72d0d0ac76ba",
@@ -39478,11 +39680,13 @@
           "proxySize": 232004,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1JYe8c7bd1xr9zhICgUeLzejp-eHVqVed",
           "gdriveViewUrl": "https://drive.google.com/file/d/1JYe8c7bd1xr9zhICgUeLzejp-eHVqVed/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c18703e1-2f77-45b4-bc23-7c9702b30f9e",
@@ -39598,11 +39802,13 @@
           "proxySize": 317266,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1EY-6xt04szGjn8OEoO4bdyB5myu92Ql3",
           "gdriveViewUrl": "https://drive.google.com/file/d/1EY-6xt04szGjn8OEoO4bdyB5myu92Ql3/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6f5e0e97-5fe0-4358-89ee-7ace7c164f84",
@@ -39688,11 +39894,13 @@
           "proxySize": 332964,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1e-g_sNW91g7k55BieeiSDIzBjfgRJ66r",
           "gdriveViewUrl": "https://drive.google.com/file/d/1e-g_sNW91g7k55BieeiSDIzBjfgRJ66r/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c527fe78-7f06-4238-be45-22c06bc5ba68",
@@ -39703,11 +39911,13 @@
           "proxySize": 326582,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1QIVdvhvye94CMIiMAzX2I0biBPyF_2I8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1QIVdvhvye94CMIiMAzX2I0biBPyF_2I8/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d3137e58-bf16-4e77-8791-02825ad8f161",
@@ -39793,11 +40003,13 @@
           "proxySize": 396796,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1_EfXfdEDQcLMihlWxgDgPgRmT2isb64W",
           "gdriveViewUrl": "https://drive.google.com/file/d/1_EfXfdEDQcLMihlWxgDgPgRmT2isb64W/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "855b9e55-96c8-4501-84cb-0fc9bf03a22b",
@@ -39808,11 +40020,13 @@
           "proxySize": 387586,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1uMgpNcH7t-ltdBq-Su2ExQtTNmsBW-te",
           "gdriveViewUrl": "https://drive.google.com/file/d/1uMgpNcH7t-ltdBq-Su2ExQtTNmsBW-te/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5aaf0209-8eb7-45dc-a1fe-2fba900696fa",
@@ -39823,11 +40037,13 @@
           "proxySize": 289964,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1tVAqILNgxzsZNBffbqsZjs1IFih2rOB1",
           "gdriveViewUrl": "https://drive.google.com/file/d/1tVAqILNgxzsZNBffbqsZjs1IFih2rOB1/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9f16e76d-fe4a-480d-bb93-153ddecfd7b4",
@@ -39853,11 +40069,13 @@
           "proxySize": 349340,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Jf5K6BHhfeuTvv9VhnXbmfXAcvfwUMh7",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Jf5K6BHhfeuTvv9VhnXbmfXAcvfwUMh7/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "99bef567-8326-4a0a-9a6e-007fb2fc0bd9",
@@ -39988,11 +40206,13 @@
           "proxySize": 362226,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "102BXhbKAblRkgg621ofjFbxfSk7ScrKT",
           "gdriveViewUrl": "https://drive.google.com/file/d/102BXhbKAblRkgg621ofjFbxfSk7ScrKT/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "751f054c-8261-4f68-8014-b6f233f4879b",
@@ -40033,11 +40253,13 @@
           "proxySize": 369162,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1gLdShh8gv7eIjY-tTiMmbmnmjO57kbEL",
           "gdriveViewUrl": "https://drive.google.com/file/d/1gLdShh8gv7eIjY-tTiMmbmnmjO57kbEL/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e29db707-0acc-4c8d-b5d5-7c21e3345c9a",
@@ -40078,11 +40300,13 @@
           "proxySize": 284482,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1F9_jhfayYOI6fTwKBWTNUvpW3akWPnGe",
           "gdriveViewUrl": "https://drive.google.com/file/d/1F9_jhfayYOI6fTwKBWTNUvpW3akWPnGe/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9e76aaf0-2afa-478c-919f-e6244ddfa53c",
@@ -40093,11 +40317,13 @@
           "proxySize": 253344,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "17sPN1PBvfKtH9NkyWeLCA0a3pn5RyXQW",
           "gdriveViewUrl": "https://drive.google.com/file/d/17sPN1PBvfKtH9NkyWeLCA0a3pn5RyXQW/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "23c331ce-05fc-40a1-99c7-3b2ec881f5e5",
@@ -40123,11 +40349,13 @@
           "proxySize": 246300,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Uwau3VRXxZAxUDbNyc1bYO4wo71w4WcQ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Uwau3VRXxZAxUDbNyc1bYO4wo71w4WcQ/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0b1b06ab-0dab-4136-8214-54ef3a43e00c",
@@ -40153,11 +40381,13 @@
           "proxySize": 266572,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Z2AsEHxH3oYlL2Io6-A_eF__L20hVsmG",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Z2AsEHxH3oYlL2Io6-A_eF__L20hVsmG/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "680108e2-e0cb-4b79-868c-67c5d4db3871",
@@ -40198,11 +40428,13 @@
           "proxySize": 360404,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1heYMN4lJiF3Bwqjc7qzCj82_FBZCopEO",
           "gdriveViewUrl": "https://drive.google.com/file/d/1heYMN4lJiF3Bwqjc7qzCj82_FBZCopEO/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "cf2447f2-1feb-4e50-826e-b623bdf2899e",
@@ -40288,11 +40520,13 @@
           "proxySize": 252822,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "14tqczgKoasniA-YJTYcJixkB2w7BmVtB",
           "gdriveViewUrl": "https://drive.google.com/file/d/14tqczgKoasniA-YJTYcJixkB2w7BmVtB/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "76c79aa3-94f4-4ffd-a879-80d85c1da8fe",
@@ -40303,11 +40537,13 @@
           "proxySize": 238418,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1h2HOgnWcuU0LdS4ilGbZiePtoK2cVVd3",
           "gdriveViewUrl": "https://drive.google.com/file/d/1h2HOgnWcuU0LdS4ilGbZiePtoK2cVVd3/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "07361331-2751-479d-acca-afb0eb49afda",
@@ -40318,11 +40554,13 @@
           "proxySize": 236310,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1cm5cWDQbxQPOJ0ZwW-wIIMtFVXb6dEWe",
           "gdriveViewUrl": "https://drive.google.com/file/d/1cm5cWDQbxQPOJ0ZwW-wIIMtFVXb6dEWe/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "56db9978-1afd-4769-abd3-3abbbc4d7ac9",
@@ -40333,11 +40571,13 @@
           "proxySize": 230754,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1cQwyUrQbIRplWd21ppFYnU645mXEBT-v",
           "gdriveViewUrl": "https://drive.google.com/file/d/1cQwyUrQbIRplWd21ppFYnU645mXEBT-v/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "2bf4c682-0128-4199-bc5f-05344b5228df",
@@ -40483,11 +40723,13 @@
           "proxySize": 263612,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1_hChKtx9lUFm8KZfN9NMus1GcG8RBvrO",
           "gdriveViewUrl": "https://drive.google.com/file/d/1_hChKtx9lUFm8KZfN9NMus1GcG8RBvrO/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "7842817d-d90e-43f6-8de7-e7b1ace8973f",
@@ -40558,11 +40800,13 @@
           "proxySize": 289016,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1jF2QJcVcv15JNBWsITWwZvw7YApxnbun",
           "gdriveViewUrl": "https://drive.google.com/file/d/1jF2QJcVcv15JNBWsITWwZvw7YApxnbun/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "849b53ab-5fb9-43bc-ad58-f1d5a481bafe",
@@ -40588,11 +40832,13 @@
           "proxySize": 117824,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1yg3UGKct5NMJENOKbbhNlmdGjB5PJtDQ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1yg3UGKct5NMJENOKbbhNlmdGjB5PJtDQ/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "20987249-9872-435d-b799-1871220599a2",
@@ -40633,11 +40879,13 @@
           "proxySize": 101292,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ow_ZxbhBSQmr5U2gNo1-hAtUq9WUmKt0",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ow_ZxbhBSQmr5U2gNo1-hAtUq9WUmKt0/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f57b5a2d-4720-4470-ad51-d034a303e7f0",
@@ -40648,11 +40896,13 @@
           "proxySize": 267060,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "13dV_yGjFnRgeJK2cBXBAbznrAZ6S4X_p",
           "gdriveViewUrl": "https://drive.google.com/file/d/13dV_yGjFnRgeJK2cBXBAbznrAZ6S4X_p/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "85265b27-44d9-4ea2-a6a1-87c4db20b516",
@@ -40663,11 +40913,13 @@
           "proxySize": 235378,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1IMB4sU_jPcWzUE2yUC90hct0xgxdyxQm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1IMB4sU_jPcWzUE2yUC90hct0xgxdyxQm/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "00c88518-c3a2-499c-91fb-906847fb1182",
@@ -40723,11 +40975,13 @@
           "proxySize": 119936,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1M-L8Y1Lm8SrjuBd3lp072mtMeH4MPtU9",
           "gdriveViewUrl": "https://drive.google.com/file/d/1M-L8Y1Lm8SrjuBd3lp072mtMeH4MPtU9/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a7dabd01-005e-4bb3-9567-4bc4b809d932",
@@ -40783,11 +41037,13 @@
           "proxySize": 185298,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1lDDJrNsi0zSu5_E02dori6JQqs9nmJNp",
           "gdriveViewUrl": "https://drive.google.com/file/d/1lDDJrNsi0zSu5_E02dori6JQqs9nmJNp/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "61239823-2a12-4146-aa1e-7bd8e027503e",
@@ -40858,11 +41114,13 @@
           "proxySize": 270828,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1sDh4NEtn222U-poHyfri6qJhE8c-jU-e",
           "gdriveViewUrl": "https://drive.google.com/file/d/1sDh4NEtn222U-poHyfri6qJhE8c-jU-e/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f3ac06b8-3543-4e6c-b4af-77e22bb84eb9",
@@ -40978,11 +41236,13 @@
           "proxySize": 242070,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "12kBdr7nH-wXPSD4VlI1OyW3dPPd9aNcC",
           "gdriveViewUrl": "https://drive.google.com/file/d/12kBdr7nH-wXPSD4VlI1OyW3dPPd9aNcC/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c276a7bb-414d-4cda-b39c-95d0875a82ef",
@@ -41008,11 +41268,13 @@
           "proxySize": 252318,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1lzM0sacEvGRLmQUptMqzJQLlzcKrijxM",
           "gdriveViewUrl": "https://drive.google.com/file/d/1lzM0sacEvGRLmQUptMqzJQLlzcKrijxM/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4d1420b5-be56-48dd-8467-471e96ce8ae0",
@@ -41083,11 +41345,13 @@
           "proxySize": 230030,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ttu1AdBKnyU2UcTjFHM17uQE0K4vc5ol",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ttu1AdBKnyU2UcTjFHM17uQE0K4vc5ol/view?usp=drivesdk",
-          "subfolder": "Day 1"
+          "subfolder": "Day 1",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "38c7a0fb-5e10-48a9-957a-67499e65beb5",
@@ -41158,11 +41422,13 @@
           "proxySize": 174690,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1VcRUKjOyjTU9yYcEnY7-jZxJ4rGd4l5q",
           "gdriveViewUrl": "https://drive.google.com/file/d/1VcRUKjOyjTU9yYcEnY7-jZxJ4rGd4l5q/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "81ff0466-a19f-4447-9399-7007715f4f67",
@@ -41323,11 +41589,13 @@
           "proxySize": 291524,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1uRNtje7CXW8vw3U0vQic2edGPI6jIVA9",
           "gdriveViewUrl": "https://drive.google.com/file/d/1uRNtje7CXW8vw3U0vQic2edGPI6jIVA9/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c7acd45d-9815-49dd-9e40-caf1f7a54514",
@@ -41338,11 +41606,13 @@
           "proxySize": 232276,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1In_M5q-5plFsX7kEt0YnjBLDdMwO_Bxa",
           "gdriveViewUrl": "https://drive.google.com/file/d/1In_M5q-5plFsX7kEt0YnjBLDdMwO_Bxa/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "94cde503-bc64-45fb-b4bb-8acc594ce62e",
@@ -41398,11 +41668,13 @@
           "proxySize": 127312,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "19ndqtDIgBqc7r8Rw2qZZ_7kgKCM7v_Pq",
           "gdriveViewUrl": "https://drive.google.com/file/d/19ndqtDIgBqc7r8Rw2qZZ_7kgKCM7v_Pq/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f7d5e6b8-ee85-421f-9e67-3cf1637f7144",
@@ -41458,11 +41730,13 @@
           "proxySize": 179350,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1zgnPnWoMjeGafZzJAzz1AhvRjKRM-mmt",
           "gdriveViewUrl": "https://drive.google.com/file/d/1zgnPnWoMjeGafZzJAzz1AhvRjKRM-mmt/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "28831baa-e293-4a5c-ad0b-a78c04775070",
@@ -41713,11 +41987,13 @@
           "proxySize": 230320,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Ea6CDZBqvS1t-tX33gDmt6fjRQ0fUljq",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Ea6CDZBqvS1t-tX33gDmt6fjRQ0fUljq/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "56192796-435e-48f9-8ccc-14d3c269d41b",
@@ -41728,11 +42004,13 @@
           "proxySize": 249794,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1HfWekIIa_a4kVpol8tvJ6sQ-YjeMOEkp",
           "gdriveViewUrl": "https://drive.google.com/file/d/1HfWekIIa_a4kVpol8tvJ6sQ-YjeMOEkp/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "908bfa00-4bde-4bc8-aa70-86567b0a78c3",
@@ -41743,11 +42021,13 @@
           "proxySize": 290500,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1hdBe7Q96Cl8FAzGkWh82dtxEWPOwyv-L",
           "gdriveViewUrl": "https://drive.google.com/file/d/1hdBe7Q96Cl8FAzGkWh82dtxEWPOwyv-L/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5491d360-b57b-45ad-87ab-74fa8520a51b",
@@ -41773,11 +42053,13 @@
           "proxySize": 255892,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1bgPc1N80ol09pg6BY66SCWIYqPp0zx12",
           "gdriveViewUrl": "https://drive.google.com/file/d/1bgPc1N80ol09pg6BY66SCWIYqPp0zx12/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5386e8b8-567e-48df-b5cc-17ea368e6e2c",
@@ -41803,11 +42085,13 @@
           "proxySize": 302550,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1FwjtIn14AjqYIl-nfEmRmMG8g2O_Vho-",
           "gdriveViewUrl": "https://drive.google.com/file/d/1FwjtIn14AjqYIl-nfEmRmMG8g2O_Vho-/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c65e2637-76ad-4a23-800c-86cee126bb81",
@@ -41818,11 +42102,13 @@
           "proxySize": 272816,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1jCRMEfePwLp44Ypdmnesg05puviVByCa",
           "gdriveViewUrl": "https://drive.google.com/file/d/1jCRMEfePwLp44Ypdmnesg05puviVByCa/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "23c15312-a241-4966-a53c-9b64ea27e262",
@@ -41863,11 +42149,13 @@
           "proxySize": 298488,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1R_qKoeCfyZsQ23QaCUe9JS7rRSBvQKxE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1R_qKoeCfyZsQ23QaCUe9JS7rRSBvQKxE/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c261c791-1dce-4cbc-9862-52223f88ca1b",
@@ -41878,11 +42166,13 @@
           "proxySize": 288044,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1G9VUCDMYUt1O61or0WR1ORKeBga-blnH",
           "gdriveViewUrl": "https://drive.google.com/file/d/1G9VUCDMYUt1O61or0WR1ORKeBga-blnH/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "7d46307c-1019-48e6-ab22-d83f71eb4b47",
@@ -41938,11 +42228,13 @@
           "proxySize": 270070,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1v9UNgt605Ox7KMS4GNclwr09EFE1R6Z1",
           "gdriveViewUrl": "https://drive.google.com/file/d/1v9UNgt605Ox7KMS4GNclwr09EFE1R6Z1/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "699e04b3-52fe-4d8e-ae7e-39752163c489",
@@ -41953,11 +42245,13 @@
           "proxySize": 277922,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1vVxIJ-CwnUmdx1-6HZjT5e1MZupgLsAi",
           "gdriveViewUrl": "https://drive.google.com/file/d/1vVxIJ-CwnUmdx1-6HZjT5e1MZupgLsAi/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8cf1d3cb-9bf4-43a4-821b-fa4ad491b088",
@@ -41968,11 +42262,13 @@
           "proxySize": 283352,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1eG416v9OpxdHL_3PJXQ_5joKVH2EgqGk",
           "gdriveViewUrl": "https://drive.google.com/file/d/1eG416v9OpxdHL_3PJXQ_5joKVH2EgqGk/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ad942aee-c64d-4ac4-a03d-38cb2e9681d3",
@@ -41983,11 +42279,13 @@
           "proxySize": 322878,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1szxiqApvxBDJUVnbwo5HN_ogGAthMFiN",
           "gdriveViewUrl": "https://drive.google.com/file/d/1szxiqApvxBDJUVnbwo5HN_ogGAthMFiN/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "b2b4566b-5296-4ddd-9190-7aa544eab6d4",
@@ -42073,11 +42371,13 @@
           "proxySize": 321298,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "16C-72Ipx9AcUOZrB37UTePg4Q8uPyCVm",
           "gdriveViewUrl": "https://drive.google.com/file/d/16C-72Ipx9AcUOZrB37UTePg4Q8uPyCVm/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0f40f643-1eb1-4f51-9a01-d0db6f4749d9",
@@ -42238,11 +42538,13 @@
           "proxySize": 310560,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1hu9ER9C4-cFceHhpfGklRHQCLnSiDT8s",
           "gdriveViewUrl": "https://drive.google.com/file/d/1hu9ER9C4-cFceHhpfGklRHQCLnSiDT8s/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8ed93928-105b-46d7-8371-38365fbce6b1",
@@ -42328,11 +42630,13 @@
           "proxySize": 89088,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1FehSKZ9c7ClOQEPQGwc1ZvkOxlxZf6G6",
           "gdriveViewUrl": "https://drive.google.com/file/d/1FehSKZ9c7ClOQEPQGwc1ZvkOxlxZf6G6/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "44353dad-2dcb-4a04-8762-e8603bbc5df9",
@@ -42373,11 +42677,13 @@
           "proxySize": 85116,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1-3mUVFqI8erSlSdCeukmocHa2hTC19Mm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1-3mUVFqI8erSlSdCeukmocHa2hTC19Mm/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fb3c6633-b69b-4b17-ab71-022eba7776bb",
@@ -42538,11 +42844,13 @@
           "proxySize": 89502,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1A7L8GkrPkhXTdQjAQWTbGMx799WhvFDC",
           "gdriveViewUrl": "https://drive.google.com/file/d/1A7L8GkrPkhXTdQjAQWTbGMx799WhvFDC/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "3fe08bfc-5736-4ff6-a01d-5055a5c3a415",
@@ -42613,11 +42921,13 @@
           "proxySize": 126304,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1urcS_XWa-Glgk5CIWHID1bohYI0pX8e8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1urcS_XWa-Glgk5CIWHID1bohYI0pX8e8/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "97f5999a-b52a-4704-b8de-77da4cd14e70",
@@ -42628,11 +42938,13 @@
           "proxySize": 135686,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1-AlmLrjUp7H4yENBUM3UBi3gp0UtR250",
           "gdriveViewUrl": "https://drive.google.com/file/d/1-AlmLrjUp7H4yENBUM3UBi3gp0UtR250/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "537b067e-e95b-46a7-bf62-174605b329ea",
@@ -42673,11 +42985,13 @@
           "proxySize": 130688,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1bbVBeYVGOzcPpeG0NkvcIZAQOUrKX06h",
           "gdriveViewUrl": "https://drive.google.com/file/d/1bbVBeYVGOzcPpeG0NkvcIZAQOUrKX06h/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4d1012a6-abc4-4f19-94a9-53bf6d770947",
@@ -42733,11 +43047,13 @@
           "proxySize": 51998,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1OXOtxw0xfoA8L32uNSo8cBcWAm8rnQyY",
           "gdriveViewUrl": "https://drive.google.com/file/d/1OXOtxw0xfoA8L32uNSo8cBcWAm8rnQyY/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4656ccf3-e182-495b-b211-3b16b73eb5f5",
@@ -42748,11 +43064,13 @@
           "proxySize": 168454,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1mWA_0DWl2AY9EplSKo7er1EFkig_12Ub",
           "gdriveViewUrl": "https://drive.google.com/file/d/1mWA_0DWl2AY9EplSKo7er1EFkig_12Ub/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "345b23ba-9f7c-4367-9a8f-ca56eba8ba1a",
@@ -42763,11 +43081,13 @@
           "proxySize": 211612,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "181GVODrIEjZ15CMdORKiK-Tkqio51EF8",
           "gdriveViewUrl": "https://drive.google.com/file/d/181GVODrIEjZ15CMdORKiK-Tkqio51EF8/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c0522d35-e820-4d25-beac-a128f8bfae31",
@@ -42838,11 +43158,13 @@
           "proxySize": 350978,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1EVNSqKKfkEaSbyJ4ndXcNaCXmfjtu1zD",
           "gdriveViewUrl": "https://drive.google.com/file/d/1EVNSqKKfkEaSbyJ4ndXcNaCXmfjtu1zD/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "900f4b56-6da6-4226-a36f-11e028284de9",
@@ -42853,11 +43175,13 @@
           "proxySize": 361318,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11g_RJg3Iu6ipuOxp-SezawtxtTsYzUxS",
           "gdriveViewUrl": "https://drive.google.com/file/d/11g_RJg3Iu6ipuOxp-SezawtxtTsYzUxS/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.369Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "de13ce8d-be0b-4f06-9b93-13b8b0affdf3",
@@ -42883,11 +43207,13 @@
           "proxySize": 275268,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11crMCmL-9zSWi1JMNhLlr1YGfcTAqqtU",
           "gdriveViewUrl": "https://drive.google.com/file/d/11crMCmL-9zSWi1JMNhLlr1YGfcTAqqtU/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "fe156a92-0067-4596-94c5-334323a2e8b8",
@@ -42943,11 +43269,13 @@
           "proxySize": 265656,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fkklnlK4h0Wq0_b8dJwQr-67sgev7s_I",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fkklnlK4h0Wq0_b8dJwQr-67sgev7s_I/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "efa9aee0-ff96-4cee-9a10-0eb0d19553f6",
@@ -42958,11 +43286,13 @@
           "proxySize": 229606,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1rzBHXQa6SxPRp7qunh5QXlYV2o6aiiBm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1rzBHXQa6SxPRp7qunh5QXlYV2o6aiiBm/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a93e1692-2e82-4879-8d26-904b07625e97",
@@ -42973,11 +43303,13 @@
           "proxySize": 236238,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1PoFxetX98OgevFTatMmLVgxnVbtf_Ba0",
           "gdriveViewUrl": "https://drive.google.com/file/d/1PoFxetX98OgevFTatMmLVgxnVbtf_Ba0/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e9aee853-7a5a-4236-a3e7-296c6d99c5ff",
@@ -43078,11 +43410,13 @@
           "proxySize": 283072,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1R1H3ckJrwEFC0Zch6iiOFPlVEPGRcQM3",
           "gdriveViewUrl": "https://drive.google.com/file/d/1R1H3ckJrwEFC0Zch6iiOFPlVEPGRcQM3/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c4fed06c-eee7-404e-ae35-082939f8753d",
@@ -43093,11 +43427,13 @@
           "proxySize": 292528,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1CdA1BzOeputLX0j8Z9nVIyL7rDWOWEiZ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1CdA1BzOeputLX0j8Z9nVIyL7rDWOWEiZ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1f97cccd-5de7-44ef-9a97-ad4da57a1dda",
@@ -43123,11 +43459,13 @@
           "proxySize": 154820,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1vXjewqeDSJIRkvJv_y-q3jJIcGQ1qWvh",
           "gdriveViewUrl": "https://drive.google.com/file/d/1vXjewqeDSJIRkvJv_y-q3jJIcGQ1qWvh/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "47f90f32-df46-480c-9a0c-a1a0317dfe16",
@@ -43168,11 +43506,13 @@
           "proxySize": 152334,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1KVJ33Ax587EAzzwMnEV9ZBWjsSw3Dla1",
           "gdriveViewUrl": "https://drive.google.com/file/d/1KVJ33Ax587EAzzwMnEV9ZBWjsSw3Dla1/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "91c5d7ca-b634-4331-b191-2ae61ed23d32",
@@ -43183,11 +43523,13 @@
           "proxySize": 258334,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "18scCBId1euXwiTvrf8WjKDb_phigH3eF",
           "gdriveViewUrl": "https://drive.google.com/file/d/18scCBId1euXwiTvrf8WjKDb_phigH3eF/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e56fc874-f51d-4076-b541-782fb7fd7890",
@@ -43213,11 +43555,13 @@
           "proxySize": 250796,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Td1_GMm3tzhzoj4bEwwAOPNmr1ds8bFy",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Td1_GMm3tzhzoj4bEwwAOPNmr1ds8bFy/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a6403bda-67b5-4ee2-b544-5a8d98d60c48",
@@ -43228,11 +43572,13 @@
           "proxySize": 344858,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1BsDtCpNkgvcve2913ZL4VmOh128i40Nv",
           "gdriveViewUrl": "https://drive.google.com/file/d/1BsDtCpNkgvcve2913ZL4VmOh128i40Nv/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "054b918f-b850-44ca-b29c-a78785326b47",
@@ -43273,11 +43619,13 @@
           "proxySize": 362474,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ESjEgS38NOuNbz5CaxD-fioGczwiMlbM",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ESjEgS38NOuNbz5CaxD-fioGczwiMlbM/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5d4cab2b-d4b1-4f7c-811a-74606f054fda",
@@ -43303,11 +43651,13 @@
           "proxySize": 381848,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1v989SsWH9xp4TH5j6ck5kio0idowETyi",
           "gdriveViewUrl": "https://drive.google.com/file/d/1v989SsWH9xp4TH5j6ck5kio0idowETyi/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ce68d932-ca20-4235-95fb-1a1b69fdebb5",
@@ -43333,11 +43683,13 @@
           "proxySize": 338336,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1dRM9T7Qa3lsP_vSnGOMIod3blAP_i2BW",
           "gdriveViewUrl": "https://drive.google.com/file/d/1dRM9T7Qa3lsP_vSnGOMIod3blAP_i2BW/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a6fac3ba-c789-4871-8794-432965f1aa9e",
@@ -43348,11 +43700,13 @@
           "proxySize": 482176,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1_I1QmxYmYYIgjYlrnC1B_der6FIi6ea6",
           "gdriveViewUrl": "https://drive.google.com/file/d/1_I1QmxYmYYIgjYlrnC1B_der6FIi6ea6/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "2b2fcab2-5e57-47ac-bb3f-a819b57277f0",
@@ -43363,11 +43717,13 @@
           "proxySize": 469478,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1zJRRzrrBVEPUP5gpI-K9CqvXCzVF9xmE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1zJRRzrrBVEPUP5gpI-K9CqvXCzVF9xmE/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ef1c404a-f0d4-4f05-bfc6-b5f14b7cd2a7",
@@ -43378,11 +43734,13 @@
           "proxySize": 518578,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1noL0i-UnEMXTUZSKn9cg4PZy5ARqveGU",
           "gdriveViewUrl": "https://drive.google.com/file/d/1noL0i-UnEMXTUZSKn9cg4PZy5ARqveGU/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "53fa7f0b-02d6-4cb0-9f17-41e1ac0f50f6",
@@ -43408,11 +43766,13 @@
           "proxySize": 570392,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1QytBid_Jns0zNiObBaVnqmGbckqyoNNj",
           "gdriveViewUrl": "https://drive.google.com/file/d/1QytBid_Jns0zNiObBaVnqmGbckqyoNNj/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ea09cdd9-592e-4363-a6d3-e091f4dcdfc2",
@@ -43438,11 +43798,13 @@
           "proxySize": 419068,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1lhiPQeaNrkCJSnK3cnkJDoYlEEm9_SZb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1lhiPQeaNrkCJSnK3cnkJDoYlEEm9_SZb/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "35795277-a0a2-48ce-a0b9-9b667e36585c",
@@ -43453,11 +43815,13 @@
           "proxySize": 425874,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1G4vKjgR_lF_4VjameljqAlBuctnfftRW",
           "gdriveViewUrl": "https://drive.google.com/file/d/1G4vKjgR_lF_4VjameljqAlBuctnfftRW/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e946efce-965d-4cf8-868a-c65284d979e2",
@@ -43468,11 +43832,13 @@
           "proxySize": 401430,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1WKBTRR37ham6Jk3u9tus4ZMsiUyPdRbk",
           "gdriveViewUrl": "https://drive.google.com/file/d/1WKBTRR37ham6Jk3u9tus4ZMsiUyPdRbk/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6b81bef7-3fcc-4dd2-89d2-cde69015b531",
@@ -43483,11 +43849,13 @@
           "proxySize": 367940,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1-3-JfuOjTYuxt8nhYhge3buQjN2BK1TV",
           "gdriveViewUrl": "https://drive.google.com/file/d/1-3-JfuOjTYuxt8nhYhge3buQjN2BK1TV/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1d59aa9a-c46b-4bac-9852-0e8def2f358c",
@@ -43663,11 +44031,13 @@
           "proxySize": 602002,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1TERYUmp0bcTCu5w1l5uX2hE24o0zrKQM",
           "gdriveViewUrl": "https://drive.google.com/file/d/1TERYUmp0bcTCu5w1l5uX2hE24o0zrKQM/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f3effa0c-53fc-4379-809d-3b116943e90b",
@@ -43678,11 +44048,13 @@
           "proxySize": 528876,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1XN4Icy5xD5oEvFWzdVL8vdu8izM6oyDp",
           "gdriveViewUrl": "https://drive.google.com/file/d/1XN4Icy5xD5oEvFWzdVL8vdu8izM6oyDp/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ef9f94e1-d2e6-4e3f-9ac7-1296fc5b817f",
@@ -43693,11 +44065,13 @@
           "proxySize": 529812,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1CcJKQKIc7E5L0Obg3_qVabcaEKwZRrbq",
           "gdriveViewUrl": "https://drive.google.com/file/d/1CcJKQKIc7E5L0Obg3_qVabcaEKwZRrbq/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "23d7d936-084b-4d1d-a2fe-37b5c26d4b59",
@@ -43933,11 +44307,13 @@
           "proxySize": 360962,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1oz3F4y5ZZ0diNGB16tRrCBKVPcxiXEku",
           "gdriveViewUrl": "https://drive.google.com/file/d/1oz3F4y5ZZ0diNGB16tRrCBKVPcxiXEku/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0dbb25d8-3373-438a-915b-a1c092b89b2c",
@@ -44158,11 +44534,13 @@
           "proxySize": 529856,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "rejected",
           "comment": "",
           "gdriveId": "1dovqb_Ep-408JxS0L3CC0ms3w2_kl1xB",
           "gdriveViewUrl": "https://drive.google.com/file/d/1dovqb_Ep-408JxS0L3CC0ms3w2_kl1xB/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T12:57:24.619Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0119f0ee-5e7b-412c-82ca-7edf32914ce9",
@@ -44203,11 +44581,13 @@
           "proxySize": 588044,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1RsEOc7Q9B8PjPn9dpHv27g2yLpUzPW8i",
           "gdriveViewUrl": "https://drive.google.com/file/d/1RsEOc7Q9B8PjPn9dpHv27g2yLpUzPW8i/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f1ceb07e-4b68-4aef-8e5b-fef4e7c0bbab",
@@ -44233,11 +44613,13 @@
           "proxySize": 505082,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "18rpByJ4xJQogzcSInENc0lq3rfKnzYMf",
           "gdriveViewUrl": "https://drive.google.com/file/d/18rpByJ4xJQogzcSInENc0lq3rfKnzYMf/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "18104ae9-8ce5-481b-bcff-422d6f7a48d1",
@@ -44278,11 +44660,13 @@
           "proxySize": 508886,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1cRoJOjIYtVHKihDa0CYHiiat9NThM_rL",
           "gdriveViewUrl": "https://drive.google.com/file/d/1cRoJOjIYtVHKihDa0CYHiiat9NThM_rL/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6b29e6b0-5d07-4663-a75c-8b5e5fd93845",
@@ -44293,11 +44677,13 @@
           "proxySize": 501072,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fSw3YtEIz-WmoKgtlKDSpN8R0Ogo7vVu",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fSw3YtEIz-WmoKgtlKDSpN8R0Ogo7vVu/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4576c403-2f68-4303-9a5e-02922e927e6e",
@@ -44383,11 +44769,13 @@
           "proxySize": 517430,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "16SuaqXXnLHTO_liwlODngmiBXU3yyWJJ",
           "gdriveViewUrl": "https://drive.google.com/file/d/16SuaqXXnLHTO_liwlODngmiBXU3yyWJJ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f119bd5d-795e-4952-8d34-be76ec49d060",
@@ -44398,11 +44786,13 @@
           "proxySize": 434298,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1A0JAG1XnJQWjYNkGhMUMqW09IOTViof8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1A0JAG1XnJQWjYNkGhMUMqW09IOTViof8/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "bb1e4e14-edc7-4cdc-a8a0-2414fc5652ea",
@@ -44413,11 +44803,13 @@
           "proxySize": 420634,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "19rfs985aIGTlWXQWPZj6EjkJk5L69zsd",
           "gdriveViewUrl": "https://drive.google.com/file/d/19rfs985aIGTlWXQWPZj6EjkJk5L69zsd/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "58db5d86-009d-401a-8311-0b697814d4fb",
@@ -44428,11 +44820,13 @@
           "proxySize": 393936,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "15nPOA2_0Mzppg96xxSWplawdXkOyGsjj",
           "gdriveViewUrl": "https://drive.google.com/file/d/15nPOA2_0Mzppg96xxSWplawdXkOyGsjj/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "b7773a1e-423f-408b-b5fa-1e346b2fb7b9",
@@ -44548,11 +44942,13 @@
           "proxySize": 464800,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fDKus-bAlE2JUFAfOSx3g3hLubSuhjO3",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fDKus-bAlE2JUFAfOSx3g3hLubSuhjO3/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d8b1b056-4529-41af-b815-5c3f9cc4c588",
@@ -44773,11 +45169,13 @@
           "proxySize": 551116,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "10j5yMgXV003hA0fsIf0zKcmXju6QTExz",
           "gdriveViewUrl": "https://drive.google.com/file/d/10j5yMgXV003hA0fsIf0zKcmXju6QTExz/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "546465ab-a69c-48f7-9598-2f607d389f7e",
@@ -44938,11 +45336,13 @@
           "proxySize": 511400,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MBP3VcGsK4OtuFaEn8-B39QsrbZHdMq0",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MBP3VcGsK4OtuFaEn8-B39QsrbZHdMq0/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f6a2bd23-f193-4b4a-87f8-c2802790d33f",
@@ -45028,11 +45428,13 @@
           "proxySize": 505050,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1z9ruOV9j7kMo46NXlpwHp30qkMADw0Zo",
           "gdriveViewUrl": "https://drive.google.com/file/d/1z9ruOV9j7kMo46NXlpwHp30qkMADw0Zo/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "12aa646a-b696-4e19-b966-bd6e40b4752d",
@@ -45043,11 +45445,13 @@
           "proxySize": 509734,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1665UwIUSncVQqH8cEd5VYl2VRRTYVlyE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1665UwIUSncVQqH8cEd5VYl2VRRTYVlyE/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "288e9dae-1497-4682-bf3f-9c6c3858aa02",
@@ -45118,11 +45522,13 @@
           "proxySize": 389320,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1q21upENJnYhPkvQE6qKg6VtSR2Blf0BC",
           "gdriveViewUrl": "https://drive.google.com/file/d/1q21upENJnYhPkvQE6qKg6VtSR2Blf0BC/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ae71894c-d4c8-4727-a9ef-d437133f5bf4",
@@ -45133,11 +45539,13 @@
           "proxySize": 384014,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1I4pj59PJxeW2PtIi-xnUUYLvVNY-ZFrS",
           "gdriveViewUrl": "https://drive.google.com/file/d/1I4pj59PJxeW2PtIi-xnUUYLvVNY-ZFrS/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8854c54e-b879-42f3-8adc-5c7022bf17e0",
@@ -45148,11 +45556,13 @@
           "proxySize": 392980,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1hEDDgwLyyH-Xkuz_M4fopUXRlW1zyWRt",
           "gdriveViewUrl": "https://drive.google.com/file/d/1hEDDgwLyyH-Xkuz_M4fopUXRlW1zyWRt/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "aaa59493-84d9-4459-b8c3-2dc5573a0c07",
@@ -45178,11 +45588,13 @@
           "proxySize": 397118,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "12LoDT6lMbAPxXdhawK4ui9aLYJFvhdsO",
           "gdriveViewUrl": "https://drive.google.com/file/d/12LoDT6lMbAPxXdhawK4ui9aLYJFvhdsO/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "606fcc34-496f-4a79-8fad-c3e8fa474381",
@@ -45223,11 +45635,13 @@
           "proxySize": 312490,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1DHvP9DNMxSicJHVE5oikd0Y8p8eN2OH4",
           "gdriveViewUrl": "https://drive.google.com/file/d/1DHvP9DNMxSicJHVE5oikd0Y8p8eN2OH4/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8f538384-8b37-4555-8e14-9e6224c79556",
@@ -45298,11 +45712,13 @@
           "proxySize": 348904,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1BOY7bi7FkTbThJ53d6kxUuhfITAy8F5F",
           "gdriveViewUrl": "https://drive.google.com/file/d/1BOY7bi7FkTbThJ53d6kxUuhfITAy8F5F/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9b6cfdd0-d132-4aaa-8905-fd88484e35a3",
@@ -45418,11 +45834,13 @@
           "proxySize": 123710,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1AFVehESFzdR37N39BkBCJJsQcUPyj4m8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1AFVehESFzdR37N39BkBCJJsQcUPyj4m8/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5c9ad683-5edb-4b5b-b21b-978ec6468239",
@@ -45448,11 +45866,13 @@
           "proxySize": 172574,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1SWRwjh75kVu0zGEbOPKoIQDG3bSpgnTJ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1SWRwjh75kVu0zGEbOPKoIQDG3bSpgnTJ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "01d375cd-aec7-4106-b38f-2d183b1378c8",
@@ -45463,11 +45883,13 @@
           "proxySize": 156196,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "147kLIXcsSGHZjUTw2I576UY6iKO000JZ",
           "gdriveViewUrl": "https://drive.google.com/file/d/147kLIXcsSGHZjUTw2I576UY6iKO000JZ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c31db9b2-7db2-46d7-86d0-f5e3e2d10901",
@@ -45553,11 +45975,13 @@
           "proxySize": 267988,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "14Q3pRPolwPvlq1wry8ThRjtDaHEtqsiy",
           "gdriveViewUrl": "https://drive.google.com/file/d/14Q3pRPolwPvlq1wry8ThRjtDaHEtqsiy/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "05aed577-fa7b-46a2-b5ea-dfdf0ddde83c",
@@ -45568,11 +45992,13 @@
           "proxySize": 244920,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1DsUGUmQT9tkNNX9O7h9UUTgk1T9cXkZX",
           "gdriveViewUrl": "https://drive.google.com/file/d/1DsUGUmQT9tkNNX9O7h9UUTgk1T9cXkZX/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f02d134d-4150-468d-a89e-5f485f734451",
@@ -45613,11 +46039,13 @@
           "proxySize": 251170,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1TWths2fjLtUXM-aPk93dVaLD-Pa5Vs2X",
           "gdriveViewUrl": "https://drive.google.com/file/d/1TWths2fjLtUXM-aPk93dVaLD-Pa5Vs2X/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8990e9e4-acd5-43ec-9f84-ee61a24c84c3",
@@ -45628,11 +46056,13 @@
           "proxySize": 230072,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1N-3HFNhe0fJdsYladiUtkvkp1l5cMJES",
           "gdriveViewUrl": "https://drive.google.com/file/d/1N-3HFNhe0fJdsYladiUtkvkp1l5cMJES/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0bf6bd9b-5595-4d8c-904f-317e52bbad9d",
@@ -45643,11 +46073,13 @@
           "proxySize": 198240,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MjfLIj6sm8UKUQlmR9aovy0pgeP9ZP3P",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MjfLIj6sm8UKUQlmR9aovy0pgeP9ZP3P/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "056ea446-eee8-4124-a208-c7ef5a37b857",
@@ -45658,11 +46090,13 @@
           "proxySize": 205132,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1H0MCjDiRl2THPbQaD5Uk6sbT3swj8pR2",
           "gdriveViewUrl": "https://drive.google.com/file/d/1H0MCjDiRl2THPbQaD5Uk6sbT3swj8pR2/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "af95ae29-a202-4e06-ad3b-9f227b6ca7d3",
@@ -45673,11 +46107,13 @@
           "proxySize": 195932,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fqrZKKP1-Sx3gRLJ9BOCQp6lpUBLxuo-",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fqrZKKP1-Sx3gRLJ9BOCQp6lpUBLxuo-/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "c99991f9-5d39-491b-b918-99132928c222",
@@ -45703,11 +46139,13 @@
           "proxySize": 202234,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1LPE4LGfvP2VX5sc_RSQbGt4ul5Ed9rIW",
           "gdriveViewUrl": "https://drive.google.com/file/d/1LPE4LGfvP2VX5sc_RSQbGt4ul5Ed9rIW/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e7162169-23d9-4a75-b95e-ddc06d234bfc",
@@ -45748,11 +46186,13 @@
           "proxySize": 291638,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "13ig9qYW0eNzBt4CKmxAVYjFdA8iQ9Yem",
           "gdriveViewUrl": "https://drive.google.com/file/d/13ig9qYW0eNzBt4CKmxAVYjFdA8iQ9Yem/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "32593919-8eb8-4831-8f18-dd5f7f3861f3",
@@ -45763,11 +46203,13 @@
           "proxySize": 250626,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MrVy4-Q5j_WZL631FeC8MuNU3zyczoHw",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MrVy4-Q5j_WZL631FeC8MuNU3zyczoHw/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "94912886-95fc-48f5-8e61-8d7431e38b92",
@@ -45838,11 +46280,13 @@
           "proxySize": 348366,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1MRW9omvAuoXSMZtLt3iXfreZ0BgTHskG",
           "gdriveViewUrl": "https://drive.google.com/file/d/1MRW9omvAuoXSMZtLt3iXfreZ0BgTHskG/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "502ed00b-5c2a-4662-8294-4c39b4ce2a8f",
@@ -45853,11 +46297,13 @@
           "proxySize": 340722,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1zx4XWfqH58NqDP4zqW7ds_gv29eiYK0x",
           "gdriveViewUrl": "https://drive.google.com/file/d/1zx4XWfqH58NqDP4zqW7ds_gv29eiYK0x/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6ea54bbc-decb-4e9f-b08b-e08ce634299a",
@@ -45883,11 +46329,13 @@
           "proxySize": 285098,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1hzNiARa_2t_Bbt7Jlp1pr-OQuAfO6FZ5",
           "gdriveViewUrl": "https://drive.google.com/file/d/1hzNiARa_2t_Bbt7Jlp1pr-OQuAfO6FZ5/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "9a2eed37-12c5-422f-8fb6-5117740a2394",
@@ -45943,11 +46391,13 @@
           "proxySize": 415684,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1nT0nVD9iyBjQsAwkZeuurDY-Uq2umo42",
           "gdriveViewUrl": "https://drive.google.com/file/d/1nT0nVD9iyBjQsAwkZeuurDY-Uq2umo42/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "585e2f0c-3108-49a6-9728-818e7938f5b8",
@@ -45958,11 +46408,13 @@
           "proxySize": 399328,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1A-qaWHGDLoK8UeGtmEPmojOGr7wmrH0h",
           "gdriveViewUrl": "https://drive.google.com/file/d/1A-qaWHGDLoK8UeGtmEPmojOGr7wmrH0h/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4d99899c-31ed-4b22-902b-8112cce21146",
@@ -46018,11 +46470,13 @@
           "proxySize": 354256,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1rP5gXkvrfWvkxs3JX2OJg9NGiRrYLOyT",
           "gdriveViewUrl": "https://drive.google.com/file/d/1rP5gXkvrfWvkxs3JX2OJg9NGiRrYLOyT/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "22602ed1-648d-4f71-982f-570eb8a2ee23",
@@ -46048,11 +46502,13 @@
           "proxySize": 349538,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1RW3TLrntZbrL0jHQbG182iwWW67bUlGM",
           "gdriveViewUrl": "https://drive.google.com/file/d/1RW3TLrntZbrL0jHQbG182iwWW67bUlGM/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "af8c7d57-6606-43d0-94d4-360b4c8d38c8",
@@ -46063,11 +46519,13 @@
           "proxySize": 328500,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "19kQTZBFGg95iuluL6vkGcJmQoVUCObdJ",
           "gdriveViewUrl": "https://drive.google.com/file/d/19kQTZBFGg95iuluL6vkGcJmQoVUCObdJ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "62717d28-6b1c-40b7-9c96-1bbc13211189",
@@ -46258,11 +46716,13 @@
           "proxySize": 299426,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Cwq79DBnC4T6-1qIlmWIeM-WWDrcSMKF",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Cwq79DBnC4T6-1qIlmWIeM-WWDrcSMKF/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "01c4924d-4250-4bb6-a1fb-ef95cc85c24b",
@@ -46303,11 +46763,13 @@
           "proxySize": 305360,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "142kdBucaMNL5Qu5SA8dHcJ8QzY8aVQt9",
           "gdriveViewUrl": "https://drive.google.com/file/d/142kdBucaMNL5Qu5SA8dHcJ8QzY8aVQt9/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "a5f87952-c3b4-4647-8f4e-3f8349355b48",
@@ -46318,11 +46780,13 @@
           "proxySize": 302230,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1qgwmeVSfzEQnrH8GvdYmJ8ujzzbY10sQ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1qgwmeVSfzEQnrH8GvdYmJ8ujzzbY10sQ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ce673a20-2d0f-4f38-bd3c-a2511b124577",
@@ -46333,11 +46797,13 @@
           "proxySize": 299080,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1va8DyM-aT1PwAUEF7fedzobaCpV7vGH6",
           "gdriveViewUrl": "https://drive.google.com/file/d/1va8DyM-aT1PwAUEF7fedzobaCpV7vGH6/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "97ecfed0-209a-449a-ab93-0dfb658f904c",
@@ -46363,11 +46829,13 @@
           "proxySize": 293820,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1UTDjWKPN0oKPD12zEaaEBTiMcubaKd0t",
           "gdriveViewUrl": "https://drive.google.com/file/d/1UTDjWKPN0oKPD12zEaaEBTiMcubaKd0t/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "7cd6d921-4c5f-4cf3-b367-9633ea819996",
@@ -46408,11 +46876,13 @@
           "proxySize": 361482,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1M2Vn4-M_03ksNFKFx6_LIQiQXAY2mGAl",
           "gdriveViewUrl": "https://drive.google.com/file/d/1M2Vn4-M_03ksNFKFx6_LIQiQXAY2mGAl/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "03886503-24ae-4765-b427-a30a7ab3fd72",
@@ -46423,11 +46893,13 @@
           "proxySize": 364804,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ylaKZM__gR6fPWTKiHWXTuficZDfu-27",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ylaKZM__gR6fPWTKiHWXTuficZDfu-27/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8a2a93f7-087b-4281-9973-a0bb9f5b33cf",
@@ -46438,11 +46910,13 @@
           "proxySize": 325982,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11ix-Iy2Jjf2Jx44Ov21vtX9tLiiq202q",
           "gdriveViewUrl": "https://drive.google.com/file/d/11ix-Iy2Jjf2Jx44Ov21vtX9tLiiq202q/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8d7a9d71-d3e1-47a5-ad80-b2e05e663049",
@@ -46543,11 +47017,13 @@
           "proxySize": 179840,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1P1RLX4uNQiZk18LtYR6n8wLWi5eVxB5U",
           "gdriveViewUrl": "https://drive.google.com/file/d/1P1RLX4uNQiZk18LtYR6n8wLWi5eVxB5U/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "bda179f3-39a2-4c1d-8cfc-1c0f3f65d15c",
@@ -46558,11 +47034,13 @@
           "proxySize": 183466,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fwQnvqmsIBddkYMF9T4sfE5FwusgaqUb",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fwQnvqmsIBddkYMF9T4sfE5FwusgaqUb/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "75a857d0-4e61-40cc-8947-560547c78b40",
@@ -46633,11 +47111,13 @@
           "proxySize": 317294,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1ArgSFFLmmHoxS2sIPXmAuX6v9QVUCaq8",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ArgSFFLmmHoxS2sIPXmAuX6v9QVUCaq8/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e851b23f-0709-4db8-aae0-87ed60fc1631",
@@ -46648,11 +47128,13 @@
           "proxySize": 221950,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Z0fctMFPG_X0Vc6rJMdQthQIQm6qtaVU",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Z0fctMFPG_X0Vc6rJMdQthQIQm6qtaVU/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "63388bde-457c-47fb-8c94-aba9b3d5328f",
@@ -46753,11 +47235,13 @@
           "proxySize": 366984,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1nJnn8vCpz_AS5nK2tJD5ml4n-2DrTS7s",
           "gdriveViewUrl": "https://drive.google.com/file/d/1nJnn8vCpz_AS5nK2tJD5ml4n-2DrTS7s/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "34cb4f50-6a71-4a3c-95b3-09a554a4180e",
@@ -46768,11 +47252,13 @@
           "proxySize": 362414,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1otPk2IHBa3HHweV2ou92qsalCrlCrmaH",
           "gdriveViewUrl": "https://drive.google.com/file/d/1otPk2IHBa3HHweV2ou92qsalCrlCrmaH/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8ec6a823-1dd7-4534-a10a-e73d22777d21",
@@ -46783,11 +47269,13 @@
           "proxySize": 282848,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1a0zI7AsSxc0yi88zS086Yl_tmIJZqeAR",
           "gdriveViewUrl": "https://drive.google.com/file/d/1a0zI7AsSxc0yi88zS086Yl_tmIJZqeAR/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "09f1a2fa-0e2f-4550-8b13-258afb81ba5b",
@@ -46813,11 +47301,13 @@
           "proxySize": 271012,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "19esbhXfQK6Ziqjf7fjHQRQhvuxtZQjZH",
           "gdriveViewUrl": "https://drive.google.com/file/d/19esbhXfQK6Ziqjf7fjHQRQhvuxtZQjZH/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e6331faa-2d50-4b6d-b591-a2acae1a8ab1",
@@ -46828,11 +47318,13 @@
           "proxySize": 263776,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1fNnMKFkGOAlP8GbcQIxIYWhd3GMWvCeE",
           "gdriveViewUrl": "https://drive.google.com/file/d/1fNnMKFkGOAlP8GbcQIxIYWhd3GMWvCeE/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "38f3aa4a-4089-4817-b61f-6d5d3d224336",
@@ -46858,11 +47350,13 @@
           "proxySize": 355864,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1sgcR4MYIL-7oIxpakdlLRoA0mo6-NPL1",
           "gdriveViewUrl": "https://drive.google.com/file/d/1sgcR4MYIL-7oIxpakdlLRoA0mo6-NPL1/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "418ed8cb-17f7-4e16-9eac-1375d8e844cf",
@@ -46903,11 +47397,13 @@
           "proxySize": 307786,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1Ml7VxK7nluGr0rmNldhdcJv7dRVLaNEw",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Ml7VxK7nluGr0rmNldhdcJv7dRVLaNEw/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "37476869-f619-4af9-8eb0-5aea0d8c8213",
@@ -46993,11 +47489,13 @@
           "proxySize": 364440,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "14fKy7uhoDlgG54RblRjebqpwHPL78Ktj",
           "gdriveViewUrl": "https://drive.google.com/file/d/14fKy7uhoDlgG54RblRjebqpwHPL78Ktj/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "d64d02c7-b033-407f-954e-7e1f3591bf51",
@@ -47053,11 +47551,13 @@
           "proxySize": 365432,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1bBKNj4e9X00KkpteDKaROr6nedGux9Jm",
           "gdriveViewUrl": "https://drive.google.com/file/d/1bBKNj4e9X00KkpteDKaROr6nedGux9Jm/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1a197021-8b66-48aa-a40f-419ab1d7bd17",
@@ -47113,11 +47613,13 @@
           "proxySize": 312570,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1luRGH7QG38EtbQ033KdEWblu5L6-AL54",
           "gdriveViewUrl": "https://drive.google.com/file/d/1luRGH7QG38EtbQ033KdEWblu5L6-AL54/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "96279f5c-8353-4e2b-83bc-f42e38cebc62",
@@ -47173,11 +47675,13 @@
           "proxySize": 317786,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1i07_xDbVQl9AqZiFmMbpWSFlfeQpoSvv",
           "gdriveViewUrl": "https://drive.google.com/file/d/1i07_xDbVQl9AqZiFmMbpWSFlfeQpoSvv/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "eb37b517-a514-42a7-a4e4-9d4a290e2f61",
@@ -47203,11 +47707,13 @@
           "proxySize": 301168,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "16h5nWkL20H_zJZnfbrY7qT0BLr1jk8Be",
           "gdriveViewUrl": "https://drive.google.com/file/d/16h5nWkL20H_zJZnfbrY7qT0BLr1jk8Be/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "afbdae9e-edf9-4d6c-9725-dcbb1900b8bd",
@@ -47218,11 +47724,13 @@
           "proxySize": 271162,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1tNl2BsyKcdyN-9v0X_sknDeZokV5DKTJ",
           "gdriveViewUrl": "https://drive.google.com/file/d/1tNl2BsyKcdyN-9v0X_sknDeZokV5DKTJ/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "91db9d12-566c-4b53-befe-f1976912defe",
@@ -47248,11 +47756,13 @@
           "proxySize": 420976,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1KOL-rnKif47C3c2EaYpXF_og-IJYoL3I",
           "gdriveViewUrl": "https://drive.google.com/file/d/1KOL-rnKif47C3c2EaYpXF_og-IJYoL3I/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "f1535986-b6d0-46a4-981d-8ebbc486674d",
@@ -47293,11 +47803,13 @@
           "proxySize": 532298,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "11QR1JEYy-ARI5rdj7gmWnwb5C69h6y6n",
           "gdriveViewUrl": "https://drive.google.com/file/d/11QR1JEYy-ARI5rdj7gmWnwb5C69h6y6n/view?usp=drivesdk",
-          "subfolder": "Day 2"
+          "subfolder": "Day 2",
+          "lastVotedAt": "2026-10-25T04:28:05.370Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "0795d9f2-b3d7-4fbd-9c84-ccb6b05ae40b",
@@ -47328,7 +47840,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:33.440Z",
-      "updatedAt": "2026-10-17T02:49:33.440Z"
+      "updatedAt": "2026-10-25T12:57:24.619Z"
     },
     {
       "id": "proj_prakash_reception",
