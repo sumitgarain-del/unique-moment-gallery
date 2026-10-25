@@ -65,6 +65,8 @@ router.post('/sync-project', (req, res) => {
         notes: project.notes,
         images: mergedImages,
         gdrive: project.gdrive,
+        token: project.token || existing.token,
+        aliases: Array.from(new Set([...(existing.aliases || []), ...(project.aliases || [])])),
         status: existing.status === 'submitted' ? 'submitted' : project.status,
         submittedAt: existing.submittedAt || project.submittedAt,
         submissionNotes: existing.submissionNotes || project.submissionNotes,
@@ -83,10 +85,13 @@ router.post('/sync-project', (req, res) => {
  * Endpoint to get latest client selection from cloud
  * GET /api/cloud/project/:token/selection
  */
-router.get('/project/:token/selection', (req, res) => {
+router.get('/project/:token/selection', async (req, res) => {
   try {
     const { token } = req.params;
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
     if (!project) {
       return res.status(404).json({ success: false, error: 'Project not found' });
     }
@@ -147,11 +152,14 @@ router.delete('/project/:token', (req, res) => {
  * Endpoint on cloud to reset all client selections for a project
  * POST /api/cloud/project/:token/reset-selection
  */
-router.post('/project/:token/reset-selection', (req, res) => {
+router.post('/project/:token/reset-selection', async (req, res) => {
   try {
     const { token } = req.params;
     const { resetAt = new Date().toISOString() } = req.body;
-    const project = db.getProjectByToken(token);
+    let project = db.getProjectByToken(token);
+    if (!project) {
+      project = await db.syncProjectByTokenFromCloud(token);
+    }
     if (!project) {
       return res.status(404).json({ success: false, error: 'Project not found' });
     }
