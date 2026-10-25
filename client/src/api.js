@@ -116,6 +116,24 @@ export async function submitGallery(token, submissionNotes, clientName, selected
   });
 }
 
+export async function reopenGallery(token) {
+  return await fetchJson(`/gallery/${token}/reopen`, {
+    method: 'POST',
+  });
+}
+
+export async function resetProjectSelections(projectId) {
+  return await fetchJson(`/projects/${projectId}/reset-selections`, {
+    method: 'POST',
+  });
+}
+
+export async function reopenProject(projectId) {
+  return await fetchJson(`/projects/${projectId}/reopen`, {
+    method: 'POST',
+  });
+}
+
 // Local Sync API (Phase 3: The Magic Feature)
 export async function previewSync(projectId, { masterFolderPath, recursive = true, preference = 'all' }) {
   const res = await fetchJson(`/projects/${projectId}/sync/preview`, {

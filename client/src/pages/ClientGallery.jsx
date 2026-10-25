@@ -11,12 +11,13 @@ import {
   Check,
   ChevronRight,
   Filter,
-  Folder
+  Folder,
+  RotateCcw
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import PhotoCard from '../components/PhotoCard';
 import LightboxModal from '../components/LightboxModal';
-import { getGallery, voteImage, submitGallery } from '../api';
+import { getGallery, voteImage, submitGallery, reopenGallery } from '../api';
 import { socket } from '../socket';
 
 export default function ClientGallery({ token }) {
@@ -36,6 +37,7 @@ export default function ClientGallery({ token }) {
   const [submissionNotes, setSubmissionNotes] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedSuccess, setSubmittedSuccess] = useState(false);
+  const [isReopening, setIsReopening] = useState(false);
 
   useEffect(() => {
     loadGalleryData();
@@ -50,8 +52,16 @@ export default function ClientGallery({ token }) {
       // LocalStorage recovery: protect client from serverless cold-start resets
       let localVotes = {};
       try {
-        const stored = localStorage.getItem(`studio_sync_votes_${token}`);
-        if (stored) localVotes = JSON.parse(stored);
+        const resetKey = `studio_sync_reset_${token}`;
+        const lastReset = localStorage.getItem(resetKey);
+        if (data.resetAt && lastReset !== data.resetAt) {
+          // Studio cleared selections! Wipe client's local cache so they start completely fresh
+          localStorage.removeItem(`studio_sync_votes_${token}`);
+          localStorage.setItem(resetKey, data.resetAt);
+        } else {
+          const stored = localStorage.getItem(`studio_sync_votes_${token}`);
+          if (stored) localVotes = JSON.parse(stored);
+        }
       } catch (e) {}
 
       if (data && Array.isArray(data.images) && Object.keys(localVotes).length > 0) {
@@ -67,12 +77,11 @@ export default function ClientGallery({ token }) {
 
         // Recount stats
         const selCount = data.images.filter((i) => i.status === 'selected').length;
-        const rejCount = data.images.filter((i) => i.status === 'rejected').length;
         data.stats = {
           ...data.stats,
           selected: selCount,
-          rejected: rejCount,
-          unreviewed: data.images.length - selCount - rejCount,
+          rejected: 0,
+          unreviewed: data.images.length - selCount,
         };
 
         // Re-dispatch missing votes to server silently in background
@@ -88,6 +97,8 @@ export default function ClientGallery({ token }) {
       setGallery(data);
       if (data.status === 'submitted') {
         setSubmittedSuccess(true);
+      } else {
+        setSubmittedSuccess(false);
       }
     } catch (err) {
       setError(err.message || 'Gallery not found or expired');
@@ -132,10 +143,29 @@ export default function ClientGallery({ token }) {
       }
     });
 
+    const unsubReopened = socket.on('PROJECT_REOPENED', (data) => {
+      if (data.token === token) {
+        setGallery((prev) => (prev ? { ...prev, status: 'uploaded', stats: data.stats } : prev));
+        setSubmittedSuccess(false);
+      }
+    });
+
+    const unsubCleared = socket.on('SELECTIONS_CLEARED', (data) => {
+      if (data.token === token) {
+        try {
+          localStorage.removeItem(`studio_sync_votes_${token}`);
+          if (data.resetAt) localStorage.setItem(`studio_sync_reset_${token}`, data.resetAt);
+        } catch (e) {}
+        loadGalleryData();
+      }
+    });
+
     return () => {
       unsubRoomState();
       unsubVoteUpdated();
       unsubSubmitted();
+      unsubReopened();
+      unsubCleared();
       socket.leaveRoom(`gallery:${token}`);
     };
   }, [token]);
@@ -226,9 +256,24 @@ export default function ClientGallery({ token }) {
     }
   };
 
+  const handleReopenGallery = async () => {
+    if (!window.confirm('Do you want to re-verify or adjust your selections? Your existing shortlisted photos will remain selected so you can make changes.')) {
+      return;
+    }
+    try {
+      setIsReopening(true);
+      await reopenGallery(token);
+      setSubmittedSuccess(false);
+      setGallery((prev) => (prev ? { ...prev, status: 'uploaded' } : prev));
+    } catch (err) {
+      alert(`Error unlocking gallery: ${err.message}`);
+    } finally {
+      setIsReopening(false);
+    }
+  };
+
   const images = gallery?.images || [];
   const selectedCount = images.filter((img) => img.status === 'selected').length;
-  const rejectedCount = images.filter((img) => img.status === 'rejected').length;
   const unreviewedCount = images.filter((img) => !img.status || img.status === 'unreviewed').length;
 
   const getSubfolder = (img) => {
@@ -338,7 +383,7 @@ export default function ClientGallery({ token }) {
         
         {/* Submitted Success Banner */}
         {submittedSuccess && (
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-teal-950/20 border border-emerald-500/30 text-emerald-300 flex items-center justify-between">
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-teal-950/20 border border-emerald-500/30 text-emerald-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
             <div className="flex items-center space-x-3">
               <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0" />
               <div>
@@ -348,7 +393,17 @@ export default function ClientGallery({ token }) {
                 </p>
               </div>
             </div>
-            <Sparkles className="w-5 h-5 text-amber-400 hidden sm:block" />
+            <div className="flex items-center space-x-2 shrink-0 w-full sm:w-auto justify-end">
+              <button
+                onClick={handleReopenGallery}
+                disabled={isReopening}
+                className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-semibold transition-all hover:scale-105 active:scale-95 shadow-sm"
+                title="ভুলবশত সাবমিট হয়ে থাকলে বা পরিবর্তন করতে চাইলে আনলক করুন"
+              >
+                <RotateCcw className={`w-3.5 h-3.5 ${isReopening ? 'animate-spin' : ''}`} />
+                <span>{isReopening ? 'Unlocking...' : 'Re-verify / Edit Selection'}</span>
+              </button>
+            </div>
           </div>
         )}
 
@@ -409,17 +464,7 @@ export default function ClientGallery({ token }) {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              ❤️ Selected ({selectedCount})
-            </button>
-            <button
-              onClick={() => setFilter('rejected')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                filter === 'rejected'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              ❌ Rejected ({rejectedCount})
+              ❤️ Shortlisted ({selectedCount})
             </button>
             <button
               onClick={() => setFilter('unreviewed')}
@@ -452,7 +497,6 @@ export default function ClientGallery({ token }) {
                 isClientView={true}
                 showCompressionStats={false}
                 onSelect={(img) => handleVote(img, 'selected')}
-                onReject={(img) => handleVote(img, 'rejected')}
                 onOpenLightbox={(img) => {
                   const idx = filteredImages.findIndex((i) => i.id === img.id);
                   setLightboxIndex(idx);
@@ -498,7 +542,6 @@ export default function ClientGallery({ token }) {
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onSelect={(img) => handleVote(img, 'selected')}
-          onReject={(img) => handleVote(img, 'rejected')}
           onUpdateComment={handleUpdateComment}
         />
       )}

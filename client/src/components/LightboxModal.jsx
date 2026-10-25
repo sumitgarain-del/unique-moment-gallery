@@ -561,17 +561,19 @@ export default function LightboxModal({
 
         {/* Selection Decision Buttons */}
         <div className="flex items-center space-x-3 w-full sm:w-auto justify-end">
-          <button
-            onClick={() => onReject(currentImage)}
-            className={`flex-1 sm:flex-none flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl font-medium text-xs transition-all ${
-              isRejected
-                ? 'bg-neutral-800 text-red-400 border border-red-500/50 shadow-lg'
-                : 'bg-white/10 hover:bg-red-500/20 text-slate-300 hover:text-red-400 border border-white/10'
-            }`}
-          >
-            <Ban className="w-4 h-4 text-red-400" />
-            <span>{isRejected ? 'Rejected ❌' : 'Reject Photo'}</span>
-          </button>
+          {onReject && (
+            <button
+              onClick={() => onReject(currentImage)}
+              className={`flex-1 sm:flex-none flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl font-medium text-xs transition-all ${
+                isRejected
+                  ? 'bg-neutral-800 text-red-400 border border-red-500/50 shadow-lg'
+                  : 'bg-white/10 hover:bg-red-500/20 text-slate-300 hover:text-red-400 border border-white/10'
+              }`}
+            >
+              <Ban className="w-4 h-4 text-red-400" />
+              <span>{isRejected ? 'Rejected ❌' : 'Reject Photo'}</span>
+            </button>
+          )}
 
           <button
             onClick={() => onSelect(currentImage)}

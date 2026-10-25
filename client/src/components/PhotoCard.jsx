@@ -112,38 +112,40 @@ export default function PhotoCard({
         )}
 
         {/* Quick Selection Buttons */}
-        <div className="grid grid-cols-2 gap-2 pt-1 border-t border-white/5">
+        <div className={`pt-1 border-t border-white/5 ${onReject ? 'grid grid-cols-2 gap-2' : 'flex'}`}>
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onSelect(image);
             }}
-            className={`flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-xs font-medium transition-all ${
+            className={`w-full flex items-center justify-center space-x-1.5 py-2 px-2.5 rounded-xl text-xs font-semibold transition-all ${
               isSelected
-                ? 'bg-rose-600 text-white shadow-md shadow-rose-900/40 ring-1 ring-rose-400'
+                ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-md shadow-rose-900/40 ring-1 ring-rose-400'
                 : 'bg-white/5 text-slate-300 hover:bg-rose-500/20 hover:text-rose-400 border border-white/5'
             }`}
           >
             <Heart className={`w-3.5 h-3.5 ${isSelected ? 'fill-white text-white' : 'text-rose-400'}`} />
-            <span>{isSelected ? 'Shortlisted' : 'Select'}</span>
+            <span>{isSelected ? 'Shortlisted ✓' : 'Select Photo'}</span>
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onReject(image);
-            }}
-            className={`flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-xs font-medium transition-all ${
-              isRejected
-                ? 'bg-neutral-800 text-red-400 border border-red-500/40'
-                : 'bg-white/5 text-slate-300 hover:bg-red-500/20 hover:text-red-400 border border-white/5'
-            }`}
-          >
-            <X className="w-3.5 h-3.5 text-red-400" />
-            <span>{isRejected ? 'Rejected' : 'Reject'}</span>
-          </button>
+          {onReject && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onReject(image);
+              }}
+              className={`flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-xs font-medium transition-all ${
+                isRejected
+                  ? 'bg-neutral-800 text-red-400 border border-red-500/40'
+                  : 'bg-white/5 text-slate-300 hover:bg-red-500/20 hover:text-red-400 border border-white/5'
+              }`}
+            >
+              <X className="w-3.5 h-3.5 text-red-400" />
+              <span>{isRejected ? 'Rejected' : 'Reject'}</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

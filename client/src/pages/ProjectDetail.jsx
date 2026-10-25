@@ -28,6 +28,8 @@ import {
   Loader2,
   FolderUp,
   Image as ImageIcon,
+  RotateCcw,
+  Trash2,
 } from 'lucide-react';
 import PhotoCard from '../components/PhotoCard';
 
@@ -126,7 +128,9 @@ import {
   importFolder,
   browseNativeFolder,
   cloudPullProject,
-  cloudSyncProject
+  cloudSyncProject,
+  resetProjectSelections,
+  reopenProject
 } from '../api';
 import { socket } from '../socket';
 
@@ -149,6 +153,8 @@ export default function ProjectDetail({
   const [copiedQr, setCopiedQr] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [shareInfo, setShareInfo] = useState(null);
+  const [isResetting, setIsResetting] = useState(false);
+  const [isReopening, setIsReopening] = useState(false);
 
   // Master Folder & Live Processing States
   const [masterFolderPath, setMasterFolderPath] = useState(project.masterFolderPath || '');
@@ -494,9 +500,49 @@ export default function ProjectDetail({
     await voteImage(project.token, image.id, newStatus, null, 'Studio');
   };
 
-  const handleReject = async (image) => {
-    const newStatus = image.status === 'rejected' ? 'unreviewed' : 'rejected';
-    await voteImage(project.token, image.id, newStatus, null, 'Studio');
+  const handleResetSelections = async () => {
+    const confirmed = window.confirm(
+      `Are you sure you want to CLEAR ALL client selections for "${project.title}"?\n\n` +
+      `• All shortlisted photos will be reset to unreviewed on this machine.\n` +
+      `• The client's mobile/desktop shared link will be cleared completely.\n` +
+      `• The client can start selecting from scratch, and their choices will update here live.`
+    );
+    if (!confirmed) return;
+
+    try {
+      setIsResetting(true);
+      const res = await resetProjectSelections(project.id);
+      if (res.project) {
+        onUpdateProject(res.project);
+        alert(`All client selections cleared successfully for "${project.title}". The client can now select anew!`);
+      }
+    } catch (err) {
+      alert(`Error resetting selections: ${err.message}`);
+    } finally {
+      setIsResetting(false);
+    }
+  };
+
+  const handleReopenProject = async () => {
+    const confirmed = window.confirm(
+      `Allow client to re-verify or adjust their selections for "${project.title}"?\n\n` +
+      `• Their existing shortlisted photos will remain selected.\n` +
+      `• The gallery submission will be unlocked so they can add/remove photos and submit again.`
+    );
+    if (!confirmed) return;
+
+    try {
+      setIsReopening(true);
+      const res = await reopenProject(project.id);
+      if (res.project) {
+        onUpdateProject(res.project);
+        alert(`Gallery unlocked! The client can now re-verify and adjust their selection.`);
+      }
+    } catch (err) {
+      alert(`Error unlocking project: ${err.message}`);
+    } finally {
+      setIsReopening(false);
+    }
   };
 
   const availableSubfolders = useMemo(() => {
@@ -510,7 +556,6 @@ export default function ProjectDetail({
   const filteredImages = (project.images || []).filter((img) => {
     if (subfolderFilter !== 'all' && img.subfolder !== subfolderFilter) return false;
     if (filter === 'selected') return img.status === 'selected';
-    if (filter === 'rejected') return img.status === 'rejected';
     if (filter === 'unreviewed') return !img.status || img.status === 'unreviewed';
     return true;
   });
@@ -562,7 +607,7 @@ export default function ProjectDetail({
         </div>
 
         {/* Quick Actions Header */}
-        <div className="flex items-center space-x-2.5">
+        <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={handlePullFromCloud}
             disabled={isPullingCloud}
@@ -571,6 +616,16 @@ export default function ProjectDetail({
           >
             <RefreshCw className={`w-3.5 h-3.5 text-blue-400 ${isPullingCloud ? 'animate-spin' : ''}`} />
             <span>{isPullingCloud ? 'Syncing...' : 'Refresh from Cloud'}</span>
+          </button>
+
+          <button
+            onClick={handleResetSelections}
+            disabled={isResetting}
+            className="flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-200 border border-rose-500/30 text-xs font-medium transition-all disabled:opacity-50"
+            title="ক্লায়েন্টের সমস্ত সিলেকশন মুছে দিয়ে নতুন করে সিলেক্ট করার সুযোগ দিন"
+          >
+            <RotateCcw className={`w-3.5 h-3.5 text-rose-400 ${isResetting ? 'animate-spin' : ''}`} />
+            <span>{isResetting ? 'Clearing...' : 'Clear Selections'}</span>
           </button>
 
           {/* Magic Sync Trigger Button */}
@@ -615,13 +670,25 @@ export default function ProjectDetail({
             </div>
           </div>
 
-          <button
-            onClick={() => onOpenSyncModal(project)}
-            className="flex-shrink-0 flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-lg shadow-emerald-900/50 transition-all hover:scale-[1.02]"
-          >
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>Launch Local Master Sync</span>
-          </button>
+          <div className="flex flex-wrap items-center gap-2.5 flex-shrink-0">
+            <button
+              onClick={handleReopenProject}
+              disabled={isReopening}
+              className="flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-semibold transition-all shadow-sm"
+              title="ভুলবশত সাবমিট হয়ে থাকলে বা পরিবর্তন করতে চাইলে আনলক করুন"
+            >
+              <RotateCcw className={`w-3.5 h-3.5 ${isReopening ? 'animate-spin' : ''}`} />
+              <span>{isReopening ? 'Unlocking...' : 'Unlock for Re-selection'}</span>
+            </button>
+
+            <button
+              onClick={() => onOpenSyncModal(project)}
+              className="flex items-center justify-center space-x-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-lg shadow-emerald-900/50 transition-all hover:scale-[1.02]"
+            >
+              <Sparkles className="w-4 h-4 text-amber-300" />
+              <span>Launch Local Master Sync</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -1126,17 +1193,7 @@ export default function ProjectDetail({
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              ❤️ Selected ({stats.selected || 0})
-            </button>
-            <button
-              onClick={() => setFilter('rejected')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                filter === 'rejected'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              ❌ Rejected ({stats.rejected || 0})
+              ❤️ Shortlisted ({stats.selected || 0})
             </button>
             <button
               onClick={() => setFilter('unreviewed')}
@@ -1167,7 +1224,6 @@ export default function ProjectDetail({
                 key={image.id}
                 image={image}
                 onSelect={handleSelect}
-                onReject={handleReject}
                 onOpenLightbox={(img) => {
                   const idx = filteredImages.findIndex((i) => i.id === img.id);
                   onOpenLightbox(filteredImages, idx);

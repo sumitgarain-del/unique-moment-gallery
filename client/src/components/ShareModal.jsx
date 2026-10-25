@@ -73,7 +73,7 @@ export default function ShareModal({ project, onClose }) {
     `Here is your private photo selection link from our studio:\n\n` +
     `🔗 *Gallery Link:* ${publicLink}\n` +
     `🖼️ *QR Code Image:* ${qrImageUrl}\n\n` +
-    `Please tap the link or scan the QR code to select your favorite photos [❤️ Select] or [❌ Reject], and click "Submit Selection" when finished.\n\n` +
+    `Please tap the link or scan the QR code to shortlist your favorite photos [❤️ Select], and click "Submit Selection" when finished.\n\n` +
     `Thank you,\n` +
     `Team *Unique Moment* ✨`
   );
