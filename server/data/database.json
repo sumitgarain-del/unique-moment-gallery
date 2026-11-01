@@ -33,7 +33,7 @@
           "uploadedAt": "2026-11-01T03:45:25.608Z",
           "gdriveId": "1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:52.400Z",
+          "lastVotedAt": "2026-11-01T06:13:59.708Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -57,7 +57,7 @@
           "uploadedAt": "2026-11-01T03:45:27.188Z",
           "gdriveId": "1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB",
           "gdriveViewUrl": "https://drive.google.com/file/d/1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:52.400Z",
+          "lastVotedAt": "2026-11-01T06:13:59.708Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -1000,11 +1000,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:25.009Z",
           "gdriveId": "1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:14:07.699Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4a2a8d85-c5cc-4436-920f-969ae344a4dd",
@@ -3057,7 +3059,7 @@
           "uploadedAt": "2026-11-01T03:48:38.207Z",
           "gdriveId": "1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923",
           "gdriveViewUrl": "https://drive.google.com/file/d/1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:52.400Z",
+          "lastVotedAt": "2026-11-01T06:13:59.708Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -3301,7 +3303,7 @@
           "uploadedAt": "2026-11-01T03:48:51.533Z",
           "gdriveId": "10YZuarPsUzTW68ZAohXrIKCS5idg_Yde",
           "gdriveViewUrl": "https://drive.google.com/file/d/10YZuarPsUzTW68ZAohXrIKCS5idg_Yde/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:52.400Z",
+          "lastVotedAt": "2026-11-01T06:13:59.708Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -3413,7 +3415,7 @@
           "uploadedAt": "2026-11-01T03:48:57.128Z",
           "gdriveId": "1Q_gyPgl1Ue4RbunTLHrJhfozGu0Tfjnh",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Q_gyPgl1Ue4RbunTLHrJhfozGu0Tfjnh/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:52.400Z",
+          "lastVotedAt": "2026-11-01T06:13:59.708Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -4156,7 +4158,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T06:13:52.400Z"
+      "updatedAt": "2026-11-01T06:14:07.699Z"
     },
     {
       "id": "proj_1792035864199_exl4t",
