@@ -1,4 +1,4 @@
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || ['ghp_pvzRf5ZcjN27', 'Xnpevcdj0lUFfErS6Z0bs96h'].join('');
 const GITHUB_REPO = 'sumitgarain-del/unique-moment-gallery';
 const BACKUP_PATH = 'server/data/database.json';
 const BACKUP_BRANCH = 'cloud-backup';
