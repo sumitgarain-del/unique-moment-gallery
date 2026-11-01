@@ -9171,10 +9171,12 @@
           "proxySize": 170316,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T15:09:10.174Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ac1bf868-e644-4b4e-b2d6-c5f162092b78",
@@ -21398,7 +21400,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:32.271Z",
-      "updatedAt": "2026-11-01T15:09:02.357Z"
+      "updatedAt": "2026-11-01T15:09:10.175Z"
     },
     {
       "id": "proj_supriya_wedding",
