@@ -1,6 +1,32 @@
 {
   "projects": [
     {
+      "id": "proj_1793536150744_g26to",
+      "title": "Duyuti - Wedding",
+      "clientName": "Duyuti",
+      "clientEmail": "",
+      "eventDate": "2026-11-01",
+      "shootType": "Wedding",
+      "notes": "",
+      "token": "gallery_yivtkfzki689b6th",
+      "aliases": [],
+      "status": "draft",
+      "images": [],
+      "masterFolderPath": "",
+      "outputFolderPath": "",
+      "gdrive": {
+        "uploaded": false,
+        "folderId": null,
+        "folderUrl": null,
+        "syncedCount": 0,
+        "syncedAt": null
+      },
+      "submittedAt": null,
+      "submissionNotes": "",
+      "createdAt": "2026-11-01T12:29:10.744Z",
+      "updatedAt": "2026-11-01T12:29:10.744Z"
+    },
+    {
       "id": "proj_1793504697619_fgioz",
       "title": "Bithi - Wedding",
       "clientName": "Bithi",
