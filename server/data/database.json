@@ -28,11 +28,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:25.608Z",
           "gdriveId": "1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:24:16.948Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "924f00f0-3b88-4cf4-b7b8-7314ed00e690",
@@ -50,12 +52,12 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:27.188Z",
           "gdriveId": "1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB",
           "gdriveViewUrl": "https://drive.google.com/file/d/1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T04:22:25.437Z",
+          "lastVotedAt": "2026-11-01T06:26:53.214Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -998,11 +1000,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:25.009Z",
           "gdriveId": "1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1W01bHNU1GM5c_JIGlF1xRm8zCSSX_RbQ/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4a2a8d85-c5cc-4436-920f-969ae344a4dd",
@@ -1020,11 +1024,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:26.038Z",
           "gdriveId": "14TWGpipbtv2ay7Fb5xS8y7d1BMDiTMDL",
-          "gdriveViewUrl": "https://drive.google.com/file/d/14TWGpipbtv2ay7Fb5xS8y7d1BMDiTMDL/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/14TWGpipbtv2ay7Fb5xS8y7d1BMDiTMDL/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "6f6ba1a2-d73b-4ee2-b0e7-c1c548f77c19",
@@ -1046,7 +1052,9 @@
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:27.025Z",
           "gdriveId": "1oIeGQUwphBliaNLUu1Ec54qEJpaDE4U4",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1oIeGQUwphBliaNLUu1Ec54qEJpaDE4U4/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1oIeGQUwphBliaNLUu1Ec54qEJpaDE4U4/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:15:07.843Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "eebe93fa-9bce-4c7e-b87e-3e09f217dcbd",
@@ -1086,11 +1094,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:29.022Z",
           "gdriveId": "1Vkum8fFCPEkDsUuJ-NH3Smx7r55w8EJQ",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1Vkum8fFCPEkDsUuJ-NH3Smx7r55w8EJQ/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1Vkum8fFCPEkDsUuJ-NH3Smx7r55w8EJQ/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "8fa6a6b0-a836-4a67-8e7c-4b8c984bc0c8",
@@ -1130,11 +1140,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:31.233Z",
           "gdriveId": "1LLCmfU9NRf4v2IoWTTSJFYiOmJAZqAgR",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1LLCmfU9NRf4v2IoWTTSJFYiOmJAZqAgR/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1LLCmfU9NRf4v2IoWTTSJFYiOmJAZqAgR/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "2cb2ab66-7e9b-491d-be3a-2a32422f1ffc",
@@ -1332,11 +1344,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:46:40.643Z",
           "gdriveId": "1vg4vm_qF61OWpJa7mqqCDTI_5V8dHI_I",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1vg4vm_qF61OWpJa7mqqCDTI_5V8dHI_I/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1vg4vm_qF61OWpJa7mqqCDTI_5V8dHI_I/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "1693d226-1e25-42b1-9f53-87a0815df378",
@@ -1904,11 +1918,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:47:22.086Z",
           "gdriveId": "1jIo4bpkLkIfR5c9umrM0TrG1PZWyX5e9",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1jIo4bpkLkIfR5c9umrM0TrG1PZWyX5e9/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1jIo4bpkLkIfR5c9umrM0TrG1PZWyX5e9/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "31534176-b461-4a0b-94c3-9112d52016fa",
@@ -2058,11 +2074,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:47:29.626Z",
           "gdriveId": "1nnywnmsXn_m8BUaBu6Sb9q3dPC29XXib",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1nnywnmsXn_m8BUaBu6Sb9q3dPC29XXib/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1nnywnmsXn_m8BUaBu6Sb9q3dPC29XXib/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "03d16771-7c38-45b3-aed3-395b5ecb92fe",
@@ -2146,11 +2164,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:47:35.030Z",
           "gdriveId": "16CXGPIZrhXcYh9U4rCtsTkLYmh1mU37T",
-          "gdriveViewUrl": "https://drive.google.com/file/d/16CXGPIZrhXcYh9U4rCtsTkLYmh1mU37T/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/16CXGPIZrhXcYh9U4rCtsTkLYmh1mU37T/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "88b734ec-80b5-44f6-927b-5ea9ce0ce292",
@@ -3050,11 +3070,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:38.207Z",
           "gdriveId": "1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "45a77a3e-4a72-46b7-a388-4323d3cdb9d7",
@@ -3226,11 +3248,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:48.483Z",
           "gdriveId": "1V54dwwLvimJj7fB7LnJeTiAKACSedNSR",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1V54dwwLvimJj7fB7LnJeTiAKACSedNSR/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1V54dwwLvimJj7fB7LnJeTiAKACSedNSR/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "4f1f4f5a-8570-402d-a8ec-481513f1a005",
@@ -3292,11 +3316,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:51.533Z",
           "gdriveId": "10YZuarPsUzTW68ZAohXrIKCS5idg_Yde",
-          "gdriveViewUrl": "https://drive.google.com/file/d/10YZuarPsUzTW68ZAohXrIKCS5idg_Yde/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/10YZuarPsUzTW68ZAohXrIKCS5idg_Yde/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "bd7cc5a3-7713-45da-8bdb-212936554b62",
@@ -3402,11 +3428,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:57.128Z",
           "gdriveId": "1Q_gyPgl1Ue4RbunTLHrJhfozGu0Tfjnh",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1Q_gyPgl1Ue4RbunTLHrJhfozGu0Tfjnh/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1Q_gyPgl1Ue4RbunTLHrJhfozGu0Tfjnh/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "5d9ee1f4-ae50-48eb-aa2c-ae468d22f525",
@@ -3468,11 +3496,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:49:00.869Z",
           "gdriveId": "1Je99Lev0-vGlu2CjQD9kBfkvKUmdNOqh",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1Je99Lev0-vGlu2CjQD9kBfkvKUmdNOqh/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1Je99Lev0-vGlu2CjQD9kBfkvKUmdNOqh/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "aa04cd3c-6637-40c6-855f-1d87f585a0a8",
@@ -3556,11 +3586,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:49:13.833Z",
           "gdriveId": "1MshDHeji33D-y6svXhJBOG420a8J2Cvb",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1MshDHeji33D-y6svXhJBOG420a8J2Cvb/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1MshDHeji33D-y6svXhJBOG420a8J2Cvb/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "87e14483-31a6-4921-bd37-2d6151a7691e",
@@ -4128,11 +4160,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:49:50.726Z",
           "gdriveId": "1ZAmzSoWDS3nEL6fK5HtOvsC5Glhzha6v",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1ZAmzSoWDS3nEL6fK5HtOvsC5Glhzha6v/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1ZAmzSoWDS3nEL6fK5HtOvsC5Glhzha6v/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:26:53.215Z",
+          "lastModifiedBy": "Client"
         }
       ],
       "masterFolderPath": "",
@@ -4148,7 +4182,13 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T04:22:25.437Z"
+      "updatedAt": "2026-11-01T06:26:53.215Z",
+      "stats": {
+        "total": 187,
+        "selected": 18,
+        "rejected": 0,
+        "unreviewed": 169
+      }
     },
     {
       "id": "proj_1792035864199_exl4t",
@@ -26169,7 +26209,8 @@
         "gallery_surajit_bhandari",
         "gallery_0g6j963tz9bpq2th",
         "proj_1792035864199_exl4t"
-      ]
+      ],
+      "updatedAt": "2026-11-01T06:26:48.167Z"
     },
     {
       "id": "proj_bappa_bhandari_wedding",
