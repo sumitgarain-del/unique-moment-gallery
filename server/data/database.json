@@ -50,7 +50,7 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:27.188Z",
           "gdriveId": "1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB",
@@ -4140,7 +4140,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T04:11:51.797Z"
+      "updatedAt": "2026-11-01T04:11:58.411Z"
     },
     {
       "id": "proj_1792035864199_exl4t",
