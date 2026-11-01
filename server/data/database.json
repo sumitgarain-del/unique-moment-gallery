@@ -433,7 +433,7 @@
           "uploadedAt": "2026-11-01T03:45:47.192Z",
           "gdriveId": "1ebqQz7RTMaRiMmmZEbc9RPEpJJZa1Hko",
           "gdriveViewUrl": "https://drive.google.com/file/d/1ebqQz7RTMaRiMmmZEbc9RPEpJJZa1Hko/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:35:28.945Z",
+          "lastVotedAt": "2026-11-01T06:34:08.614Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -4184,7 +4184,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T06:35:28.945Z",
+      "updatedAt": "2026-11-01T06:34:08.614Z",
       "stats": {
         "total": 187,
         "selected": 18,
