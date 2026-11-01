@@ -4714,7 +4714,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T12:29:10.744Z",
-      "updatedAt": "2026-11-01T15:07:35.949Z"
+      "updatedAt": "2026-11-01T15:08:36.118Z"
     },
     {
       "id": "proj_1793504697619_fgioz",
@@ -8941,10 +8941,12 @@
           "proxySize": 146676,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea",
-          "gdriveViewUrl": "https://drive.google.com/file/d/15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T15:08:34.089Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "3d029ba2-386c-4f13-9f32-2b607dc6fe99",
@@ -21392,7 +21394,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:32.271Z",
-      "updatedAt": "2026-10-17T02:49:32.271Z"
+      "updatedAt": "2026-11-01T15:08:34.089Z"
     },
     {
       "id": "proj_supriya_wedding",
