@@ -9,8 +9,9 @@ class CloudSyncWorker {
 
   start(intervalMs = 3000) {
     if (this.timer) clearInterval(this.timer);
-    // Initial poll immediately
+    // Push all local projects to cloud on startup to guarantee all links are immediately live
     setTimeout(() => {
+      this.syncAllProjectsToCloud();
       this.pollActiveProjects();
     }, 1200);
     this.timer = setInterval(() => this.pollActiveProjects(), intervalMs);
@@ -66,7 +67,19 @@ class CloudSyncWorker {
         try {
           const url = `${cloudBase}/api/cloud/project/${token}/selection`;
           const res = await fetch(url, { signal: AbortSignal.timeout(6000) });
-          if (!res.ok) continue;
+          if (!res.ok) {
+            // If cloud returns 404, it means the project is missing from cloud.
+            // Automatically push it to heal the cloud gallery immediately!
+            if (res.status === 404) {
+              fetch(`${cloudBase}/api/cloud/sync-project`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project: db.getProject(project.id) || project }),
+                signal: AbortSignal.timeout(8000),
+              }).catch(() => {});
+            }
+            continue;
+          }
 
             const data = await res.json();
             if (!data || !data.success || !Array.isArray(data.allImages)) continue;
