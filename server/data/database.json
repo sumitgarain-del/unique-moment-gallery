@@ -28,12 +28,12 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "selected",
+          "status": "unreviewed",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:25.608Z",
           "gdriveId": "1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_",
           "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:15.645Z",
+          "lastVotedAt": "2026-11-01T06:13:15.224Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -52,12 +52,12 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:27.188Z",
           "gdriveId": "1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB",
           "gdriveViewUrl": "https://drive.google.com/file/d/1w9La9kpG-orjC-F-1K6T4QrP0DQ4F2mB/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:15.645Z",
+          "lastVotedAt": "2026-11-01T06:13:15.224Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -3052,12 +3052,12 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:38.207Z",
           "gdriveId": "1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923",
           "gdriveViewUrl": "https://drive.google.com/file/d/1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:13:15.645Z",
+          "lastVotedAt": "2026-11-01T06:13:15.224Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -4152,7 +4152,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T06:13:15.645Z"
+      "updatedAt": "2026-11-01T06:13:15.224Z"
     },
     {
       "id": "proj_1792035864199_exl4t",
