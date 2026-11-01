@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 // POST /api/projects
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { clientName, eventDate, shootType, notes, title, masterFolderPath, outputFolderPath } = req.body;
     if (!clientName) {
@@ -34,6 +34,20 @@ router.post('/', (req, res) => {
       masterFolderPath,
       outputFolderPath,
     });
+
+    // Auto-sync new project to cloud immediately so share link works from the very first second!
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl) {
+      try {
+        const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
+        fetch(cloudUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project }),
+          signal: AbortSignal.timeout(8000),
+        }).catch((e) => console.warn('[Cloud] Immediate new project sync note:', e.message));
+      } catch (e) {}
+    }
 
     res.status(201).json({ success: true, project });
   } catch (err) {
@@ -399,12 +413,23 @@ router.post('/:id/reset-selections', async (req, res) => {
     const settings = db.getSettings();
     if (settings.cloudServerUrl && project.token) {
       const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
-      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reset-selection`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resetAt }),
-        signal: AbortSignal.timeout(8000),
-      }).catch((err) => console.error('[ResetSelections] Cloud sync error:', err.message));
+      try {
+        // 1. DELETE from cloud to wipe old cached in-memory votes
+        await fetch(`${cloudBase}/api/cloud/project/${project.token}`, {
+          method: 'DELETE',
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
+
+        // 2. Re-sync clean project with 0 selections
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: updated }),
+          signal: AbortSignal.timeout(8000),
+        }).catch(() => {});
+      } catch (err) {
+        console.error('[ResetSelections] Cloud sync error:', err.message);
+      }
     }
 
     res.json({ success: true, project: updated });
@@ -441,11 +466,23 @@ router.post('/:id/reopen', async (req, res) => {
     const settings = db.getSettings();
     if (settings.cloudServerUrl && project.token) {
       const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
-      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reopen`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(8000),
-      }).catch((err) => console.error('[Reopen] Cloud sync error:', err.message));
+      try {
+        // 1. DELETE from cloud to wipe submitted lock
+        await fetch(`${cloudBase}/api/cloud/project/${project.token}`, {
+          method: 'DELETE',
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
+
+        // 2. Re-sync with status: 'uploaded' while preserving existing shortlisted photos
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: updated }),
+          signal: AbortSignal.timeout(8000),
+        }).catch(() => {});
+      } catch (err) {
+        console.error('[Reopen] Cloud sync error:', err.message);
+      }
     }
 
     res.json({ success: true, project: updated });
