@@ -28,11 +28,13 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:25.608Z",
           "gdriveId": "1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1Tq8L-LRHF4C1n3bSR80f3y4c8RkAd6r_/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:12:55.060Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "924f00f0-3b88-4cf4-b7b8-7314ed00e690",
@@ -3050,12 +3052,12 @@
           "width": 1277,
           "height": 1920,
           "format": "webp",
-          "status": "selected",
+          "status": "unreviewed",
           "comment": "",
           "uploadedAt": "2026-11-01T03:48:38.207Z",
           "gdriveId": "1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923",
           "gdriveViewUrl": "https://drive.google.com/file/d/1eHmqYYuc8Fbe4KmUv-BzJq6zdeS0y923/view?usp=drivesdk",
-          "lastVotedAt": "2026-11-01T06:12:59.594Z",
+          "lastVotedAt": "2026-11-01T06:12:55.060Z",
           "lastModifiedBy": "Client"
         },
         {
@@ -4150,7 +4152,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T06:12:59.594Z"
+      "updatedAt": "2026-11-01T06:12:55.060Z"
     },
     {
       "id": "proj_1792035864199_exl4t",
