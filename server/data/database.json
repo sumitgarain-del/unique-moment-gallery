@@ -4193,9 +4193,9 @@
       "updatedAt": "2026-11-02T03:37:04.086Z",
       "stats": {
         "total": 187,
-        "selected": 18,
+        "selected": 22,
         "rejected": 0,
-        "unreviewed": 169
+        "unreviewed": 165
       }
     },
     {
@@ -38706,7 +38706,13 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:32.271Z",
-      "updatedAt": "2026-11-02T03:27:39.419Z"
+      "updatedAt": "2026-11-02T03:27:39.419Z",
+      "stats": {
+        "total": 889,
+        "selected": 4,
+        "rejected": 0,
+        "unreviewed": 885
+      }
     },
     {
       "id": "proj_supriya_wedding",
@@ -52047,7 +52053,13 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:33.440Z",
-      "updatedAt": "2026-11-01T04:22:27.056Z"
+      "updatedAt": "2026-11-01T04:22:27.056Z",
+      "stats": {
+        "total": 853,
+        "selected": 231,
+        "rejected": 0,
+        "unreviewed": 622
+      }
     },
     {
       "id": "proj_prakash_reception",
@@ -54489,7 +54501,13 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:34.038Z",
-      "updatedAt": "2026-10-17T02:49:34.038Z"
+      "updatedAt": "2026-10-17T02:49:34.038Z",
+      "stats": {
+        "total": 172,
+        "selected": 0,
+        "rejected": 0,
+        "unreviewed": 172
+      }
     }
   ],
   "deletedProjectIds": [
