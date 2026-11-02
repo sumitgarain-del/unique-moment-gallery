@@ -3,7 +3,7 @@
   "photographerEmail": "mail2uniquemoment@gmail.com",
   "customDomain": "",
   "cloudflareTunnelToken": "",
-  "cloudServerUrl": "",
+  "cloudServerUrl": "https://spry-teal-c1983ep.vercel.app",
   "gdrive": {
     "enabled": false,
     "clientId": "",
@@ -11,9 +11,7 @@
     "refreshToken": "",
     "parentFolderId": "",
     "folderUrl": "",
-    "serviceAccountKey": "",
-    "status": "not_configured",
-    "serviceAccountEmail": ""
+    "status": "not_configured"
   },
   "exportSettings": {
     "folderNameTemplate": "Selected Images",
