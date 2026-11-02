@@ -54490,6 +54490,26 @@
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:34.038Z",
       "updatedAt": "2026-10-17T02:49:34.038Z"
+    },
+    {
+      "id": "proj_probe_self_heal",
+      "title": "Probe Self Heal",
+      "clientName": "Probe Client",
+      "token": "gallery_probe_self_heal_123",
+      "status": "uploaded",
+      "images": [
+        {
+          "id": "img_probe_1",
+          "originalName": "probe.jpg",
+          "status": "unreviewed"
+        }
+      ],
+      "stats": {
+        "total": 1,
+        "selected": 0,
+        "rejected": 0,
+        "unreviewed": 1
+      }
     }
   ],
   "deletedProjectIds": [
