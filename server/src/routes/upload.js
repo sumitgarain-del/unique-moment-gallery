@@ -100,7 +100,7 @@ router.post('/:id/upload', upload.array('photos', 2500), async (req, res) => {
       });
     }
 
-    // Auto sync to Render cloud server
+    // Auto sync to Vercel cloud server
     if (settings.cloudServerUrl) {
       try {
         const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
