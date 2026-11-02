@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 // POST /api/projects
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { clientName, eventDate, shootType, notes, title, masterFolderPath, outputFolderPath } = req.body;
     if (!clientName) {
@@ -34,6 +34,20 @@ router.post('/', (req, res) => {
       masterFolderPath,
       outputFolderPath,
     });
+
+    // Auto-sync new project to cloud immediately so share link works from the very first second!
+    const settings = db.getSettings();
+    if (settings.cloudServerUrl) {
+      try {
+        const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
+        fetch(cloudUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project }),
+          signal: AbortSignal.timeout(8000),
+        }).catch((e) => console.warn('[Cloud] Immediate new project sync note:', e.message));
+      } catch (e) {}
+    }
 
     res.status(201).json({ success: true, project });
   } catch (err) {
@@ -198,20 +212,22 @@ router.post('/:id/import-folder', async (req, res) => {
           });
         }
 
-        // Auto push to Render.com cloud server if configured
-        if (settings.cloudServerUrl) {
+        // Auto push to Cloud servers (both Vercel and Render)
+        const endpoints = Array.from(new Set([
+          settings.cloudServerUrl ? settings.cloudServerUrl.replace(/\/$/, '') : null,
+          'https://unique-moment-gallery.onrender.com'
+        ].filter(Boolean)));
+
+        for (const ep of endpoints) {
           try {
-            const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
-            console.log(`[Cloud] Auto-syncing project ${id} to Render cloud: ${cloudUrl}`);
-            await fetch(cloudUrl, {
+            const syncUrl = `${ep}/api/cloud/sync-project`;
+            fetch(syncUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ project: db.getProject(id) }),
-            });
-            console.log(`[Cloud] Project ${id} synced to Render successfully.`);
-          } catch (cloudErr) {
-            console.warn(`[Cloud] Render auto-sync note: ${cloudErr.message}`);
-          }
+              signal: AbortSignal.timeout(6000),
+            }).catch(() => {});
+          } catch (cloudErr) {}
         }
 
         socketHub.broadcastToRoom(`project:${id}`, {
@@ -399,12 +415,23 @@ router.post('/:id/reset-selections', async (req, res) => {
     const settings = db.getSettings();
     if (settings.cloudServerUrl && project.token) {
       const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
-      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reset-selection`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resetAt }),
-        signal: AbortSignal.timeout(8000),
-      }).catch((err) => console.error('[ResetSelections] Cloud sync error:', err.message));
+      try {
+        // 1. DELETE from cloud to wipe old cached in-memory votes
+        await fetch(`${cloudBase}/api/cloud/project/${project.token}`, {
+          method: 'DELETE',
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
+
+        // 2. Re-sync clean project with 0 selections
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: updated }),
+          signal: AbortSignal.timeout(8000),
+        }).catch(() => {});
+      } catch (err) {
+        console.error('[ResetSelections] Cloud sync error:', err.message);
+      }
     }
 
     res.json({ success: true, project: updated });
@@ -441,11 +468,23 @@ router.post('/:id/reopen', async (req, res) => {
     const settings = db.getSettings();
     if (settings.cloudServerUrl && project.token) {
       const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
-      await fetch(`${cloudBase}/api/cloud/project/${project.token}/reopen`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(8000),
-      }).catch((err) => console.error('[Reopen] Cloud sync error:', err.message));
+      try {
+        // 1. DELETE from cloud to wipe submitted lock
+        await fetch(`${cloudBase}/api/cloud/project/${project.token}`, {
+          method: 'DELETE',
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
+
+        // 2. Re-sync with status: 'uploaded' while preserving existing shortlisted photos
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: updated }),
+          signal: AbortSignal.timeout(8000),
+        }).catch(() => {});
+      } catch (err) {
+        console.error('[Reopen] Cloud sync error:', err.message);
+      }
     }
 
     res.json({ success: true, project: updated });
