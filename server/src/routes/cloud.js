@@ -4,7 +4,7 @@ import { db } from '../db.js';
 const router = express.Router();
 
 /**
- * Endpoint on Render (or cloud server) to receive project metadata from local studio
+ * Endpoint on Vercel cloud server to receive project metadata from local studio
  * POST /api/cloud/sync-project
  */
 router.post('/sync-project', (req, res) => {
@@ -130,7 +130,7 @@ router.get('/project/:token/selection', async (req, res) => {
 });
 
 /**
- * Endpoint on Render (or cloud server) to delete a project by token
+ * Endpoint on Vercel cloud server to delete a project by token
  * DELETE /api/cloud/project/:token
  */
 router.delete('/project/:token', (req, res) => {
