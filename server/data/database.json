@@ -2128,11 +2128,13 @@
           "width": 1280,
           "height": 1920,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T12:32:01.812Z",
           "gdriveId": "1dyiKAIPeyUAjuh4I0QbV83T_JydrOWEO",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1dyiKAIPeyUAjuh4I0QbV83T_JydrOWEO/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1dyiKAIPeyUAjuh4I0QbV83T_JydrOWEO/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-02T12:53:05.106Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "05987a61-6c91-4a19-9916-5265d8e9af56",
@@ -4744,7 +4746,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T12:29:10.744Z",
-      "updatedAt": "2026-11-02T12:53:01.115Z"
+      "updatedAt": "2026-11-02T12:53:05.106Z"
     },
     {
       "id": "proj_1793504697619_fgioz",
