@@ -212,20 +212,22 @@ router.post('/:id/import-folder', async (req, res) => {
           });
         }
 
-        // Auto push to Render.com cloud server if configured
-        if (settings.cloudServerUrl) {
+        // Auto push to Cloud servers (both Vercel and Render)
+        const endpoints = Array.from(new Set([
+          settings.cloudServerUrl ? settings.cloudServerUrl.replace(/\/$/, '') : null,
+          'https://unique-moment-gallery.onrender.com'
+        ].filter(Boolean)));
+
+        for (const ep of endpoints) {
           try {
-            const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
-            console.log(`[Cloud] Auto-syncing project ${id} to Render cloud: ${cloudUrl}`);
-            await fetch(cloudUrl, {
+            const syncUrl = `${ep}/api/cloud/sync-project`;
+            fetch(syncUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ project: db.getProject(id) }),
-            });
-            console.log(`[Cloud] Project ${id} synced to Render successfully.`);
-          } catch (cloudErr) {
-            console.warn(`[Cloud] Render auto-sync note: ${cloudErr.message}`);
-          }
+              signal: AbortSignal.timeout(6000),
+            }).catch(() => {});
+          } catch (cloudErr) {}
         }
 
         socketHub.broadcastToRoom(`project:${id}`, {
