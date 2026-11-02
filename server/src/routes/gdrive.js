@@ -158,7 +158,7 @@ router.post('/upload/:id', async (req, res) => {
       },
     });
 
-    // Auto sync updated project with Google Drive IDs to Render
+    // Auto sync updated project with Google Drive IDs to Vercel Cloud
     const settings = db.getSettings();
     if (settings.cloudServerUrl) {
       try {
