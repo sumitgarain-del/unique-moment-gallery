@@ -428,11 +428,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:47.192Z",
           "gdriveId": "1ebqQz7RTMaRiMmmZEbc9RPEpJJZa1Hko",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1ebqQz7RTMaRiMmmZEbc9RPEpJJZa1Hko/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1ebqQz7RTMaRiMmmZEbc9RPEpJJZa1Hko/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:35:39.597Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "59a97984-ca40-4d7e-b2aa-4ed4a82161dc",
@@ -494,11 +496,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:50.031Z",
           "gdriveId": "1xFtVv75KRiRUmmDao2qPwsarvvkrh4-A",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1xFtVv75KRiRUmmDao2qPwsarvvkrh4-A/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1xFtVv75KRiRUmmDao2qPwsarvvkrh4-A/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:35:47.632Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "290dc60b-124b-46ec-bada-af84bb15d799",
@@ -560,11 +564,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:52.006Z",
           "gdriveId": "1dnkoZGBpqrUYll3ODOkWs__IpHsFkFhk",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1dnkoZGBpqrUYll3ODOkWs__IpHsFkFhk/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1dnkoZGBpqrUYll3ODOkWs__IpHsFkFhk/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:35:59.641Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "2f4dce80-0002-4e8f-a962-f9363869d592",
@@ -582,11 +588,13 @@
           "width": 1920,
           "height": 1277,
           "format": "webp",
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "uploadedAt": "2026-11-01T03:45:52.925Z",
           "gdriveId": "1rknSQKMRLCLbUJFgA-BhdF1qaVHNebOA",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1rknSQKMRLCLbUJFgA-BhdF1qaVHNebOA/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1rknSQKMRLCLbUJFgA-BhdF1qaVHNebOA/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-01T06:36:03.645Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "309c154c-2980-420e-821d-709ee414c5e1",
@@ -4182,7 +4190,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-11-01T03:44:57.619Z",
-      "updatedAt": "2026-11-01T06:26:53.215Z",
+      "updatedAt": "2026-11-02T03:37:04.086Z",
       "stats": {
         "total": 187,
         "selected": 18,
@@ -26239,10 +26247,12 @@
           "proxySize": 146676,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea",
-          "gdriveViewUrl": "https://drive.google.com/file/d/15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/15asQRyS9mwI1Gm0D_FcOjP13WK8i9_ea/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-02T03:27:39.337Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "3d029ba2-386c-4f13-9f32-2b607dc6fe99",
@@ -26379,10 +26389,12 @@
           "proxySize": 187320,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1QSbcUrEeZB3jUOF6T6vcy_ODUQfmmeAT",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1QSbcUrEeZB3jUOF6T6vcy_ODUQfmmeAT/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1QSbcUrEeZB3jUOF6T6vcy_ODUQfmmeAT/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-02T03:27:39.418Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "551c78f0-7505-4220-b9ec-1cd018d4e322",
@@ -26435,10 +26447,12 @@
           "proxySize": 154074,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1r1nl4ujP6h5sRU-6iZwqmpCcgkNAjZRV",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1r1nl4ujP6h5sRU-6iZwqmpCcgkNAjZRV/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1r1nl4ujP6h5sRU-6iZwqmpCcgkNAjZRV/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-02T03:27:39.418Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "e7e647f6-64b9-4e3c-b8e9-c3b9dfb347b4",
@@ -26463,10 +26477,12 @@
           "proxySize": 170316,
           "width": 1920,
           "height": 1280,
-          "status": "unreviewed",
+          "status": "selected",
           "comment": "",
           "gdriveId": "1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2",
-          "gdriveViewUrl": "https://drive.google.com/file/d/1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2/view?usp=drivesdk"
+          "gdriveViewUrl": "https://drive.google.com/file/d/1O0wfHZgxrP6kQkUq5D1jA5k2ezqnf8E2/view?usp=drivesdk",
+          "lastVotedAt": "2026-11-02T03:27:39.418Z",
+          "lastModifiedBy": "Client"
         },
         {
           "id": "ac1bf868-e644-4b4e-b2d6-c5f162092b78",
@@ -38690,7 +38706,7 @@
       "submittedAt": null,
       "submissionNotes": "",
       "createdAt": "2026-10-17T02:49:32.271Z",
-      "updatedAt": "2026-10-17T02:49:32.271Z"
+      "updatedAt": "2026-11-02T03:27:39.419Z"
     },
     {
       "id": "proj_supriya_wedding",
