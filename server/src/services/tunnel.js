@@ -5,7 +5,7 @@ import { db } from '../db.js';
 
 class TunnelService {
   constructor() {
-    this.tunnelType = 'render_cloud';
+    this.tunnelType = 'vercel_cloud';
   }
 
   /**
@@ -45,14 +45,14 @@ class TunnelService {
   }
 
   /**
-   * Start / Connect (Instant resolution using Render Cloud Server)
+   * Start / Connect (Instant resolution using Vercel Cloud Server)
    */
   async startTunnel() {
     const cloudUrl = this.getCloudBaseUrl();
     return {
       url: cloudUrl,
       active: true,
-      type: 'render_cloud',
+      type: 'vercel_cloud',
     };
   }
 
@@ -76,7 +76,7 @@ class TunnelService {
     const publicLink = `${cloudBase}${galleryPath}`;
     const localhostLink = `http://localhost:${port}${galleryPath}`;
 
-    // Target link for client: 24/7 Render cloud link
+    // Target link for client: 24/7 Vercel cloud link
     const primaryLink = publicLink;
     let qrCode = null;
     try {
@@ -104,7 +104,7 @@ class TunnelService {
       primaryLink,
       qrImageUrl,
       tunnelActive: true,
-      tunnelType: 'render_cloud',
+      tunnelType: 'vercel_cloud',
       qrCode,
     };
   }
