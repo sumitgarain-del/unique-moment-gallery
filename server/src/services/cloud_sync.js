@@ -26,26 +26,23 @@ class CloudSyncWorker {
   async syncAllProjectsToCloud() {
     try {
       const settings = db.getSettings();
-      const primaryUrl = settings.cloudServerUrl ? settings.cloudServerUrl.replace(/\/$/, '') : '';
-      const renderUrl = 'https://unique-moment-gallery.onrender.com';
-      const endpoints = Array.from(new Set([primaryUrl, renderUrl].filter(Boolean)));
+      if (!settings.cloudServerUrl) return;
+      const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
 
       const projects = db.getProjects() || [];
       const deletedTokens = new Set(db.data.deletedTokens || []);
       const deletedIds = new Set(db.data.deletedProjectIds || []);
 
-      for (const cloudBase of endpoints) {
-        for (const project of projects) {
-          if (!project.token) continue;
-          if (deletedTokens.has(project.token) || deletedIds.has(project.id)) continue;
+      for (const project of projects) {
+        if (!project.token) continue;
+        if (deletedTokens.has(project.token) || deletedIds.has(project.id)) continue;
 
-          await fetch(`${cloudBase}/api/cloud/sync-project`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ project }),
-            signal: AbortSignal.timeout(6000),
-          }).catch(() => {});
-        }
+        await fetch(`${cloudBase}/api/cloud/sync-project`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project }),
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
       }
     } catch (e) {}
   }
