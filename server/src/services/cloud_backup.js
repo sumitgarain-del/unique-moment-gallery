@@ -79,10 +79,9 @@ class CloudBackupService {
   }
 
   /**
-   * Restore latest database from cloud-backup branch with multi-tier fallback:
+   * Restore latest database from cloud-backup branch:
    * Tier 1: Public raw github (cached)
    * Tier 2: GitHub Contents REST API with token (live commit, 0 cache)
-   * Tier 3: Render persistent cloud server (live 24/7 endpoint)
    */
   async fetchBackup() {
     // Tier 1: Raw GitHub
@@ -126,19 +125,6 @@ class CloudBackupService {
         }
       } catch (err) {}
     }
-
-    // Tier 3: Live Render Server
-    try {
-      const renderRes = await fetch('https://unique-moment-gallery.onrender.com/api/projects', {
-        signal: AbortSignal.timeout(6000),
-      });
-      if (renderRes.ok) {
-        const renderData = await renderRes.json();
-        if (renderData.success && Array.isArray(renderData.projects) && renderData.projects.length > 0) {
-          return { projects: renderData.projects };
-        }
-      }
-    } catch (err) {}
 
     return null;
   }
