@@ -9,8 +9,9 @@ class CloudSyncWorker {
 
   start(intervalMs = 3000) {
     if (this.timer) clearInterval(this.timer);
-    // Initial poll immediately
+    // Push all local projects to cloud on startup to guarantee all links are immediately live
     setTimeout(() => {
+      this.syncAllProjectsToCloud();
       this.pollActiveProjects();
     }, 1200);
     this.timer = setInterval(() => this.pollActiveProjects(), intervalMs);
@@ -25,22 +26,26 @@ class CloudSyncWorker {
   async syncAllProjectsToCloud() {
     try {
       const settings = db.getSettings();
-      if (!settings.cloudServerUrl) return;
-      const cloudBase = settings.cloudServerUrl.replace(/\/$/, '');
+      const primaryUrl = settings.cloudServerUrl ? settings.cloudServerUrl.replace(/\/$/, '') : '';
+      const renderUrl = 'https://unique-moment-gallery.onrender.com';
+      const endpoints = Array.from(new Set([primaryUrl, renderUrl].filter(Boolean)));
+
       const projects = db.getProjects() || [];
       const deletedTokens = new Set(db.data.deletedTokens || []);
       const deletedIds = new Set(db.data.deletedProjectIds || []);
 
-      for (const project of projects) {
-        if (!project.token) continue;
-        if (deletedTokens.has(project.token) || deletedIds.has(project.id)) continue;
+      for (const cloudBase of endpoints) {
+        for (const project of projects) {
+          if (!project.token) continue;
+          if (deletedTokens.has(project.token) || deletedIds.has(project.id)) continue;
 
-        await fetch(`${cloudBase}/api/cloud/sync-project`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ project }),
-          signal: AbortSignal.timeout(6000),
-        }).catch(() => {});
+          await fetch(`${cloudBase}/api/cloud/sync-project`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ project }),
+            signal: AbortSignal.timeout(6000),
+          }).catch(() => {});
+        }
       }
     } catch (e) {}
   }
@@ -66,7 +71,19 @@ class CloudSyncWorker {
         try {
           const url = `${cloudBase}/api/cloud/project/${token}/selection`;
           const res = await fetch(url, { signal: AbortSignal.timeout(6000) });
-          if (!res.ok) continue;
+          if (!res.ok) {
+            // If cloud returns 404, it means the project is missing from cloud.
+            // Automatically push it to heal the cloud gallery immediately!
+            if (res.status === 404) {
+              fetch(`${cloudBase}/api/cloud/sync-project`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project: db.getProject(project.id) || project }),
+                signal: AbortSignal.timeout(8000),
+              }).catch(() => {});
+            }
+            continue;
+          }
 
             const data = await res.json();
             if (!data || !data.success || !Array.isArray(data.allImages)) continue;
@@ -115,8 +132,11 @@ class CloudSyncWorker {
             };
 
             const localSelectedCount = currentImages.filter((i) => i.status === 'selected').length;
-            // Cold start detection: when cloud suddenly reports 0 while local had > 5 selections and no submission notes or reset
-            const isColdStartWipe = (data.selectedCount === 0 && localSelectedCount > 5 && !data.submittedAt && !data.submissionNotes && !data.resetAt && !project.resetAt);
+            
+            // Check if cloud reports fewer selections than local verified count
+            if (typeof data.selectedCount === 'number' && data.selectedCount < localSelectedCount && !project.resetAt) {
+              needsHealCloud = true;
+            }
 
             const updatedImages = currentImages.map((img) => {
               const cloudImg = findCloudImg(img);
@@ -127,20 +147,28 @@ class CloudSyncWorker {
                 const cloudComment = cloudImg.comment || '';
 
                 if (cloudStatus !== currentStatus || cloudComment !== currentComment) {
-                  // Safeguard against complete serverless cold-start data loss
-                  if (isColdStartWipe && currentStatus === 'selected' && cloudStatus === 'unreviewed') {
-                    needsHealCloud = true;
-                    return img;
+                  // Conflict resolution: protect locally selected photos from stale cloud instances
+                  if (currentStatus === 'selected' && cloudStatus === 'unreviewed') {
+                    const localVotedTime = img.lastVotedAt ? new Date(img.lastVotedAt).getTime() : 0;
+                    const cloudVotedTime = cloudImg.lastVotedAt ? new Date(cloudImg.lastVotedAt).getTime() : 0;
+
+                    // Deselection is ONLY accepted if client explicitly unvoted on cloud with a strictly newer timestamp.
+                    // If cloud has null/undefined timestamp or older timestamp, that cloud instance is STALE or cold-started!
+                    const isGenuineDeselect = cloudVotedTime > 0 && cloudVotedTime > localVotedTime;
+                    if (!isGenuineDeselect) {
+                      needsHealCloud = true;
+                      return img; // Keep selection safe!
+                    }
                   }
 
-                  // Live client vote: selection, deselection, or comment
+                  // Live client vote: selection, genuine deselection, or comment
                   hasChanges = true;
                   return {
                     ...img,
                     status: cloudStatus,
                     comment: cloudComment,
-                    lastVotedAt: cloudImg.lastVotedAt || new Date().toISOString(),
-                    lastModifiedBy: cloudImg.lastModifiedBy || 'Client',
+                    lastVotedAt: cloudImg.lastVotedAt || (cloudStatus === 'selected' ? new Date().toISOString() : null),
+                    lastModifiedBy: cloudImg.lastModifiedBy || (cloudStatus === 'selected' ? 'Client' : null),
                   };
                 }
               }
