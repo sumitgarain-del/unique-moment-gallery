@@ -147,6 +147,71 @@ class Database {
     }
   }
 
+  async syncProjectByTokenFromCloud(token) {
+    if (!token) return null;
+    const clean = token.trim().toLowerCase();
+    try {
+      const backupData = await cloudBackupService.fetchBackup();
+      if (backupData && Array.isArray(backupData.projects)) {
+        const deletedIds = new Set(this.data.deletedProjectIds || []);
+        const deletedTokens = new Set(this.data.deletedTokens || []);
+
+        const found = backupData.projects.find((p) => {
+          if (deletedTokens.has(p.token) || deletedIds.has(p.id)) return false;
+          if (p.token && p.token.toLowerCase() === clean) return true;
+          if (p.id && p.id.toLowerCase() === clean) return true;
+          if (Array.isArray(p.aliases) && p.aliases.some((a) => a.toLowerCase() === clean)) return true;
+          return false;
+        });
+
+        if (found) {
+          const existingIdx = this.data.projects.findIndex((p) => p.id === found.id || p.token === found.token);
+          if (existingIdx >= 0) {
+            this.data.projects[existingIdx] = {
+              ...found,
+              ...this.data.projects[existingIdx],
+              aliases: Array.from(new Set([...(this.data.projects[existingIdx].aliases || []), ...(found.aliases || [])])),
+            };
+            this.saveDatabase(true);
+            return this.computeProjectStats(this.data.projects[existingIdx]);
+          } else {
+            this.data.projects.push(found);
+            this.saveDatabase(true);
+            console.log(`[DB] Restored missing project '${found.clientName}' (${found.token}) from cloud backup`);
+            return this.computeProjectStats(found);
+          }
+        }
+      }
+
+      // Direct fallback: Fetch specific gallery from Render live server
+      try {
+        const directRes = await fetch(`https://unique-moment-gallery.onrender.com/api/gallery/${clean}`, {
+          signal: AbortSignal.timeout(6000),
+        });
+        if (directRes.ok) {
+          const directData = await directRes.json();
+          if (directData && directData.success && directData.gallery) {
+            const restored = directData.gallery;
+            const existingIdx = this.data.projects.findIndex((p) => p.id === restored.id || p.token === restored.token);
+            if (existingIdx >= 0) {
+              this.data.projects[existingIdx] = { ...restored, ...this.data.projects[existingIdx] };
+            } else {
+              this.data.projects.push(restored);
+            }
+            this.saveDatabase(true);
+            console.log(`[DB] Restored '${restored.title}' directly from Render live server`);
+            return this.computeProjectStats(restored);
+          }
+        }
+      } catch (directErr) {}
+
+      return null;
+    } catch (err) {
+      console.warn('[DB] syncProjectByTokenFromCloud error:', err.message);
+      return null;
+    }
+  }
+
   saveSettings(newSettings) {
     try {
       this.settings = { ...this.settings, ...newSettings };
@@ -196,6 +261,7 @@ class Database {
       shootType: projectData.shootType || 'Wedding',
       notes: projectData.notes || '',
       token: projectData.token || `gallery_${Math.random().toString(36).substring(2, 10)}${Math.random().toString(36).substring(2, 10)}`,
+      aliases: projectData.aliases || [],
       status: projectData.status || (projectData.images && projectData.images.length > 0 ? 'uploaded' : 'draft'),
       images: projectData.images || [],
       masterFolderPath: projectData.masterFolderPath || '',
