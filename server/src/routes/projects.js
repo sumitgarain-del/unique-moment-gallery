@@ -100,15 +100,15 @@ router.delete('/:id', async (req, res) => {
       }
     }
 
-    // 2. Delete project from Render cloud server if configured
+    // 2. Delete project from Vercel cloud server if configured
     const settings = db.getSettings();
     if (settings.cloudServerUrl && project.token) {
       try {
         const cloudUrl = `${settings.cloudServerUrl.replace(/\/$/, '')}/api/cloud/project/${project.token}`;
         await fetch(cloudUrl, { method: 'DELETE' });
-        console.log(`[Delete] Project ${project.token} removed from Render cloud.`);
+        console.log(`[Delete] Project ${project.token} removed from Vercel cloud.`);
       } catch (cloudErr) {
-        console.warn(`[Delete] Render cloud deletion note: ${cloudErr.message}`);
+        console.warn(`[Delete] Vercel cloud deletion note: ${cloudErr.message}`);
       }
     }
 
@@ -212,15 +212,10 @@ router.post('/:id/import-folder', async (req, res) => {
           });
         }
 
-        // Auto push to Cloud servers (both Vercel and Render)
-        const endpoints = Array.from(new Set([
-          settings.cloudServerUrl ? settings.cloudServerUrl.replace(/\/$/, '') : null,
-          'https://unique-moment-gallery.onrender.com'
-        ].filter(Boolean)));
-
-        for (const ep of endpoints) {
+        // Auto push to Vercel Cloud server
+        if (settings.cloudServerUrl) {
           try {
-            const syncUrl = `${ep}/api/cloud/sync-project`;
+            const syncUrl = `${settings.cloudServerUrl.replace(/\/$/, '')}/api/cloud/sync-project`;
             fetch(syncUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -254,7 +249,7 @@ router.post('/:id/import-folder', async (req, res) => {
   }
 });
 
-// POST /api/projects/:id/cloud-sync (Push local project metadata to Render cloud server)
+// POST /api/projects/:id/cloud-sync (Push local project metadata to Vercel cloud server)
 router.post('/:id/cloud-sync', async (req, res) => {
   try {
     const { id } = req.params;
@@ -265,7 +260,7 @@ router.post('/:id/cloud-sync', async (req, res) => {
 
     const settings = db.getSettings();
     if (!settings.cloudServerUrl) {
-      return res.status(400).json({ success: false, error: 'Render Cloud Server URL not configured in Settings' });
+      return res.status(400).json({ success: false, error: 'Vercel Cloud Server URL not configured in Settings' });
     }
 
     const cloudUrl = settings.cloudServerUrl.replace(/\/$/, '') + '/api/cloud/sync-project';
@@ -277,16 +272,16 @@ router.post('/:id/cloud-sync', async (req, res) => {
 
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.error || 'Failed to sync with Render cloud server');
+      throw new Error(data.error || 'Failed to sync with Vercel cloud server');
     }
 
-    res.json({ success: true, message: 'Project synced to Render cloud server successfully', data });
+    res.json({ success: true, message: 'Project synced to Vercel cloud server successfully', data });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
-// POST /api/projects/:id/cloud-pull (Pull latest client selections from Render cloud server)
+// POST /api/projects/:id/cloud-pull (Pull latest client selections from Vercel cloud server)
 router.post('/:id/cloud-pull', async (req, res) => {
   try {
     const { id } = req.params;
@@ -297,7 +292,7 @@ router.post('/:id/cloud-pull', async (req, res) => {
 
     const settings = db.getSettings();
     if (!settings.cloudServerUrl) {
-      return res.status(400).json({ success: false, error: 'Render Cloud Server URL not configured in Settings' });
+      return res.status(400).json({ success: false, error: 'Vercel Cloud Server URL not configured in Settings' });
     }
 
     const cloudUrl = `${settings.cloudServerUrl.replace(/\/$/, '')}/api/cloud/project/${project.token}/selection`;
@@ -305,7 +300,7 @@ router.post('/:id/cloud-pull', async (req, res) => {
     const data = await response.json();
 
     if (!response.ok || !data.success) {
-      throw new Error(data.error || 'Failed to fetch selection from Render cloud server');
+      throw new Error(data.error || 'Failed to fetch selection from Vercel cloud server');
     }
 
     // Update local project images with latest client statuses
