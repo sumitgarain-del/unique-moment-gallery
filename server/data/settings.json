@@ -3,7 +3,7 @@
   "photographerEmail": "mail2uniquemoment@gmail.com",
   "customDomain": "",
   "cloudflareTunnelToken": "",
-  "cloudServerUrl": "https://spry-teal-c1983ep.vercel.app",
+  "cloudServerUrl": "https://unique-moment-gallery.onrender.com",
   "gdrive": {
     "enabled": false,
     "clientId": "",

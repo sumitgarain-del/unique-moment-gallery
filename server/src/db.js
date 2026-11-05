@@ -13,7 +13,7 @@ class Database {
       photographerEmail: 'mail2uniquemoment@gmail.com',
       customDomain: '', // e.g. https://gallery.uniquemoment.com
       cloudflareTunnelToken: '', // Cloudflare Zero Trust permanent tunnel token
-      cloudServerUrl: 'https://spry-teal-c1983ep.vercel.app', // 24/7 Vercel cloud gallery server URL
+      cloudServerUrl: 'https://unique-moment-gallery.onrender.com', // 24/7 Vercel cloud gallery server URL
       gdrive: {
         enabled: false,
         clientId: '',
