@@ -91,6 +91,26 @@ app.get(['/api/proxies/:projectId/:filename', '/proxies/:projectId/:filename'], 
 
 app.use(['/api/proxies', '/proxies'], express.static(config.PROXIES_DIR));
 
+// Serve client production build if available
+const candidateDistPaths = [
+  path.resolve(__dirname, '../../client/dist'),
+  path.resolve(__dirname, '../client/dist'),
+  path.resolve(process.cwd(), 'client/dist'),
+];
+const clientDist = candidateDistPaths.find((p) => fs.existsSync(p));
+
+if (clientDist) {
+  app.use(express.static(clientDist));
+
+  // Client Public Gallery page: serve index.html when requested by browser
+  app.get(['/gallery/:token', '/gallery/:token/*'], (req, res, next) => {
+    if (req.accepts('html')) {
+      return res.sendFile(path.join(clientDist, 'index.html'));
+    }
+    next();
+  });
+}
+
 // API Routes (Mounted under both /api/* and direct /* so all rewrite styles work seamlessly)
 app.use('/api/projects', projectsRouter);
 app.use('/projects', projectsRouter);
@@ -119,16 +139,7 @@ app.post(['/api/settings', '/settings'], (req, res) => {
   res.json({ success: true, settings: updated });
 });
 
-// Serve client production build if available
-const candidateDistPaths = [
-  path.resolve(__dirname, '../../client/dist'),
-  path.resolve(__dirname, '../client/dist'),
-  path.resolve(process.cwd(), 'client/dist'),
-];
-const clientDist = candidateDistPaths.find((p) => fs.existsSync(p));
-
 if (clientDist) {
-  app.use(express.static(clientDist));
   app.get('*', (req, res) => {
     if (!req.path.startsWith('/api') && !req.path.startsWith('/ws')) {
       res.sendFile(path.join(clientDist, 'index.html'));
@@ -159,12 +170,16 @@ if (!config.IS_VERCEL) {
     // Start background auto-sync to pull client selections from cloud in real-time
     cloudSyncWorker.start(4000);
 
-    // Automatically restore/sync projects from cloud backup
-    db.syncWithCloudBackup();
+    // Automatically restore/sync projects from cloud backup ONLY if database is empty
+    if (!db.data.projects || db.data.projects.length === 0) {
+      db.syncWithCloudBackup();
+    }
   });
 } else {
-  // Restore/sync from cloud backup on serverless function boot
-  db.syncWithCloudBackup();
+  // Restore/sync from cloud backup on serverless function boot ONLY if empty
+  if (!db.data.projects || db.data.projects.length === 0) {
+    db.syncWithCloudBackup();
+  }
 }
 
 export { app, server };
