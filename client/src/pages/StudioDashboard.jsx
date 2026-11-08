@@ -297,7 +297,7 @@ export default function StudioDashboard({
                           e.stopPropagation();
                           if (
                             confirm(
-                              `Delete project "${project.clientName}"?\n\nThis will permanently remove the local project, its folder on Google Drive, and its online gallery on Render.`
+                              `Delete project "${project.clientName}"?\n\nThis will permanently remove the local project, its folder on Google Drive, and its online gallery on Vercel.`
                             )
                           ) {
                             onDeleteProject(project.id);

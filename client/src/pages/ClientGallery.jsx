@@ -64,16 +64,28 @@ export default function ClientGallery({ token }) {
         }
       } catch (e) {}
 
-      if (data && Array.isArray(data.images) && Object.keys(localVotes).length > 0) {
+      if (data && Array.isArray(data.images)) {
         let hasLocalVotesToSync = false;
-        data.images = data.images.map((img) => {
-          const lv = localVotes[img.id];
-          if (lv && lv.status && (!img.status || img.status === 'unreviewed')) {
-            hasLocalVotesToSync = true;
-            return { ...img, status: lv.status, comment: lv.comment || img.comment };
+        if (Object.keys(localVotes).length > 0) {
+          data.images = data.images.map((img) => {
+            const lv = localVotes[img.id];
+            if (lv && lv.status && (!img.status || img.status === 'unreviewed')) {
+              hasLocalVotesToSync = true;
+              return { ...img, status: lv.status, comment: lv.comment || img.comment };
+            }
+            return img;
+          });
+        }
+
+        // Cache all confirmed selections into device localStorage as well
+        data.images.forEach((img) => {
+          if (img.status === 'selected' && !localVotes[img.id]) {
+            localVotes[img.id] = { status: 'selected', comment: img.comment || '', timestamp: Date.now() };
           }
-          return img;
         });
+        try {
+          localStorage.setItem(`studio_sync_votes_${token}`, JSON.stringify(localVotes));
+        } catch (e) {}
 
         // Recount stats
         const selCount = data.images.filter((i) => i.status === 'selected').length;
@@ -174,13 +186,25 @@ export default function ClientGallery({ token }) {
     const currentStatus = image.status;
     const newStatus = currentStatus === targetStatus ? 'unreviewed' : targetStatus;
 
-    // Optimistic UI update
+    // Optimistic UI update with immediate stat recalculation
     setGallery((prev) => {
       if (!prev) return prev;
       const updatedImages = prev.images.map((img) =>
         img.id === image.id ? { ...img, status: newStatus } : img
       );
-      return { ...prev, images: updatedImages };
+      const selCount = updatedImages.filter((i) => i.status === 'selected').length;
+      const rejCount = updatedImages.filter((i) => i.status === 'rejected').length;
+      return {
+        ...prev,
+        images: updatedImages,
+        stats: {
+          ...prev.stats,
+          total: updatedImages.length,
+          selected: selCount,
+          rejected: rejCount,
+          unreviewed: updatedImages.length - selCount - rejCount,
+        },
+      };
     });
 
     // Save to device localStorage immediately
@@ -196,7 +220,10 @@ export default function ClientGallery({ token }) {
     } catch (e) {}
 
     try {
-      await voteImage(token, image.id, newStatus, null, voterName);
+      const res = await voteImage(token, image.id, newStatus, null, voterName);
+      if (res && res.stats) {
+        setGallery((prev) => (prev ? { ...prev, stats: res.stats } : prev));
+      }
     } catch (err) {
       console.warn('Vote background sync note:', err.message);
     }

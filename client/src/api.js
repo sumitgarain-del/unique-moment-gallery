@@ -249,7 +249,7 @@ export async function saveSettings(settings) {
   return res.settings;
 }
 
-// Cloud Synchronization API (Render.com)
+// Cloud Synchronization API (Vercel Cloud)
 export async function cloudSyncProject(projectId) {
   return await fetchJson(`/projects/${projectId}/cloud-sync`, {
     method: 'POST',

@@ -23,6 +23,8 @@ export default function ShareModal({ project, onClose }) {
   const loadInfo = async () => {
     try {
       setLoading(true);
+      // Ensure cloud has latest project data before sharing
+      fetch(`/api/projects/${project.id}/cloud-sync`, { method: 'POST' }).catch(() => {});
       const info = await getShareInfo(project.token);
       setShareInfo(info);
     } catch (err) {

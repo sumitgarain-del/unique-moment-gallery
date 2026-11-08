@@ -280,7 +280,7 @@ export default function ProjectDetail({
       setFolderImportProgress(null);
     });
 
-    // Auto-pull selections & submission state from Render cloud every 3.5s
+    // Auto-pull selections & submission state from Vercel cloud every 3.5s
     const cloudPollTimer = setInterval(async () => {
       try {
         const res = await cloudPullProject(project.id);
@@ -612,7 +612,7 @@ export default function ProjectDetail({
             onClick={handlePullFromCloud}
             disabled={isPullingCloud}
             className="flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-xs font-medium transition-colors disabled:opacity-50"
-            title="Fetch client selections directly from Render.com cloud server"
+            title="Fetch client selections directly from Vercel cloud server"
           >
             <RefreshCw className={`w-3.5 h-3.5 text-blue-400 ${isPullingCloud ? 'animate-spin' : ''}`} />
             <span>{isPullingCloud ? 'Syncing...' : 'Refresh from Cloud'}</span>
@@ -704,7 +704,7 @@ export default function ProjectDetail({
               </span>
               <span className="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>24/7 Cloud Gallery Live (Render.com + Google Drive)</span>
+                <span>24/7 Cloud Gallery Live (Vercel + Google Drive)</span>
               </span>
             </div>
 
